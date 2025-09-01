@@ -5,78 +5,80 @@ const Skills = () => {
         <section id="skills" className="py-24 bg-primary">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Yeteneklerim</h2>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Yetkinliklerim</h2>
                     <div className="w-32 h-1 bg-gradient-to-r from-highlight to-accent mx-auto rounded-full"></div>
                 </div>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
                     <div className="bg-gradient-to-br from-secondary to-primary rounded-2xl p-8 hover:transform hover:scale-105 transition-all duration-300 border border-accent hover:border-highlight/50 hover:shadow-2xl">
                         <div className="w-20 h-20 rounded-2xl bg-gradient-to-r from-highlight to-accent flex items-center justify-center mb-6 shadow-lg">
-                            <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2L2 7v10c0 5.55 3.84 9.739 9 11 5.16-1.261 9-5.45 9-11V7l-10-5z"/>
-                            </svg>
+                            <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 12h14M12 5l7 7-7 7"></path></svg>
                         </div>
                         <h3 className="text-2xl font-bold text-white mb-4">Backend Development</h3>
                         <ul className="space-y-3 text-text-primary">
-                            <li>• Python FastAPI</li>
-                            <li>• REST API Design</li>
-                            <li>• Database Design</li>
-                            <li>• Server Architecture</li>
-                        </ul>
-                    </div>
-                    <div className="bg-gradient-to-br from-secondary to-primary rounded-2xl p-8 hover:transform hover:scale-105 transition-all duration-300 border border-accent hover:border-blue-500/50 hover:shadow-2xl">
-                        <div className="w-20 h-20 rounded-2xl bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center mb-6 shadow-lg">
-                            <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M17.9 17.39c-.26-.8-1.01-1.39-1.9-1.39h-1v-3a1 1 0 0 0-1-1H8v-2h2a1 1 0 0 0 1-1V7h2a2 2 0 0 0 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-                            </svg>
-                        </div>
-                        <h3 className="text-2xl font-bold text-white mb-4">Mobile Development</h3>
-                        <ul className="space-y-3 text-text-primary">
-                            <li>• Kotlin</li>
-                            <li>• Jetpack Compose</li>
-                            <li>• Android Studio</li>
-                            <li>• Material Design</li>
-                        </ul>
-                    </div>
-                    <div className="bg-gradient-to-br from-secondary to-primary rounded-2xl p-8 hover:transform hover:scale-105 transition-all duration-300 border border-accent hover:border-purple-500/50 hover:shadow-2xl">
-                        <div className="w-20 h-20 rounded-2xl bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center mb-6 shadow-lg">
-                            <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                            </svg>
-                        </div>
-                        <h3 className="text-2xl font-bold text-white mb-4">Game Development</h3>
-                        <ul className="space-y-3 text-text-primary">
-                            <li>• Unity 3D Engine</li>
-                            <li>• C# Programming</li>
-                            <li>• 2D/3D Game Design</li>
-                            <li>• Physics & Animation</li>
-                        </ul>
-                    </div>
-                    <div className="bg-gradient-to-br from-secondary to-primary rounded-2xl p-8 hover:transform hover:scale-105 transition-all duration-300 border border-accent hover:border-yellow-500/50 hover:shadow-2xl">
-                        <div className="w-20 h-20 rounded-2xl bg-gradient-to-r from-yellow-500 to-orange-500 flex items-center justify-center mb-6 shadow-lg">
-                            <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
-                            </svg>
-                        </div>
-                        <h3 className="text-2xl font-bold text-white mb-4">AI & Machine Learning</h3>
-                        <ul className="space-y-3 text-text-primary">
-                            <li>• AI Tools Testing</li>
-                            <li>• Machine Learning</li>
-                            <li>• OpenAI APIs</li>
-                            <li>• Data Analysis</li>
+                            <li>• Python (FastAPI) ile performanslı API'ler</li>
+                            <li>• Ölçeklenebilir REST API mimarisi</li>
+                            <li>• PostgreSQL ile veritabanı tasarımı</li>
+                            <li>• Sunucu tarafı mantık ve iş akışları</li>
                         </ul>
                     </div>
                     <div className="bg-gradient-to-br from-secondary to-primary rounded-2xl p-8 hover:transform hover:scale-105 transition-all duration-300 border border-accent hover:border-green-500/50 hover:shadow-2xl">
                         <div className="w-20 h-20 rounded-2xl bg-gradient-to-r from-green-500 to-teal-500 flex items-center justify-center mb-6 shadow-lg">
-                            <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                            </svg>
+                            <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
                         </div>
                         <h3 className="text-2xl font-bold text-white mb-4">Frontend Development</h3>
                         <ul className="space-y-3 text-text-primary">
-                            <li>• React & TypeScript</li>
-                            <li>• Modern CSS & Tailwind</li>
-                            <li>• Responsive Design</li>
-                            <li>• UI/UX Principles</li>
+                            <li>• React & TypeScript ile modern arayüzler</li>
+                            <li>• TailwindCSS ile hızlı ve tutarlı tasarım</li>
+                            <li>• Duyarlı (Responsive) tasarım prensipleri</li>
+                            <li>• State yönetimi ve component mimarisi</li>
+                        </ul>
+                    </div>
+                    <div className="bg-gradient-to-br from-secondary to-primary rounded-2xl p-8 hover:transform hover:scale-105 transition-all duration-300 border border-accent hover:border-blue-500/50 hover:shadow-2xl">
+                        <div className="w-20 h-20 rounded-2xl bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center mb-6 shadow-lg">
+                            <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h3 className="text-2xl font-bold text-white mb-4">Mobile Development</h3>
+                        <ul className="space-y-3 text-text-primary">
+                            <li>• Kotlin ile native Android geliştirme</li>
+                            <li>• Jetpack Compose ile deklaratif UI</li>
+                            <li>• Android Studio ve geliştirme araçları</li>
+                            <li>• Materyal Tasarım ilkeleri</li>
+                        </ul>
+                    </div>
+                    <div className="bg-gradient-to-br from-secondary to-primary rounded-2xl p-8 hover:transform hover:scale-105 transition-all duration-300 border border-accent hover:border-purple-500/50 hover:shadow-2xl">
+                        <div className="w-20 h-20 rounded-2xl bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center mb-6 shadow-lg">
+                            <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3 className="text-2xl font-bold text-white mb-4">AI & Machine Learning</h3>
+                        <ul className="space-y-3 text-text-primary">
+                            <li>• OpenAI gibi LLM API'lerinin entegrasyonu</li>
+                            <li>• Üretken Yapay Zeka araçlarının kullanımı</li>
+                            <li>• Temel Makine Öğrenmesi ve Veri Bilimi</li>
+                            <li>• AI destekli uygulama geliştirme</li>
+                        </ul>
+                    </div>
+                    <div className="bg-gradient-to-br from-secondary to-primary rounded-2xl p-8 hover:transform hover:scale-105 transition-all duration-300 border border-accent hover:border-yellow-500/50 hover:shadow-2xl">
+                        <div className="w-20 h-20 rounded-2xl bg-gradient-to-r from-yellow-500 to-orange-500 flex items-center justify-center mb-6 shadow-lg">
+                            <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg>
+                        </div>
+                        <h3 className="text-2xl font-bold text-white mb-4">DevOps & Altyapı</h3>
+                        <ul className="space-y-3 text-text-primary">
+                            <li>• Linux (Ubuntu/Fedora) sunucu yönetimi</li>
+                            <li>• Temel Git ve GitHub iş akışları</li>
+                            <li>• Uygulamaları bulut ortamına taşıma</li>
+                            <li>• Nginx, Docker gibi temel araçlar</li>
+                        </ul>
+                    </div>
+                    <div className="bg-gradient-to-br from-secondary to-primary rounded-2xl p-8 hover:transform hover:scale-105 transition-all duration-300 border border-accent hover:border-red-500/50 hover:shadow-2xl">
+                        <div className="w-20 h-20 rounded-2xl bg-gradient-to-r from-red-500 to-pink-500 flex items-center justify-center mb-6 shadow-lg">
+                            <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h3 className="text-2xl font-bold text-white mb-4">Game Development</h3>
+                        <ul className="space-y-3 text-text-primary">
+                            <li>• Unity 3D oyun motoru kullanımı</li>
+                            <li>• C# ile oyun mekaniği programlama</li>
+                            <li>• 3D oyun tasarımı ve fizik entegrasyonu</li>
+                            <li>• Animasyon ve karakter kontrolü</li>
                         </ul>
                     </div>
                 </div>
