@@ -1,36 +1,105 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useForm, SubmitHandler } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
+import emailjs from 'emailjs-com';
+import { Github, Linkedin, Instagram } from 'lucide-react'; // Linkedin ve Instagram ikonlarını import et
 
-const Footer = () => {
+const contactSchema = z.object({
+    from_name: z.string().min(2, { message: 'Adınız en az 2 karakter olmalıdır.' }),
+    from_email: z.string().email({ message: 'Lütfen geçerli bir e-posta adresi girin.' }),
+    message: z.string().min(10, { message: 'Mesajınız en az 10 karakter olmalıdır.' }),
+});
+
+type ContactFormInputs = z.infer<typeof contactSchema>;
+
+const Contact = () => {
+    const [isLoading, setIsLoading] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+        reset,
+    } = useForm<ContactFormInputs>({
+        resolver: zodResolver(contactSchema),
+    });
+
+    const onSubmit: SubmitHandler<ContactFormInputs> = (data) => {
+        setIsLoading(true);
+        setSubmitStatus(null);
+
+        emailjs.send(
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+            data,
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        )
+            .then(() => {
+                setSubmitStatus('success');
+                reset();
+            })
+            .catch((err) => {
+                console.log('FAILED...', err);
+                setSubmitStatus('error');
+            })
+            .finally(() => {
+                setIsLoading(false);
+            });
+    };
+
     return (
-        <footer className="bg-primary py-12 border-t border-accent">
-            <div className="container mx-auto px-6 text-center">
-                <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-6">
-                    <a
-                        href="https://github.com/halitbarut"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-text-secondary hover:text-highlight transition-colors"
-                    >
-                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                    </a>
-                    <a
-                        href="mailto:mhbarut66@gmail.com"
-                        className="text-text-secondary hover:text-highlight transition-colors"
-                    >
-                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                        </svg>
-                    </a>
+        <section id="contact" className="py-24 bg-primary">
+            <div className="container mx-auto px-6">
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">İletişim</h2>
+                    <div className="w-32 h-1 bg-gradient-to-r from-highlight to-accent mx-auto rounded-full"></div>
                 </div>
-                <p className="text-text-secondary text-lg mb-2">© 2024 Mehmet Halit Barut. Tüm hakları saklıdır.</p>
-                <p className="text-text-secondary text-base">
-                    "Teknoloji tutkusu ve sürekli öğrenme arzusu ile geleceği şekillendiriyorum."
-                </p>
+                <div className="grid lg:grid-cols-2 gap-16">
+                    <div className="space-y-6">
+                        {/* ... E-posta kartı ... */}
+                        <div className="flex items-center space-x-6 p-6 bg-gradient-to-r from-secondary to-primary rounded-2xl border border-accent hover:border-highlight/50 transition-all duration-300">
+                            {/* ... E-posta içeriği ... */}
+                        </div>
+
+                        {/* LinkedIn Kartı (YENİ) */}
+                        <a href="https://www.linkedin.com/in/mehmet-halit-barut/" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-6 p-6 bg-gradient-to-r from-secondary to-primary rounded-2xl border border-accent hover:border-blue-500/50 transition-all duration-300 group">
+                            <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
+                                <Linkedin className="w-8 h-8 text-white" />
+                            </div>
+                            <div>
+                                <h3 className="text-xl font-semibold text-white mb-1">LinkedIn</h3>
+                                <p className="text-blue-400 group-hover:text-blue-300 transition-colors">
+                                    in/mehmet-halit-barut
+                                </p>
+                            </div>
+                        </a>
+
+                        {/* Instagram Kartı (YENİ) */}
+                        <a href="https://instagram.com/halit__barut" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-6 p-6 bg-gradient-to-r from-secondary to-primary rounded-2xl border border-accent hover:border-pink-500/50 transition-all duration-300 group">
+                            <div className="w-16 h-16 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-2xl flex items-center justify-center shadow-lg">
+                                <Instagram className="w-8 h-8 text-white" />
+                            </div>
+                            <div>
+                                <h3 className="text-xl font-semibold text-white mb-1">Instagram</h3>
+                                <p className="text-pink-400 group-hover:text-pink-300 transition-colors">
+                                    @halit__barut
+                                </p>
+                            </div>
+                        </a>
+
+                        {/* ... GitHub ve Konum kartları (isteğe bağlı, bunları kaldırabiliriz de) ... */}
+
+                    </div>
+
+                    <div className="bg-gradient-to-br from-secondary to-primary p-8 lg:p-10 rounded-2xl border border-accent">
+                        {/* ... Form içeriği ... */}
+                    </div>
+                </div>
             </div>
-        </footer>
+        </section>
     );
 };
 
-export default Footer;
+export default Contact;

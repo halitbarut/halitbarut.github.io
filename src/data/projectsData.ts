@@ -36,7 +36,6 @@ export const projects: Project[] = [
         image: 'https://via.placeholder.com/1280x720/1B263B/FFFFFF?text=Perpetua',
         technologies: ['Python', 'FastAPI', 'OpenAI API', 'React', 'Next.js'],
         githubUrl: 'https://github.com/halitbarut/perpetua',
-        status: 'Geliştirme Aşamasında',
     },
     {
         id: 3,

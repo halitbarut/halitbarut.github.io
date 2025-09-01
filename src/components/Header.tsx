@@ -5,7 +5,10 @@ const Header = () => {
         <header className="fixed top-0 w-full z-50 bg-primary/95 backdrop-blur-sm">
             <nav className="container mx-auto px-6 py-4">
                 <div className="flex items-center justify-between">
-                    <div className="text-2xl font-bold text-white">MHB</div>
+                    {/* MHB yazısı yerine logoyu (favicon) koyuyoruz */}
+                    <a href="#hero" aria-label="Anasayfaya dön">
+                        <img src="/favicon-32x32.png" alt="MHB Logo" className="w-8 h-8 hover:opacity-80 transition-opacity" />
+                    </a>
                     <div className="hidden md:flex space-x-8">
                         <a href="#hero" className="text-text-secondary hover:text-highlight transition-colors">Anasayfa</a>
                         <a href="#about" className="text-text-secondary hover:text-highlight transition-colors">Hakkımda</a>
