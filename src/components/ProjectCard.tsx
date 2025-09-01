@@ -1,16 +1,6 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Project } from '../data/projectsData';
 import { icons } from 'lucide-react';
-
-const cardVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-        y: 0,
-        opacity: 1,
-        transition: { duration: 0.6, ease: "easeOut" }
-    },
-};
 
 interface ProjectCardProps {
     project: Project;
@@ -21,11 +11,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
     const LucideIcon = icons[project.icon];
 
     return (
-        <motion.div
-            // layoutId prop'u buradan kaldırıldı.
-            variants={cardVariants}
+        <div
             onClick={onClick}
             className="bg-gradient-to-br from-primary to-secondary rounded-2xl p-6 cursor-pointer
+                 h-full flex flex-col {/* Kartların aynı boyda kalması için */}
                  hover:transform hover:scale-105 transition-all duration-300
                  border border-accent hover:border-highlight/50 hover:shadow-2xl group relative z-10"
         >
@@ -33,15 +22,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
                 {LucideIcon ? <LucideIcon className="w-8 h-8 text-white" /> : null}
             </div>
             <h3 className="text-2xl font-bold text-white mb-4">{project.title}</h3>
-            <p className="text-text-primary mb-6 leading-relaxed">{project.shortDescription}</p>
-            <div className="flex flex-wrap gap-2 mb-4">
+            <p className="text-text-primary mb-6 leading-relaxed flex-grow">{/* Açıklamanın esneyerek boşluğu doldurması için */}
+                {project.shortDescription}
+            </p>
+            <div className="flex flex-wrap gap-2 mt-auto">{/* Teknolojilerin her zaman en altta kalması için */}
                 {project.technologies.slice(0, 4).map((tech) => (
                     <span key={tech} className="text-xs bg-highlight/20 text-highlight px-3 py-1 rounded-full border border-highlight/30">
             {tech}
           </span>
                 ))}
             </div>
-        </motion.div>
+        </div>
     );
 };
 

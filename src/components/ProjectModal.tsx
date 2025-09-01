@@ -1,7 +1,38 @@
 import React from 'react';
 import { Dialog } from '@headlessui/react';
+import { motion } from 'framer-motion';
 import { Project } from '../data/projectsData';
 import { X, Github, ExternalLink } from 'lucide-react';
+
+// Animasyon varyantlarımız
+const backdropVariants = {
+    visible: { opacity: 1 },
+    hidden: { opacity: 0 },
+};
+
+const modalVariants = {
+    hidden: {
+        opacity: 0,
+        rotateX: -30, // 3D dönüş başlangıcı
+        y: 50,
+        scale: 0.9,
+        transition: { duration: 0.3, ease: "easeIn" }
+    },
+    visible: {
+        opacity: 1,
+        rotateX: 0, // 3D dönüş bitişi
+        y: 0,
+        scale: 1,
+        transition: { duration: 0.4, ease: "easeOut" }
+    },
+    exit: {
+        opacity: 0,
+        rotateX: 30, // Çıkarken ters yöne dön
+        y: -50,
+        scale: 0.9,
+        transition: { duration: 0.3, ease: "easeIn" }
+    }
+};
 
 interface ProjectModalProps {
     project: Project | null;
@@ -9,24 +40,29 @@ interface ProjectModalProps {
 }
 
 const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
-    const isOpen = !!project;
-
-    if (!project) {
-        return null; // Proje null ise hiçbir şey render etme
-    }
+    if (!project) return null;
 
     return (
-        <Dialog open={isOpen} onClose={onClose} className="relative z-50">
+        <Dialog open={!!project} onClose={onClose} className="relative z-50">
             {/* Backdrop (Arka Plan Karartması) */}
-            <div
-                className="fixed inset-0 bg-black/80 backdrop-blur-sm modal-backdrop-enter"
-                aria-hidden="true"
+            <motion.div
+                variants={backdropVariants}
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                className="fixed inset-0 bg-black/80 backdrop-blur-sm"
             />
 
             <div className="fixed inset-0 overflow-y-auto">
-                <div className="flex min-h-full items-center justify-center p-4">
-                    <Dialog.Panel className="w-full max-w-3xl transform overflow-hidden rounded-2xl bg-secondary p-8 text-left align-middle shadow-xl border border-accent relative modal-panel-enter">
-
+                <div className="flex min-h-full items-center justify-center p-4" style={{ perspective: '1000px' }}>
+                    <Dialog.Panel
+                        as={motion.div}
+                        variants={modalVariants}
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
+                        className="w-full max-w-3xl transform overflow-hidden rounded-2xl bg-secondary p-8 text-left align-middle shadow-xl border border-accent relative"
+                    >
                         <button onClick={onClose} className="absolute top-4 right-4 text-text-secondary hover:text-white transition-colors z-10">
                             <X size={24} />
                         </button>

@@ -1,19 +1,9 @@
 import React, { useState } from 'react';
-// AnimatePresence import'unu ve kullanımını kaldırıyoruz
-import { motion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import { projects, Project } from '../data/projectsData';
 import ProjectCard from './ProjectCard';
 import ProjectModal from './ProjectModal';
-
-const containerVariants = {
-    hidden: { opacity: 1 },
-    visible: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.2,
-        },
-    },
-};
+import ScrollReveal from './ScrollReveal'; // ScrollReveal bileşenini import ediyoruz
 
 const Projects = () => {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -34,31 +24,28 @@ const Projects = () => {
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Projelerim</h2>
                         <div className="w-32 h-1 bg-gradient-to-r from-highlight to-accent mx-auto rounded-full"></div>
                     </div>
-                    <motion.div
-                        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10"
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, amount: 0.1 }}
-                    >
-                        {projects.map((project) => (
-                            <ProjectCard
-                                key={project.id}
-                                project={project}
-                                onClick={() => openModal(project)}
-                            />
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+                        {projects.map((project, index) => (
+                            // Her bir kartı kendi ScrollReveal bileşeniyle sarmalıyoruz
+                            <ScrollReveal key={project.id} delay={index * 0.1}>
+                                <ProjectCard
+                                    project={project}
+                                    onClick={() => openModal(project)}
+                                />
+                            </ScrollReveal>
                         ))}
-                    </motion.div>
+                    </div>
                 </div>
             </section>
 
-            {/* <AnimatePresence> sarmalayıcısı buradan tamamen kaldırıldı */}
-            {selectedProject && (
-                <ProjectModal
-                    project={selectedProject}
-                    onClose={closeModal}
-                />
-            )}
+            <AnimatePresence>
+                {selectedProject && (
+                    <ProjectModal
+                        project={selectedProject}
+                        onClose={closeModal}
+                    />
+                )}
+            </AnimatePresence>
         </>
     );
 };
