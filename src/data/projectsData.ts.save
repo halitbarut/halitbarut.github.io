@@ -1,0 +1,52 @@
+Oimport ticaretAppImg from '../assets/ticaretapp.png'; // Bu dosyaları src/assets içine eklemelisin
+import perpetuaImg from '../assets/perpetua.png';
+import zigzagImg from '../assets/zigzag.png';
+
+// Her projenin tipini tanımlıyoruz
+export interface Project {
+    id: number;
+O    title: string;
+    shortDescription: string;
+ OO   longDescription: string;
+   OB image: string;
+    tOOechnologies: string[];
+    githubUrl: string;
+    livOOeUrl?: string; // Canlı linki olmayan projeler için opsiyonel
+    status?: string; // "Geliştirme Aşamasında" gibi durumlar için
+}
+
+// Proje verilerimiz
+export const projects: Project[] = [
+    {
+        id: 1,
+        title: 'TicaretApp',
+        shortDescription: 'Full-stack e-ticaret platformu. Kapsamlı online alışveriş deneyimi sunar.',
+        longDescription:
+            "TicaretApp, modern bir full-stack e-ticaret platformudur. Python FastAPI ile geliştirilen güçlü bir backend API'si üzerine kurulmuştur. PostgreSQL veritabanı ile ürün, kullanıcı ve sipariş verilerini yönetir. Frontend tarafında ise React ve TypeScript kullanılarak kullanıcı dostu ve dinamik bir arayüz oluşturulmuştur. Bu projede, REST API tasarımı, veritabanı mimarisi ve component tabanlı frontend geliştirme konularında derinlemesine çalıştım.",
+        image: ticaretAppImg,
+        technologies: ['Python', 'FastAPI', 'PostgreSQL', 'React', 'TypeScript', 'TailwindCSS'],
+        githubUrl: 'https://github.com/halitbarut/ticaretapp',
+        liveUrl: '#', // Varsa canlı projenin linki
+    },
+    {
+        id: 2,
+        title: 'Perpetua',
+        shortDescription: 'AI destekli, kişiselleştirilmiş dil öğrenme platformu.',
+        longDescription:
+            "Perpetua, yapay zeka destekli bir dil öğrenme uygulamasıdır. Kullanıcıların öğrenme stillerine ve hızlarına göre adapte olan kişiselleştirilmiş dersler sunar. OpenAI API'sini kullanarak metin üretme, çeviri ve konuşma pratiği gibi özellikler içerir. Proje, dil öğrenimini daha etkileşimli ve verimli hale getirmeyi amaçlamaktadır. Backend FastAPI, frontend ise React ile geliştirilmektedir.",
+        image: perpetuaImg,
+        technologies: ['Python', 'FastAPI', 'OpenAI API', 'React', 'Next.js'],
+        githubUrl: 'https://github.com/halitbarut/perpetua',
+        status: 'Geliştirme Aşamasında',
+    },
+    {
+        id: 3,
+        title: 'ZigZag',
+        shortDescription: 'Unity 3D ile geliştirilmiş dinamik ve eğlenceli bir platform oyunu.',
+        longDescription:
+            "ZigZag, Unity 3D oyun motoru ve C# kullanılarak geliştirilmiş bir 3D platform oyunudur. Oyuncular, sürekli değişen ve rastgele oluşturulan platformlarda karakterlerini hayatta tutmaya çalışırlar. Proje, dinamik level tasarımı, oyun fiziği, animasyon yönetimi ve mobil oyun optimizasyonu gibi konulara odaklanmaktadır. Akıcı oynanış mekaniği ile keyifli bir oyun deneyimi sunar.",
+        image: zigzagImg,
+        technologies: ['Unity 3D', 'C#', 'Game Design', 'Physics', 'Animation'],
+        githubUrl: 'https://github.com/halitbarut/zigzag',
+    },
+];
