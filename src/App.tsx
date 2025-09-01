@@ -6,6 +6,7 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ScrollReveal from './components/ScrollReveal'; // Import et
 
 function App() {
     return (
@@ -13,10 +14,18 @@ function App() {
             <Header />
             <main>
                 <Hero />
-                <About />
-                <Skills />
-                <Projects />
-                <Contact />
+                <ScrollReveal>
+                    <About />
+                </ScrollReveal>
+                <ScrollReveal>
+                    <Skills />
+                </ScrollReveal>
+                <ScrollReveal>
+                    <Projects />
+                </ScrollReveal>
+                <ScrollReveal>
+                    <Contact />
+                </ScrollReveal>
             </main>
             <Footer />
         </div>
