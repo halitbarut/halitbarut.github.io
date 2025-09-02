@@ -1,8 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Puzzle, TerminalSquare, Smartphone, Gamepad2, GraduationCap, KanbanSquare, Sparkles } from 'lucide-react';
+import { Puzzle, Smartphone, Gamepad2, GraduationCap, KanbanSquare, Sparkles } from 'lucide-react';
 
-// Zaman tünelindeki her bir olayın tipini tanımlayalım
 type TimelineEvent = {
     year: string;
     title: string;
@@ -10,12 +9,11 @@ type TimelineEvent = {
     icon: React.ElementType;
 };
 
-// --- SON GÜNCEL VERİLER ---
 const timelineData: TimelineEvent[] = [
     {
         year: '~2016-2019',
-        title: 'Merak ve İlk Adımlar',
-        description: 'Kısıtlı imkanlara rağmen Code.org ile başlayan kodlama merakım, lisede Python\'un temellerini öğrenmemle somut bir tutkuya dönüştü.',
+        title: 'Merak ve İlk Fırsatlar',
+        description: 'Her fırsatı değerlendirerek, erişim sağlayabildiğim kaynaklarla ve dönemin donanım koşullarıyla Code.org ve Python temellerini öğrendim. Bu dönem, problem çözme tutkumun başlangıcı oldu.',
         icon: Puzzle,
     },
     {
@@ -39,7 +37,7 @@ const timelineData: TimelineEvent[] = [
     {
         year: '2025',
         title: 'Proje Üretimi ve Yetkinlik Gelişimi',
-        description: 'Google Yapay Zeka ve Teknoloji Akademisi ile TicaretApp\'i geliştirdim, projeleri buluta taşırken Linux (Ubuntu) tecrübesi kazandım. BTK Hackathon\'unda Perpetua ve Çıkmış gibi AI destekli projelerle takım çalışmasını öğrendim.',
+        description: 'Google Yapay Zeka ve Teknoloji Akademisi ile TicaretApp\'i geliştirdim, projeleri buluta taşırken Linux (Ubuntu/Fedora) tecrübesi kazandım. BTK Hackathon\'unda Perpetua ve Çıkmış gibi AI destekli projelerle takım çalışmasını öğrendim.',
         icon: KanbanSquare,
     },
     {
@@ -50,7 +48,6 @@ const timelineData: TimelineEvent[] = [
     },
 ];
 
-// Animasyonlar (Değişiklik yok)
 const containerVariants = {
     hidden: { opacity: 0 },
     visible: {

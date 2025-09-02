@@ -13,7 +13,7 @@ const About = () => {
                     {/* Sol Taraf: Hikaye ve Paragraflar */}
                     <div className="space-y-6">
                         <p className="text-lg md:text-xl text-text-primary leading-relaxed">
-                            Merhaba! Ben Mehmet Halit. Benim için yazılım, bir dergide gördüğüm merakla başlayıp, kısıtlı imkanlara rağmen tutkuyla devam eden bir yolculuk. Her şey, bir bilgisayarım bile yokken bloklarla kod yazmanın heyecanını keşfetmemle başladı ve lisede yazdığım ilk Python satırlarıyla somut bir hedefe dönüştü.
+                            Merhaba! Ben Mehmet Halit. Benim için yazılım, bir dergide gördüğüm bir merak kıvılcımıyla başlayıp, kod yazabilmek için her fırsatı bir arayışa dönüştürdüğüm bir tutku yolculuğu. Her şey, Code.org ile bloklarla kod yazmanın heyecanını keşfetmemle başladı ve lisede yazdığım ilk Python satırlarıyla somut bir hedefe dönüştü.
                         </p>
                         <p className="text-lg md:text-xl text-text-primary leading-relaxed">
                             Bu yolculuk boyunca, farklı teknolojileri sadece öğrenmekle kalmadım, aynı zamanda onları problem çözmek için birer araç olarak kullanmayı benimsedim. Kotlin ile mobil dünyanın kapılarını araladım, Unity ile oyun mekaniklerinin ardındaki mantığı çözdüm ve FastAPI ile güçlü backend sistemleri inşa ettim. Her proje, benim için teorik bilgiyi pratiğe dökme ve sürekli gelişme fırsatı oldu.
