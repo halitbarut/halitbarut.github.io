@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import emailjs from 'emailjs-com';
-import { Mail } from 'lucide-react';
+import { Mail, Send, MessageCircle } from 'lucide-react';
 
 const contactSchema = z.object({
     from_name: z.string().min(2, { message: 'Adınız en az 2 karakter olmalıdır.' }),
@@ -50,54 +51,171 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="py-24 bg-primary">
-            <div className="container mx-auto px-6">
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">İletişim</h2>
-                    <div className="w-32 h-1 bg-gradient-to-r from-highlight to-accent mx-auto rounded-full"></div>
-                </div>
-                <div className="grid lg:grid-cols-2 gap-16">
-                    <div className="space-y-6 flex flex-col justify-center">
-                        {/* Sadece E-posta kartı kaldı */}
-                        <a href="mailto:mhbarut66@gmail.com" className="flex items-center space-x-6 p-6 bg-gradient-to-r from-secondary to-primary rounded-2xl border border-accent hover:border-highlight/50 transition-all duration-300 group">
-                            <div className="w-16 h-16 bg-gradient-to-r from-highlight to-accent rounded-2xl flex items-center justify-center shadow-lg">
-                                <Mail className="w-8 h-8 text-white" />
+        <section id="contact" className="py-24 relative">
+            <div className="absolute inset-0">
+                <div className="absolute top-0 left-0 w-96 h-96 rounded-full bg-purple-600/20 blur-[160px]" />
+                <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-cyan-500/20 blur-[160px]" />
+            </div>
+            <div className="container mx-auto px-6 relative">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="text-center mb-16"
+                >
+                    <motion.div
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ type: "spring", stiffness: 200, damping: 15 }}
+                        className="inline-block mb-4"
+                    >
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center mx-auto mb-6">
+                            <MessageCircle className="w-8 h-8 text-white" />
+                        </div>
+                    </motion.div>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent mb-6">
+                        İletişim
+                    </h2>
+                    <div className="w-32 h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 mx-auto rounded-full"></div>
+                </motion.div>
+
+                <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, x: -40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="space-y-8 flex flex-col justify-center"
+                    >
+                        <motion.a
+                            href="mailto:mhbarut66@gmail.com"
+                            whileHover={{ y: -4 }}
+                            className="group relative overflow-hidden"
+                        >
+                            <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-cyan-500 rounded-3xl opacity-0 blur group-hover:opacity-100 transition duration-500"></div>
+                            <div className="relative flex items-center gap-6 p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl">
+                                <div className="relative flex-shrink-0">
+                                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-2xl blur-md opacity-60"></div>
+                                    <div className="relative w-20 h-20 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-2xl flex items-center justify-center shadow-lg">
+                                        <Mail className="w-10 h-10 text-white" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 className="text-xl font-semibold text-white mb-1">E-posta</h3>
+                                    <p className="text-gray-300 group-hover:text-white transition-colors">
+                                        mhbarut66@gmail.com
+                                    </p>
+                                </div>
                             </div>
-                            <div>
-                                <h3 className="text-xl font-semibold text-white mb-1">E-posta</h3>
-                                <p className="text-highlight group-hover:text-white transition-colors">
-                                    mhbarut66@gmail.com
-                                </p>
-                            </div>
-                        </a>
-                        <p className="text-center text-text-secondary">
+                        </motion.a>
+                        <p className="text-center text-gray-400 text-sm">
                             Veya sosyal medya hesaplarıma aşağıdaki linklerden ulaşabilirsiniz.
                         </p>
-                    </div>
+                    </motion.div>
 
-                    <div className="bg-gradient-to-br from-secondary to-primary p-8 lg:p-10 rounded-2xl border border-accent">
-                        <h3 className="text-3xl font-bold text-white mb-8">Mesaj Gönder</h3>
-                        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 lg:space-y-8">
-                            {/* Form içeriği aynı kalıyor */}
-                            <div>
-                                <input type="text" placeholder="Adınız Soyadınız" {...register('from_name')} className={`w-full px-6 py-4 bg-primary border rounded-xl text-white placeholder-text-secondary focus:outline-none transition-colors ${ errors.from_name ? 'border-red-500 focus:border-red-500' : 'border-accent focus:border-highlight' }`} />
-                                {errors.from_name && <p className="text-red-500 text-sm mt-2">{errors.from_name.message}</p>}
-                            </div>
-                            <div>
-                                <input type="email" placeholder="ornek@email.com" {...register('from_email')} className={`w-full px-6 py-4 bg-primary border rounded-xl text-white placeholder-text-secondary focus:outline-none transition-colors ${ errors.from_email ? 'border-red-500 focus:border-red-500' : 'border-accent focus:border-highlight' }`} />
-                                {errors.from_email && <p className="text-red-500 text-sm mt-2">{errors.from_email.message}</p>}
-                            </div>
-                            <div>
-                                <textarea rows={6} placeholder="Mesajınızı buraya yazın..." {...register('message')} className={`w-full px-6 py-4 bg-primary border rounded-xl text-white placeholder-text-secondary focus:outline-none transition-colors resize-none ${ errors.message ? 'border-red-500 focus:border-red-500' : 'border-accent focus:border-highlight' }`} ></textarea>
-                                {errors.message && <p className="text-red-500 text-sm mt-2">{errors.message.message}</p>}
-                            </div>
-                            <button type="submit" disabled={isLoading} className="w-full bg-gradient-to-r from-accent to-highlight text-white py-4 px-8 rounded-xl transition-all duration-300 font-semibold text-lg transform hover:from-highlight hover:to-accent hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary focus:ring-highlight disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100 disabled:shadow-none" >
-                                {isLoading ? ( <span className="flex items-center justify-center"> <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"> <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle> <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path> </svg> Gönderiliyor... </span> ) : ( 'Mesaj Gönder' )}
-                            </button>
-                            {submitStatus === 'success' && <p className="text-green-400 text-center mt-4">Mesajınız başarıyla gönderildi. Teşekkürler!</p>}
-                            {submitStatus === 'error' && <p className="text-red-500 text-center mt-4">Bir hata oluştu. Lütfen daha sonra tekrar deneyin.</p>}
-                        </form>
-                    </div>
+                    <motion.div
+                        initial={{ opacity: 0, x: 40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="relative"
+                    >
+                        <div className="absolute -inset-1 bg-gradient-to-br from-purple-600/30 via-pink-500/30 to-cyan-500/30 rounded-3xl blur-xl"></div>
+                        <div className="relative glass-panel rounded-3xl p-8 lg:p-10 border border-white/10 shadow-2xl">
+                            <h3 className="text-3xl font-bold text-white mb-8">Mesaj Gönder</h3>
+                            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                                <div>
+                                    <input
+                                        type="text"
+                                        placeholder="Adınız Soyadınız"
+                                        {...register('from_name')}
+                                        className={`w-full px-6 py-4 bg-white/5 border rounded-2xl text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 transition-all ${
+                                            errors.from_name
+                                                ? 'border-red-500/50 focus:ring-red-500/50'
+                                                : 'border-white/10 focus:ring-purple-500/50 focus:border-purple-500/50'
+                                        }`}
+                                    />
+                                    {errors.from_name && (
+                                        <p className="text-red-400 text-sm mt-2">{errors.from_name.message}</p>
+                                    )}
+                                </div>
+                                <div>
+                                    <input
+                                        type="email"
+                                        placeholder="ornek@email.com"
+                                        {...register('from_email')}
+                                        className={`w-full px-6 py-4 bg-white/5 border rounded-2xl text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 transition-all ${
+                                            errors.from_email
+                                                ? 'border-red-500/50 focus:ring-red-500/50'
+                                                : 'border-white/10 focus:ring-purple-500/50 focus:border-purple-500/50'
+                                        }`}
+                                    />
+                                    {errors.from_email && (
+                                        <p className="text-red-400 text-sm mt-2">{errors.from_email.message}</p>
+                                    )}
+                                </div>
+                                <div>
+                                    <textarea
+                                        rows={6}
+                                        placeholder="Mesajınızı buraya yazın..."
+                                        {...register('message')}
+                                        className={`w-full px-6 py-4 bg-white/5 border rounded-2xl text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 transition-all resize-none ${
+                                            errors.message
+                                                ? 'border-red-500/50 focus:ring-red-500/50'
+                                                : 'border-white/10 focus:ring-purple-500/50 focus:border-purple-500/50'
+                                        }`}
+                                    ></textarea>
+                                    {errors.message && (
+                                        <p className="text-red-400 text-sm mt-2">{errors.message.message}</p>
+                                    )}
+                                </div>
+                                <button
+                                    type="submit"
+                                    disabled={isLoading}
+                                    className="group relative w-full py-4 px-8 rounded-2xl font-semibold text-white text-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden"
+                                >
+                                    <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-500"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-500 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"></div>
+                                    <span className="relative flex items-center justify-center gap-2">
+                                        {isLoading ? (
+                                            <>
+                                                <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                                </svg>
+                                                Gönderiliyor...
+                                            </>
+                                        ) : (
+                                            <>
+                                                <Send className="w-5 h-5" />
+                                                Mesaj Gönder
+                                            </>
+                                        )}
+                                    </span>
+                                </button>
+                                {submitStatus === 'success' && (
+                                    <motion.p
+                                        initial={{ opacity: 0, y: -10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className="text-green-400 text-center"
+                                    >
+                                        Mesajınız başarıyla gönderildi. Teşekkürler!
+                                    </motion.p>
+                                )}
+                                {submitStatus === 'error' && (
+                                    <motion.p
+                                        initial={{ opacity: 0, y: -10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className="text-red-400 text-center"
+                                    >
+                                        Bir hata oluştu. Lütfen daha sonra tekrar deneyin.
+                                    </motion.p>
+                                )}
+                            </form>
+                        </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

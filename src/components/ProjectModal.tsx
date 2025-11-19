@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { Project } from '../data/projectsData';
 import { X, Github, ExternalLink } from 'lucide-react';
 
-// Animasyon varyantlarımız
 const backdropVariants = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -13,24 +12,20 @@ const backdropVariants = {
 const modalVariants = {
     hidden: {
         opacity: 0,
-        rotateX: -30, // 3D dönüş başlangıcı
-        y: 50,
-        scale: 0.9,
-        transition: { duration: 0.3, ease: "easeIn" }
+        y: 60,
+        scale: 0.95,
     },
     visible: {
         opacity: 1,
-        rotateX: 0, // 3D dönüş bitişi
         y: 0,
         scale: 1,
-        transition: { duration: 0.4, ease: "easeOut" }
+        transition: { duration: 0.4, ease: 'easeOut' }
     },
     exit: {
         opacity: 0,
-        rotateX: 30, // Çıkarken ters yöne dön
-        y: -50,
-        scale: 0.9,
-        transition: { duration: 0.3, ease: "easeIn" }
+        y: -60,
+        scale: 0.95,
+        transition: { duration: 0.3, ease: 'easeIn' }
     }
 };
 
@@ -44,74 +39,91 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
 
     return (
         <Dialog open={!!project} onClose={onClose} className="relative z-50">
-            {/* Backdrop (Arka Plan Karartması) */}
             <motion.div
                 variants={backdropVariants}
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
-                className="fixed inset-0 bg-black/80 backdrop-blur-sm"
+                className="fixed inset-0 bg-black/70 backdrop-blur-xl"
             />
 
             <div className="fixed inset-0 overflow-y-auto">
-                <div className="flex min-h-full items-center justify-center p-4" style={{ perspective: '1000px' }}>
+                <div className="flex min-h-full items-center justify-center p-4 md:p-8" style={{ perspective: '1500px' }}>
                     <Dialog.Panel
                         as={motion.div}
                         variants={modalVariants}
                         initial="hidden"
                         animate="visible"
                         exit="exit"
-                        className="w-full max-w-3xl transform overflow-hidden rounded-2xl bg-secondary p-8 text-left align-middle shadow-xl border border-accent relative"
+                        className="relative w-full max-w-4xl rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-3xl p-0 shadow-[0_20px_120px_rgba(0,0,0,0.6)] overflow-hidden"
                     >
-                        <button onClick={onClose} className="absolute top-4 right-4 text-text-secondary hover:text-white transition-colors z-10">
-                            <X size={24} />
+                        <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 opacity-60 pointer-events-none"></div>
+                        <button onClick={onClose} className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors z-20">
+                            <X size={26} />
                         </button>
 
-                        <div className="flex flex-col gap-6">
-                            <div className="overflow-hidden rounded-lg">
-                                <img src={project.image} alt={project.title} className="w-full h-auto max-h-[400px] object-cover"/>
-                            </div>
+                        <div className="relative">
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ duration: 0.6 }}
+                                className="h-64 sm:h-80 overflow-hidden"
+                            >
+                                <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                            </motion.div>
 
-                            <div>
-                                <Dialog.Title as="h3" className="text-3xl font-bold leading-6 text-white">
-                                    {project.title}
-                                    {project.status && (
-                                        <span className="ml-4 text-xs bg-yellow-600/20 text-yellow-400 px-3 py-1 rounded-full border border-yellow-600/30 align-middle">
-                       {project.status}
-                     </span>
-                                    )}
-                                </Dialog.Title>
-                            </div>
+                            <div className="relative z-10 -mt-16 px-6 sm:px-10">
+                                <div className="p-6 sm:p-10 rounded-[28px] bg-[#060819]/90 border border-white/10 shadow-2xl space-y-6">
+                                    <Dialog.Title as="h3" className="text-3xl font-bold text-white">
+                                        {project.title}
+                                        {project.status && (
+                                            <span className="ml-4 text-xs bg-white/10 text-white px-3 py-1 rounded-full border border-white/20 align-middle">
+                                                {project.status}
+                                            </span>
+                                        )}
+                                    </Dialog.Title>
 
-                            <p className="text-lg text-text-primary">
-                                {project.longDescription}
-                            </p>
+                                    <p className="text-lg text-gray-200 leading-relaxed">
+                                        {project.longDescription}
+                                    </p>
 
-                            <div>
-                                <h4 className="text-xl font-semibold text-white mb-3">Kullanılan Teknolojiler</h4>
-                                <div className="flex flex-wrap gap-3">
-                                    {project.technologies.map(tech => (
-                                        <span key={tech} className="text-sm bg-highlight/20 text-highlight px-4 py-1 rounded-full border border-highlight/30">
-                      {tech}
-                    </span>
-                                    ))}
+                                    <div>
+                                        <h4 className="text-xl font-semibold text-white mb-3">Kullanılan Teknolojiler</h4>
+                                        <div className="flex flex-wrap gap-3">
+                                            {project.technologies.map(tech => (
+                                                <span key={tech} className="text-sm bg-white/5 border border-white/10 text-gray-200 px-4 py-1 rounded-full">
+                                                    {tech}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    <div className="flex flex-wrap gap-4 pt-4 border-t border-white/10">
+                                        <a
+                                            href={project.githubUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-500 text-white font-semibold shadow-lg hover:opacity-90 transition"
+                                        >
+                                            <Github size={20} />
+                                            Kodu Görüntüle
+                                        </a>
+                                        {project.liveUrl && project.liveUrl !== '#' && (
+                                            <a
+                                                href={project.liveUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 text-white/90 hover:text-white hover:border-white/40 transition"
+                                            >
+                                                <ExternalLink size={20} />
+                                                Canlı Demo
+                                            </a>
+                                        )}
+                                    </div>
                                 </div>
                             </div>
-
-                            <div className="flex gap-4 pt-4 border-t border-accent/30">
-                                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 bg-primary hover:bg-highlight/20 border border-accent rounded-lg text-white transition-colors">
-                                    <Github size={20} />
-                                    Kodu Görüntüle
-                                </a>
-                                {project.liveUrl && project.liveUrl !== '#' && (
-                                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 bg-highlight hover:bg-accent text-primary rounded-lg font-semibold transition-colors">
-                                        <ExternalLink size={20} />
-                                        Canlı Demo
-                                    </a>
-                                )}
-                            </div>
                         </div>
-
                     </Dialog.Panel>
                 </div>
             </div>

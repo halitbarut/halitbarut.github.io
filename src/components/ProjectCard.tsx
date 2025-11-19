@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Project } from '../data/projectsData';
 import { icons } from 'lucide-react';
 
@@ -11,28 +12,50 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
     const LucideIcon = icons[project.icon];
 
     return (
-        <div
+        <motion.button
+            type="button"
             onClick={onClick}
-            className="bg-gradient-to-br from-primary to-secondary rounded-2xl p-6 cursor-pointer
-                 h-full flex flex-col {/* Kartların aynı boyda kalması için */}
-                 hover:transform hover:scale-105 transition-all duration-300
-                 border border-accent hover:border-highlight/50 hover:shadow-2xl group relative z-10"
+            whileHover={{ y: -10, scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="group relative w-full text-left"
         >
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-highlight to-accent mb-6 flex items-center justify-center shadow-lg group-hover:shadow-highlight/25">
-                {LucideIcon ? <LucideIcon className="w-8 h-8 text-white" /> : null}
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 via-pink-500 to-cyan-500 rounded-3xl opacity-0 blur group-hover:opacity-100 group-hover:blur-xl transition duration-500"></div>
+            <div className="relative h-full rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-2xl p-8 flex flex-col gap-6 overflow-hidden">
+                <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-4">
+                        <div className="relative">
+                            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-500 via-pink-500 to-cyan-500 blur-md opacity-60"></div>
+                            <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 via-pink-500 to-cyan-500 flex items-center justify-center text-white text-2xl">
+                                {LucideIcon ? <LucideIcon className="w-8 h-8" /> : null}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/70 group-hover:text-white transition-colors">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M7 17 17 7M7 7h10v10" />
+                        </svg>
+                    </div>
+                </div>
+                <div className="space-y-4 flex-1 flex flex-col">
+                    <h3 className="text-2xl font-bold text-white tracking-tight group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-300 group-hover:via-pink-200 group-hover:to-cyan-200 group-hover:bg-clip-text transition-all">
+                        {project.title}
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed flex-1">
+                        {project.shortDescription}
+                    </p>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                    {project.technologies.slice(0, 4).map((tech) => (
+                        <span
+                            key={tech}
+                            className="text-xs uppercase tracking-wide bg-white/5 border border-white/10 text-gray-200 px-3 py-1 rounded-full"
+                        >
+                            {tech}
+                        </span>
+                    ))}
+                </div>
             </div>
-            <h3 className="text-2xl font-bold text-white mb-4">{project.title}</h3>
-            <p className="text-text-primary mb-6 leading-relaxed flex-grow">{/* Açıklamanın esneyerek boşluğu doldurması için */}
-                {project.shortDescription}
-            </p>
-            <div className="flex flex-wrap gap-2 mt-auto">{/* Teknolojilerin her zaman en altta kalması için */}
-                {project.technologies.slice(0, 4).map((tech) => (
-                    <span key={tech} className="text-xs bg-highlight/20 text-highlight px-3 py-1 rounded-full border border-highlight/30">
-            {tech}
-          </span>
-                ))}
-            </div>
-        </div>
+        </motion.button>
     );
 };
 

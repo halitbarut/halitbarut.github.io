@@ -1,6 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    color-scheme: dark;
+    --bg-base: #030014;
+    --bg-elevated: #060a1f;
+    --border-muted: rgba(255, 255, 255, 0.08);
+    --text-primary: #F5F7FB;
+}
 
 * {
     margin: 0;
@@ -9,82 +19,117 @@
 }
 
 html {
-    scroll-behavior: Smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'sans-serif';
+    font-family: 'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'sans-serif';
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    min-height: 100vh;
     line-height: 1.6;
 }
 
 #root {
     min-height: 100vh;
+    background: radial-gradient(circle at 10% 20%, rgba(43, 10, 61, 0.65) 0%, transparent 50%),
+                radial-gradient(circle at 90% 0%, rgba(11, 136, 192, 0.45) 0%, transparent 50%),
+                var(--bg-base);
+    position: relative;
+    overflow-x: hidden;
 }
 
-/* Custom animations - BU KISIM ARTIK KULLANILMIYOR AMA SİLMEK ZARAR VERMEZ */
-@keyframes Float {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
+::selection {
+    background: rgba(168, 85, 247, 0.6);
+    color: white;
 }
 
-.animate-float {
-    animation: Float 3s ease-in-out infinite;
-}
-
-/* smooth transitions */
-.transition {
-    transition: all 0.2s ease;
-}
-
-/* custom scrollbar */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #0D1B2A;
+    background: #05061d;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #415A77;
-    border-radius: 4px;
+    background: linear-gradient(180deg, #8b5cf6, #06b6d4);
+    border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #778DA9;
+    background: linear-gradient(180deg, #a855f7, #22d3ee);
 }
 
-/* smooth scroll behavior */
-html{
-    scroll-padding-top: 80px;
+.noise-overlay {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    opacity: 0.22;
+    mix-blend-mode: soft-light;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' fill='rgba(0,0,0,0)'/%3E%3Ccircle cx='10' cy='10' r='1' fill='white' opacity='0.12'/%3E%3Ccircle cx='40' cy='30' r='1' fill='white' opacity='0.08'/%3E%3Ccircle cx='80' cy='70' r='1' fill='white' opacity='0.15'/%3E%3Ccircle cx='120' cy='110' r='1' fill='white' opacity='0.09'/%3E%3Ccircle cx='160' cy='150' r='1' fill='white' opacity='0.12'/%3E%3C/svg%3E");
+    z-index: 10;
 }
 
-/* Enhanced hover effects */
-.hover-lift {
-    transform: translateY(-5px);
+.grid-overlay {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 0);
+    background-size: 60px 60px;
+    opacity: 0.4;
+    z-index: 0;
 }
 
-/* Gradient text */
-.gradient-text {
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    background-image: linear-gradient(135deg, #778DA9, #415A77);
+.glass-panel {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(24px);
+    box-shadow: 0 15px 60px rgba(5, 6, 29, 0.6);
+    position: relative;
+    overflow: hidden;
 }
 
-/* Enhanced shadows */
-.box-shadow {
-    box-shadow: 0 0 20px rgba(119, 141, 169, 0.3);
+.glass-panel::before {
+    content: '';
+    position: absolute;
+    inset: -50% 10% auto 10%;
+    height: 60%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+    opacity: 0.4;
+    pointer-events: none;
 }
 
-/* Mobile optimizations */
+.btn-shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-shine::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -150%;
+    width: 200%;
+    height: 300%;
+    background: linear-gradient(125deg, transparent 30%, rgba(255, 255, 255, 0.35) 50%, transparent 70%);
+    transform: rotate(20deg);
+    animation: shimmer 5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translate(-30%, -30%) rotate(20deg);
+    }
+    100% {
+        transform: translate(30%, 30%) rotate(20deg);
+    }
+}
+
 @media (max-width: 768px) {
     .container {
-        padding-right: 1rem;
-        padding-left: 1rem;
+        padding-right: 1.25rem;
+        padding-left: 1.25rem;
     }
 }

@@ -1,87 +1,194 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { Code2, Monitor, Smartphone, Brain, Server, Gamepad2 } from 'lucide-react';
 
 const Skills = () => {
+    const skills = [
+        {
+            icon: Server,
+            title: 'Backend Development',
+            gradient: 'from-purple-500 to-indigo-600',
+            borderColor: 'border-purple-500/20 hover:border-purple-400/50',
+            items: [
+                '• Python (FastAPI) ile performanslı API\'ler',
+                '• Ölçeklenebilir REST API mimarisi',
+                '• PostgreSQL ile veritabanı tasarımı',
+                '• Sunucu tarafı mantık ve iş akışları'
+            ]
+        },
+        {
+            icon: Monitor,
+            title: 'Frontend Development',
+            gradient: 'from-green-500 to-emerald-600',
+            borderColor: 'border-green-500/20 hover:border-green-400/50',
+            items: [
+                '• React & TypeScript ile modern arayüzler',
+                '• TailwindCSS ile hızlı ve tutarlı tasarım',
+                '• Duyarlı (Responsive) tasarım prensipleri',
+                '• State yönetimi ve component mimarisi'
+            ]
+        },
+        {
+            icon: Smartphone,
+            title: 'Mobile Development',
+            gradient: 'from-blue-500 to-cyan-600',
+            borderColor: 'border-blue-500/20 hover:border-blue-400/50',
+            items: [
+                '• Kotlin ile native Android geliştirme',
+                '• Jetpack Compose ile deklaratif UI',
+                '• Android Studio ve geliştirme araçları',
+                '• Materyal Tasarım ilkeleri'
+            ]
+        },
+        {
+            icon: Brain,
+            title: 'AI & Machine Learning',
+            gradient: 'from-violet-500 to-fuchsia-600',
+            borderColor: 'border-violet-500/20 hover:border-violet-400/50',
+            items: [
+                '• OpenAI gibi LLM API\'lerinin entegrasyonu',
+                '• Üretken Yapay Zeka araçlarının kullanımı',
+                '• Temel Makine Öğrenmesi ve Veri Bilimi',
+                '• AI destekli uygulama geliştirme'
+            ]
+        },
+        {
+            icon: Code2,
+            title: 'DevOps & Altyapı',
+            gradient: 'from-yellow-500 to-orange-600',
+            borderColor: 'border-yellow-500/20 hover:border-yellow-400/50',
+            items: [
+                '• Linux (Ubuntu/Fedora) sunucu yönetimi',
+                '• Temel Git ve GitHub iş akışları',
+                '• Uygulamaları bulut ortamına taşıma',
+                '• Nginx, Docker gibi temel araçlar'
+            ]
+        },
+        {
+            icon: Gamepad2,
+            title: 'Game Development',
+            gradient: 'from-red-500 to-pink-600',
+            borderColor: 'border-red-500/20 hover:border-red-400/50',
+            items: [
+                '• Unity 3D oyun motoru kullanımı',
+                '• C# ile oyun mekaniği programlama',
+                '• 3D oyun tasarımı ve fizik entegrasyonu',
+                '• Animasyon ve karakter kontrolü'
+            ]
+        }
+    ];
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.2,
+            }
+        }
+    };
+
+    const cardVariants = {
+        hidden: { 
+            opacity: 0, 
+            y: 50,
+            rotateX: -15,
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            rotateX: 0,
+            transition: {
+                type: "spring",
+                stiffness: 100,
+                damping: 15,
+            }
+        }
+    };
+
     return (
-        <section id="skills" className="py-24 bg-primary">
+        <section id="skills" className="py-24 relative">
             <div className="container mx-auto px-6">
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Yetkinliklerim</h2>
-                    <div className="w-32 h-1 bg-gradient-to-r from-highlight to-accent mx-auto rounded-full"></div>
-                </div>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-                    <div className="bg-gradient-to-br from-secondary to-primary rounded-2xl p-8 hover:transform hover:scale-105 transition-all duration-300 border border-accent hover:border-highlight/50 hover:shadow-2xl">
-                        <div className="w-20 h-20 rounded-2xl bg-gradient-to-r from-highlight to-accent flex items-center justify-center mb-6 shadow-lg">
-                            <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="text-center mb-20"
+                >
+                    <motion.div
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ type: "spring", stiffness: 200, damping: 15 }}
+                        className="inline-block mb-4"
+                    >
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center mx-auto mb-6">
+                            <Code2 className="w-8 h-8 text-white" />
                         </div>
-                        <h3 className="text-2xl font-bold text-white mb-4">Backend Development</h3>
-                        <ul className="space-y-3 text-text-primary">
-                            <li>• Python (FastAPI) ile performanslı API'ler</li>
-                            <li>• Ölçeklenebilir REST API mimarisi</li>
-                            <li>• PostgreSQL ile veritabanı tasarımı</li>
-                            <li>• Sunucu tarafı mantık ve iş akışları</li>
-                        </ul>
-                    </div>
-                    <div className="bg-gradient-to-br from-secondary to-primary rounded-2xl p-8 hover:transform hover:scale-105 transition-all duration-300 border border-accent hover:border-green-500/50 hover:shadow-2xl">
-                        <div className="w-20 h-20 rounded-2xl bg-gradient-to-r from-green-500 to-teal-500 flex items-center justify-center mb-6 shadow-lg">
-                            <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                        </div>
-                        <h3 className="text-2xl font-bold text-white mb-4">Frontend Development</h3>
-                        <ul className="space-y-3 text-text-primary">
-                            <li>• React & TypeScript ile modern arayüzler</li>
-                            <li>• TailwindCSS ile hızlı ve tutarlı tasarım</li>
-                            <li>• Duyarlı (Responsive) tasarım prensipleri</li>
-                            <li>• State yönetimi ve component mimarisi</li>
-                        </ul>
-                    </div>
-                    <div className="bg-gradient-to-br from-secondary to-primary rounded-2xl p-8 hover:transform hover:scale-105 transition-all duration-300 border border-accent hover:border-blue-500/50 hover:shadow-2xl">
-                        <div className="w-20 h-20 rounded-2xl bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center mb-6 shadow-lg">
-                            <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-                        </div>
-                        <h3 className="text-2xl font-bold text-white mb-4">Mobile Development</h3>
-                        <ul className="space-y-3 text-text-primary">
-                            <li>• Kotlin ile native Android geliştirme</li>
-                            <li>• Jetpack Compose ile deklaratif UI</li>
-                            <li>• Android Studio ve geliştirme araçları</li>
-                            <li>• Materyal Tasarım ilkeleri</li>
-                        </ul>
-                    </div>
-                    <div className="bg-gradient-to-br from-secondary to-primary rounded-2xl p-8 hover:transform hover:scale-105 transition-all duration-300 border border-accent hover:border-purple-500/50 hover:shadow-2xl">
-                        <div className="w-20 h-20 rounded-2xl bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center mb-6 shadow-lg">
-                            <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        </div>
-                        <h3 className="text-2xl font-bold text-white mb-4">AI & Machine Learning</h3>
-                        <ul className="space-y-3 text-text-primary">
-                            <li>• OpenAI gibi LLM API'lerinin entegrasyonu</li>
-                            <li>• Üretken Yapay Zeka araçlarının kullanımı</li>
-                            <li>• Temel Makine Öğrenmesi ve Veri Bilimi</li>
-                            <li>• AI destekli uygulama geliştirme</li>
-                        </ul>
-                    </div>
-                    <div className="bg-gradient-to-br from-secondary to-primary rounded-2xl p-8 hover:transform hover:scale-105 transition-all duration-300 border border-accent hover:border-yellow-500/50 hover:shadow-2xl">
-                        <div className="w-20 h-20 rounded-2xl bg-gradient-to-r from-yellow-500 to-orange-500 flex items-center justify-center mb-6 shadow-lg">
-                            <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg>
-                        </div>
-                        <h3 className="text-2xl font-bold text-white mb-4">DevOps & Altyapı</h3>
-                        <ul className="space-y-3 text-text-primary">
-                            <li>• Linux (Ubuntu/Fedora) sunucu yönetimi</li>
-                            <li>• Temel Git ve GitHub iş akışları</li>
-                            <li>• Uygulamaları bulut ortamına taşıma</li>
-                            <li>• Nginx, Docker gibi temel araçlar</li>
-                        </ul>
-                    </div>
-                    <div className="bg-gradient-to-br from-secondary to-primary rounded-2xl p-8 hover:transform hover:scale-105 transition-all duration-300 border border-accent hover:border-red-500/50 hover:shadow-2xl">
-                        <div className="w-20 h-20 rounded-2xl bg-gradient-to-r from-red-500 to-pink-500 flex items-center justify-center mb-6 shadow-lg">
-                            <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
-                        </div>
-                        <h3 className="text-2xl font-bold text-white mb-4">Game Development</h3>
-                        <ul className="space-y-3 text-text-primary">
-                            <li>• Unity 3D oyun motoru kullanımı</li>
-                            <li>• C# ile oyun mekaniği programlama</li>
-                            <li>• 3D oyun tasarımı ve fizik entegrasyonu</li>
-                            <li>• Animasyon ve karakter kontrolü</li>
-                        </ul>
-                    </div>
-                </div>
+                    </motion.div>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent mb-6">
+                        Yetkinliklerim
+                    </h2>
+                    <div className="w-32 h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 mx-auto rounded-full"></div>
+                </motion.div>
+
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                    className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+                >
+                    {skills.map((skill, index) => (
+                        <motion.div
+                            key={skill.title}
+                            variants={cardVariants}
+                            whileHover={{
+                                y: -8,
+                                scale: 1.02,
+                                transition: { type: "spring", stiffness: 400, damping: 10 }
+                            }}
+                            className={`group relative glass-panel rounded-3xl p-8 border ${skill.borderColor} transition-all duration-500`}
+                        >
+                            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            
+                            <motion.div
+                                whileHover={{ rotate: 360, scale: 1.1 }}
+                                transition={{ duration: 0.6 }}
+                                className={`relative w-20 h-20 rounded-2xl bg-gradient-to-br ${skill.gradient} flex items-center justify-center mb-6 shadow-2xl`}
+                            >
+                                <div className={`absolute inset-0 bg-gradient-to-br ${skill.gradient} rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity`}></div>
+                                <skill.icon className="relative w-10 h-10 text-white" />
+                            </motion.div>
+
+                            <h3 className="text-2xl font-bold text-white mb-5 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-white group-hover:to-gray-300 transition-all">
+                                {skill.title}
+                            </h3>
+
+                            <ul className="space-y-3 text-gray-300">
+                                {skill.items.map((item, idx) => (
+                                    <motion.li
+                                        key={idx}
+                                        initial={{ opacity: 0, x: -20 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: index * 0.1 + idx * 0.05 }}
+                                        className="text-base leading-relaxed"
+                                    >
+                                        {item}
+                                    </motion.li>
+                                ))}
+                            </ul>
+
+                            <motion.div
+                                className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500 -z-10"
+                                initial={false}
+                            />
+                        </motion.div>
+                    ))}
+                </motion.div>
             </div>
         </section>
     );

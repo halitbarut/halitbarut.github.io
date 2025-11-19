@@ -1,93 +1,206 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Sparkles, Github, ArrowRight } from 'lucide-react';
 
 const Hero = () => {
     const name = "Mehmet Halit".split("");
     const surname = "Barut".split("");
 
-    const sentenceVariants = {
-        hover: {
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
             transition: {
-                staggerChildren: 0.05,
-            },
-        },
-        initial: {
-            transition: {
-                staggerChildren: 0.05,
-                staggerDirection: -1,
+                staggerChildren: 0.03,
+                delayChildren: 0.2,
             },
         },
     };
 
     const letterVariants = {
-        initial: {
+        hidden: { 
+            opacity: 0, 
+            y: 50,
+            scale: 0.5,
+            rotateX: -90,
+        },
+        visible: {
+            opacity: 1,
             y: 0,
-            color: "#FFFFFF",
+            scale: 1,
+            rotateX: 0,
             transition: {
-                duration: 0.4,
-                ease: "easeInOut"
-            }
+                type: "spring",
+                damping: 12,
+                stiffness: 100,
+            },
         },
         hover: {
-            y: -10,
-            color: "#778DA9",
+            y: -8,
+            scale: 1.1,
+            color: "#06b6d4",
+            textShadow: "0 0 20px rgba(6, 182, 212, 0.8)",
             transition: {
-                duration: 0.4,
-                ease: "easeInOut"
-            }
+                type: "spring",
+                stiffness: 400,
+                damping: 10,
+            },
         },
     };
 
-    const surnameLetterVariants = {
-        ...letterVariants,
-        initial: {
-            ...letterVariants.initial,
-            color: "#778DA9"
-        }
-    }
-
     return (
-        <section id="hero" className="min-h-screen flex items-center justify-center relative">
-            <div className="absolute inset-0 bg-black/30"></div>
-            <div className="absolute inset-0 bg-gradient-to-br from-highlight/10 via-transparent to-accent/10"></div>
-            <div className="container mx-auto px-6 text-center relative z-10">
-                <div>
+        <section id="hero" className="min-h-screen flex items-center justify-center relative px-6 lg:px-0">
+            <div className="absolute inset-0 overflow-hidden">
+                <motion.div
+                    animate={{
+                        scale: [1, 1.2, 1],
+                        rotate: [0, 90, 0],
+                    }}
+                    transition={{
+                        duration: 20,
+                        repeat: Infinity,
+                        ease: "linear"
+                    }}
+                    className="absolute top-1/4 -right-20 w-96 h-96 rounded-full bg-gradient-to-br from-purple-600/30 to-pink-600/30 blur-3xl"
+                />
+                <motion.div
+                    animate={{
+                        scale: [1.2, 1, 1.2],
+                        rotate: [90, 0, 90],
+                    }}
+                    transition={{
+                        duration: 25,
+                        repeat: Infinity,
+                        ease: "linear"
+                    }}
+                    className="absolute bottom-1/4 -left-20 w-96 h-96 rounded-full bg-gradient-to-br from-cyan-600/30 to-blue-600/30 blur-3xl"
+                />
+            </div>
+
+            <div className="container mx-auto text-center relative z-10">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/10 to-cyan-500/10 border border-purple-500/20 mb-8"
+                >
+                    <Sparkles className="w-4 h-4 text-purple-400 animate-pulse" />
+                    <span className="text-sm text-gray-300 font-medium">Yazılım Mühendisliği Öğrencisi</span>
+                </motion.div>
+
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                    className="mb-8"
+                >
                     <motion.h1
-                        className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight cursor-pointer"
-                        variants={sentenceVariants}
+                        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-tight cursor-default"
                         whileHover="hover"
-                        initial="initial"
                     >
-                        {name.map((letter, index) => (
-                            <motion.span key={`name-${index}`} variants={letterVariants} className="inline-block">
-                                {letter === " " ? "\u00A0" : letter}
-                            </motion.span>
-                        ))}
-                        <span className="block">
-              {surname.map((letter, index) => (
-                  <motion.span key={`surname-${index}`} variants={surnameLetterVariants} className="inline-block">
-                      {letter}
-                  </motion.span>
-              ))}
-            </span>
+                        <div className="inline-block">
+                            {name.map((letter, index) => (
+                                <motion.span
+                                    key={`name-${index}`}
+                                    variants={letterVariants}
+                                    className="inline-block text-white hover:text-cyan-400 transition-colors"
+                                    style={{
+                                        display: 'inline-block',
+                                        fontWeight: 700,
+                                    }}
+                                >
+                                    {letter === " " ? "\u00A0" : letter}
+                                </motion.span>
+                            ))}
+                        </div>
+                        <div className="block">
+                            {surname.map((letter, index) => (
+                                <motion.span
+                                    key={`surname-${index}`}
+                                    variants={letterVariants}
+                                    className="inline-block bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent hover:from-cyan-400 hover:via-purple-400 hover:to-pink-400"
+                                    style={{
+                                        display: 'inline-block',
+                                        fontWeight: 700,
+                                    }}
+                                >
+                                    {letter}
+                                </motion.span>
+                            ))}
+                        </div>
                     </motion.h1>
-                    <p className="text-xl md:text-2xl lg:text-3xl text-text-primary mb-8">
+                </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.8, duration: 0.6 }}
+                    className="space-y-4 mb-12"
+                >
+                    <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 font-medium">
                         Ankara Yıldırım Beyazıt Üniversitesi
-                        <span className="block text-highlight font-semibold mt-2">Yazılım Mühendisliği Öğrencisi</span>
                     </p>
-                    <p className="text-lg md:text-xl text-text-secondary mb-12 max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-base md:text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed px-4">
                         Fikirleri koda dönüştürerek somut çözümler üreten; web, mobil, oyun ve yapay zeka alanlarında sürekli öğrenen bir geliştiriciyim.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                        <a href="https://github.com/halitbarut" target="_blank" rel="noopener noreferrer" className="bg-accent hover:bg-highlight text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center gap-2">
-                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                            GitHub Profilim
-                        </a>
-                        <a href="#contact" className="border-2 border-highlight text-highlight hover:bg-highlight hover:text-primary px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
+                </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1, duration: 0.6 }}
+                    className="flex flex-col sm:flex-row gap-5 justify-center items-center"
+                >
+                    <motion.a
+                        href="https://github.com/halitbarut"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="group relative px-8 py-4 rounded-full font-semibold flex items-center gap-3 overflow-hidden"
+                    >
+                        <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-500 rounded-full"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-500 rounded-full opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"></div>
+                        <div className="relative flex items-center gap-3 text-white">
+                            <Github className="w-5 h-5" />
+                            <span>GitHub Profilim</span>
+                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        </div>
+                    </motion.a>
+
+                    <motion.a
+                        href="#contact"
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="group relative px-8 py-4 rounded-full font-semibold overflow-hidden"
+                    >
+                        <div className="absolute inset-0 bg-white/5 backdrop-blur-xl rounded-full border border-white/10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-cyan-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <span className="relative text-white flex items-center gap-2">
                             İletişime Geç
-                        </a>
-                    </div>
-                </div>
+                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        </span>
+                    </motion.a>
+                </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.3, duration: 1 }}
+                    className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+                >
+                    <motion.div
+                        animate={{ y: [0, 10, 0] }}
+                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                        className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-2"
+                    >
+                        <motion.div
+                            animate={{ y: [0, 12, 0] }}
+                            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                            className="w-1.5 h-1.5 bg-white rounded-full"
+                        />
+                    </motion.div>
+                </motion.div>
             </div>
         </section>
     );

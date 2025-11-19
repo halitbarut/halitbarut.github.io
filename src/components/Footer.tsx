@@ -2,25 +2,33 @@ import React from 'react';
 import { Github, Linkedin, Instagram, Mail } from 'lucide-react';
 
 const Footer = () => {
+    const links = [
+        { href: 'https://github.com/halitbarut', icon: Github, label: 'GitHub Profilim' },
+        { href: 'https://www.linkedin.com/in/mehmet-halit-barut/', icon: Linkedin, label: 'LinkedIn Profilim' },
+        { href: 'https://instagram.com/halit__barut', icon: Instagram, label: 'Instagram Profilim' },
+        { href: 'mailto:mhbarut66@gmail.com', icon: Mail, label: 'E-posta Gönder' },
+    ];
+
     return (
-        <footer className="bg-primary py-12 border-t border-accent">
-            <div className="container mx-auto px-6 text-center">
-                <div className="flex flex-row justify-center items-center gap-6 mb-6">
-                    <a href="https://github.com/halitbarut" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-highlight transition-colors" aria-label="GitHub Profilim">
-                        <Github className="w-6 h-6" />
-                    </a>
-                    <a href="https://www.linkedin.com/in/mehmet-halit-barut/" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-highlight transition-colors" aria-label="LinkedIn Profilim">
-                        <Linkedin className="w-6 h-6" />
-                    </a>
-                    <a href="https://instagram.com/halit__barut" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-highlight transition-colors" aria-label="Instagram Profilim">
-                        <Instagram className="w-6 h-6" />
-                    </a>
-                    <a href="mailto:mhbarut66@gmail.com" className="text-text-secondary hover:text-highlight transition-colors" aria-label="E-posta Gönder">
-                        <Mail className="w-6 h-6" />
-                    </a>
+        <footer className="relative bg-[#040313]/80 border-t border-white/5 backdrop-blur-2xl">
+            <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" />
+            <div className="container mx-auto px-6 py-12 text-center">
+                <div className="flex flex-wrap justify-center items-center gap-4 mb-8">
+                    {links.map(({ href, icon: Icon, label }) => (
+                        <a
+                            key={href}
+                            href={href}
+                            target={href.startsWith('http') ? '_blank' : undefined}
+                            rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                            className="group w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white/70 hover:text-white transition-colors"
+                            aria-label={label}
+                        >
+                            <Icon className="w-5 h-5" />
+                        </a>
+                    ))}
                 </div>
-                <p className="text-text-secondary text-lg mb-2">© {new Date().getFullYear()} Mehmet Halit Barut. Tüm hakları saklıdır.</p>
-                <p className="text-text-secondary text-base">
+                <p className="text-white text-lg mb-2">© {new Date().getFullYear()} Mehmet Halit Barut. Tüm hakları saklıdır.</p>
+                <p className="text-white/60 text-base">
                     "Teknoloji tutkusu ve sürekli öğrenme arzusu ile geleceği şekillendiriyorum."
                 </p>
             </div>
