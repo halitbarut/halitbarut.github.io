@@ -1,82 +1,36 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Code2, Monitor, Smartphone, Brain, Server, Gamepad2 } from 'lucide-react';
 
+const gradients = [
+    { gradient: 'from-purple-500 to-indigo-600', borderColor: 'border-purple-500/20 hover:border-purple-400/50' },
+    { gradient: 'from-green-500 to-emerald-600', borderColor: 'border-green-500/20 hover:border-green-400/50' },
+    { gradient: 'from-blue-500 to-cyan-600', borderColor: 'border-blue-500/20 hover:border-blue-400/50' },
+    { gradient: 'from-violet-500 to-fuchsia-600', borderColor: 'border-violet-500/20 hover-border-violet-400/50' },
+    { gradient: 'from-yellow-500 to-orange-600', borderColor: 'border-yellow-500/20 hover:border-yellow-400/50' },
+    { gradient: 'from-red-500 to-pink-600', borderColor: 'border-red-500/20 hover:border-red-400/50' },
+];
+
+const iconMap = [Server, Monitor, Smartphone, Brain, Code2, Gamepad2];
+
 const Skills = () => {
-    const skills = [
-        {
-            icon: Server,
-            title: 'Backend Development',
-            gradient: 'from-purple-500 to-indigo-600',
-            borderColor: 'border-purple-500/20 hover:border-purple-400/50',
-            items: [
-                '• Python (FastAPI) ile performanslı API\'ler',
-                '• Ölçeklenebilir REST API mimarisi',
-                '• PostgreSQL ile veritabanı tasarımı',
-                '• Sunucu tarafı mantık ve iş akışları'
-            ]
-        },
-        {
-            icon: Monitor,
-            title: 'Frontend Development',
-            gradient: 'from-green-500 to-emerald-600',
-            borderColor: 'border-green-500/20 hover:border-green-400/50',
-            items: [
-                '• React & TypeScript ile modern arayüzler',
-                '• TailwindCSS ile hızlı ve tutarlı tasarım',
-                '• Duyarlı (Responsive) tasarım prensipleri',
-                '• State yönetimi ve component mimarisi'
-            ]
-        },
-        {
-            icon: Smartphone,
-            title: 'Mobile Development',
-            gradient: 'from-blue-500 to-cyan-600',
-            borderColor: 'border-blue-500/20 hover:border-blue-400/50',
-            items: [
-                '• Kotlin ile native Android geliştirme',
-                '• Jetpack Compose ile deklaratif UI',
-                '• Android Studio ve geliştirme araçları',
-                '• Materyal Tasarım ilkeleri'
-            ]
-        },
-        {
-            icon: Brain,
-            title: 'AI & Machine Learning',
-            gradient: 'from-violet-500 to-fuchsia-600',
-            borderColor: 'border-violet-500/20 hover:border-violet-400/50',
-            items: [
-                '• OpenAI gibi LLM API\'lerinin entegrasyonu',
-                '• Üretken Yapay Zeka araçlarının kullanımı',
-                '• Temel Makine Öğrenmesi ve Veri Bilimi',
-                '• AI destekli uygulama geliştirme'
-            ]
-        },
-        {
-            icon: Code2,
-            title: 'DevOps & Altyapı',
-            gradient: 'from-yellow-500 to-orange-600',
-            borderColor: 'border-yellow-500/20 hover:border-yellow-400/50',
-            items: [
-                '• Linux (Ubuntu/Fedora) sunucu yönetimi',
-                '• Temel Git ve GitHub iş akışları',
-                '• Uygulamaları bulut ortamına taşıma',
-                '• Nginx, Docker gibi temel araçlar'
-            ]
-        },
-        {
-            icon: Gamepad2,
-            title: 'Game Development',
-            gradient: 'from-red-500 to-pink-600',
-            borderColor: 'border-red-500/20 hover:border-red-400/50',
-            items: [
-                '• Unity 3D oyun motoru kullanımı',
-                '• C# ile oyun mekaniği programlama',
-                '• 3D oyun tasarımı ve fizik entegrasyonu',
-                '• Animasyon ve karakter kontrolü'
-            ]
-        }
-    ];
+    const { t } = useTranslation();
+
+    interface SkillCategory {
+        title: string;
+        items: string[];
+    }
+
+    const categories = t('skills.categories', { returnObjects: true }) as SkillCategory[];
+    
+    const skills = categories.map((category, index) => ({
+        icon: iconMap[index] || Server,
+        title: category.title,
+        gradient: gradients[index]?.gradient || 'from-purple-500 to-indigo-600',
+        borderColor: gradients[index]?.borderColor || 'border-purple-500/20 hover:border-purple-400/50',
+        items: category.items,
+    }));
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -129,7 +83,7 @@ const Skills = () => {
                         </div>
                     </motion.div>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent mb-6">
-                        Yetkinliklerim
+                        {t('skills.title')}
                     </h2>
                     <div className="w-32 h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 mx-auto rounded-full"></div>
                 </motion.div>

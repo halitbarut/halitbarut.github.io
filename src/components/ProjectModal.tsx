@@ -1,6 +1,7 @@
 import React from 'react';
 import { Dialog } from '@headlessui/react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Project } from '../data/projectsData';
 import { X, Github, ExternalLink } from 'lucide-react';
 
@@ -29,13 +30,24 @@ const modalVariants = {
     }
 };
 
+type ProjectTranslation = {
+    id: number;
+    shortDescription: string;
+    longDescription: string;
+};
+
 interface ProjectModalProps {
     project: Project | null;
     onClose: () => void;
 }
 
 const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
+    const { t } = useTranslation();
     if (!project) return null;
+
+    const projectTexts = t('projects.items', { returnObjects: true }) as ProjectTranslation[];
+    const translation = projectTexts.find((item) => item.id === project.id);
+    const longDescription = translation?.longDescription ?? '';
 
     return (
         <Dialog open={!!project} onClose={onClose} className="relative z-50">
@@ -85,11 +97,11 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
                                     </Dialog.Title>
 
                                     <p className="text-lg text-gray-200 leading-relaxed">
-                                        {project.longDescription}
+                                        {longDescription}
                                     </p>
 
                                     <div>
-                                        <h4 className="text-xl font-semibold text-white mb-3">Kullanılan Teknolojiler</h4>
+                                        <h4 className="text-xl font-semibold text-white mb-3">{t('projectModal.technologiesTitle')}</h4>
                                         <div className="flex flex-wrap gap-3">
                                             {project.technologies.map(tech => (
                                                 <span key={tech} className="text-sm bg-white/5 border border-white/10 text-gray-200 px-4 py-1 rounded-full">
@@ -107,7 +119,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
                                             className="flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-500 text-white font-semibold shadow-lg hover:opacity-90 transition"
                                         >
                                             <Github size={20} />
-                                            Kodu Görüntüle
+                                            {t('projectModal.viewCodeButton')}
                                         </a>
                                         {project.liveUrl && project.liveUrl !== '#' && (
                                             <a
@@ -117,7 +129,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
                                                 className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 text-white/90 hover:text-white hover:border-white/40 transition"
                                             >
                                                 <ExternalLink size={20} />
-                                                Canlı Demo
+                                                {t('projectModal.liveDemoButton')}
                                             </a>
                                         )}
                                     </div>

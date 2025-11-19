@@ -1,20 +1,30 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import emailjs from 'emailjs-com';
+import { useTranslation } from 'react-i18next';
 import { Mail, Send, MessageCircle } from 'lucide-react';
 
-const contactSchema = z.object({
-    from_name: z.string().min(2, { message: 'Adınız en az 2 karakter olmalıdır.' }),
-    from_email: z.string().email({ message: 'Lütfen geçerli bir e-posta adresi girin.' }),
-    message: z.string().min(10, { message: 'Mesajınız en az 10 karakter olmalıdır.' }),
-});
-
-type ContactFormInputs = z.infer<typeof contactSchema>;
+type ContactFormInputs = {
+    from_name: string;
+    from_email: string;
+    message: string;
+};
 
 const Contact = () => {
+    const { t } = useTranslation();
+    
+    const contactSchema = useMemo(
+        () =>
+            z.object({
+                from_name: z.string().min(2, { message: t('contact.validation.nameMin') }),
+                from_email: z.string().email({ message: t('contact.validation.emailInvalid') }),
+                message: z.string().min(10, { message: t('contact.validation.messageMin') }),
+            }),
+        [t]
+    );
     const [isLoading, setIsLoading] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
 
@@ -76,7 +86,7 @@ const Contact = () => {
                         </div>
                     </motion.div>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent mb-6">
-                        İletişim
+                        {t('contact.title')}
                     </h2>
                     <div className="w-32 h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 mx-auto rounded-full"></div>
                 </motion.div>
@@ -103,7 +113,7 @@ const Contact = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-semibold text-white mb-1">E-posta</h3>
+                                    <h3 className="text-xl font-semibold text-white mb-1">{t('contact.email')}</h3>
                                     <p className="text-gray-300 group-hover:text-white transition-colors">
                                         mhbarut66@gmail.com
                                     </p>
@@ -111,7 +121,7 @@ const Contact = () => {
                             </div>
                         </motion.a>
                         <p className="text-center text-gray-400 text-sm">
-                            Veya sosyal medya hesaplarıma aşağıdaki linklerden ulaşabilirsiniz.
+                            {t('contact.socialNote')}
                         </p>
                     </motion.div>
 
@@ -124,12 +134,12 @@ const Contact = () => {
                     >
                         <div className="absolute -inset-1 bg-gradient-to-br from-purple-600/30 via-pink-500/30 to-cyan-500/30 rounded-3xl blur-xl"></div>
                         <div className="relative glass-panel rounded-3xl p-8 lg:p-10 border border-white/10 shadow-2xl">
-                            <h3 className="text-3xl font-bold text-white mb-8">Mesaj Gönder</h3>
+                            <h3 className="text-3xl font-bold text-white mb-8">{t('contact.formTitle')}</h3>
                             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                                 <div>
                                     <input
                                         type="text"
-                                        placeholder="Adınız Soyadınız"
+                                        placeholder={t('contact.namePlaceholder')}
                                         {...register('from_name')}
                                         className={`w-full px-6 py-4 bg-white/5 border rounded-2xl text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 transition-all ${
                                             errors.from_name
@@ -144,7 +154,7 @@ const Contact = () => {
                                 <div>
                                     <input
                                         type="email"
-                                        placeholder="ornek@email.com"
+                                        placeholder={t('contact.emailPlaceholder')}
                                         {...register('from_email')}
                                         className={`w-full px-6 py-4 bg-white/5 border rounded-2xl text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 transition-all ${
                                             errors.from_email
@@ -159,7 +169,7 @@ const Contact = () => {
                                 <div>
                                     <textarea
                                         rows={6}
-                                        placeholder="Mesajınızı buraya yazın..."
+                                        placeholder={t('contact.messagePlaceholder')}
                                         {...register('message')}
                                         className={`w-full px-6 py-4 bg-white/5 border rounded-2xl text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 transition-all resize-none ${
                                             errors.message
@@ -185,12 +195,12 @@ const Contact = () => {
                                                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                                                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                                 </svg>
-                                                Gönderiliyor...
+                                                {t('contact.sending')}
                                             </>
                                         ) : (
                                             <>
                                                 <Send className="w-5 h-5" />
-                                                Mesaj Gönder
+                                                {t('contact.sendButton')}
                                             </>
                                         )}
                                     </span>
@@ -201,7 +211,7 @@ const Contact = () => {
                                         animate={{ opacity: 1, y: 0 }}
                                         className="text-green-400 text-center"
                                     >
-                                        Mesajınız başarıyla gönderildi. Teşekkürler!
+                                        {t('contact.successMessage')}
                                     </motion.p>
                                 )}
                                 {submitStatus === 'error' && (
@@ -210,7 +220,7 @@ const Contact = () => {
                                         animate={{ opacity: 1, y: 0 }}
                                         className="text-red-400 text-center"
                                     >
-                                        Bir hata oluştu. Lütfen daha sonra tekrar deneyin.
+                                        {t('contact.errorMessage')}
                                     </motion.p>
                                 )}
                             </form>

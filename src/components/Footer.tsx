@@ -1,12 +1,14 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Github, Linkedin, Instagram, Mail } from 'lucide-react';
 
 const Footer = () => {
+    const { t } = useTranslation();
     const links = [
-        { href: 'https://github.com/halitbarut', icon: Github, label: 'GitHub Profilim' },
-        { href: 'https://www.linkedin.com/in/mehmet-halit-barut/', icon: Linkedin, label: 'LinkedIn Profilim' },
-        { href: 'https://instagram.com/halit__barut', icon: Instagram, label: 'Instagram Profilim' },
-        { href: 'mailto:mhbarut66@gmail.com', icon: Mail, label: 'E-posta Gönder' },
+        { href: 'https://github.com/halitbarut', icon: Github, label: t('footer.githubLabel') },
+        { href: 'https://www.linkedin.com/in/mehmet-halit-barut/', icon: Linkedin, label: t('footer.linkedinLabel') },
+        { href: 'https://instagram.com/halit__barut', icon: Instagram, label: t('footer.instagramLabel') },
+        { href: 'mailto:mhbarut66@gmail.com', icon: Mail, label: t('footer.emailLabel') },
     ];
 
     return (
@@ -27,9 +29,9 @@ const Footer = () => {
                         </a>
                     ))}
                 </div>
-                <p className="text-white text-lg mb-2">© {new Date().getFullYear()} Mehmet Halit Barut. Tüm hakları saklıdır.</p>
+                <p className="text-white text-lg mb-2">{t('footer.copyright', { year: new Date().getFullYear() })}</p>
                 <p className="text-white/60 text-base">
-                    "Teknoloji tutkusu ve sürekli öğrenme arzusu ile geleceği şekillendiriyorum."
+                    “{t('footer.quote')}”
                 </p>
             </div>
         </footer>

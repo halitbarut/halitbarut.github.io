@@ -1,0 +1,176 @@
+{
+  "header": {
+    "nav": {
+      "home": "Startseite",
+      "about": "Über mich",
+      "skills": "Fähigkeiten",
+      "projects": "Projekte",
+      "contact": "Kontakt"
+    },
+    "homeAriaLabel": "Zur Startseite"
+  },
+  "hero": {
+    "badge": "Student der Softwaretechnik",
+    "university": "Ankara Yıldırım Beyazıt Universität",
+    "description": "Ein Entwickler, der Ideen in Code verwandelt und greifbare Lösungen liefert – mit ständigem Lernen in den Bereichen Web, Mobile, Games und Künstliche Intelligenz.",
+    "githubButton": "Mein GitHub-Profil",
+    "contactButton": "Kontakt aufnehmen"
+  },
+  "about": {
+    "subtitle": "Meine Geschichte",
+    "title": "Meine Geschichte",
+    "paragraph1": "Hallo! Ich bin Mehmet Halit. Für mich begann Software mit einem Funken Neugier aus einer Zeitschrift und wurde zu einer Leidenschaft, bei der ich jede Gelegenheit nutzte, um Code zu schreiben. Alles begann mit den blockbasierten Übungen auf Code.org und wurde zu einem konkreten Ziel, als ich in der Oberstufe meine ersten Python-Zeilen schrieb.",
+    "paragraph2": "Auf diesem Weg habe ich nicht nur verschiedene Technologien gelernt, sondern sie auch als Werkzeuge zur Problemlösung begriffen. Kotlin öffnete mir die Tür zur mobilen Welt, Unity ließ mich die Logik hinter Spielmechaniken verstehen und mit FastAPI baute ich leistungsfähige Backend-Systeme. Jedes Projekt war für mich eine Chance, Theorie in Praxis zu verwandeln und mich weiterzuentwickeln.",
+    "paragraph3": "Heute sehe ich KI nicht als Konkurrenz, sondern als Verstärker, der Kreativität erhöht. Die Zeitleiste rechts fasst die wichtigsten Meilensteine dieses Lern- und Anpassungsprozesses zusammen."
+  },
+  "timeline": {
+    "events": [
+      {
+        "year": "~2016-2019",
+        "title": "Neugier und erste Chancen",
+        "description": "Indem ich jede Gelegenheit nutzte, lernte ich mit den verfügbaren Ressourcen und damaligen Hardwarebedingungen die Grundlagen von Code.org und Python. Diese Zeit war der Beginn meiner Leidenschaft für Problemlösung."
+      },
+      {
+        "year": "2021",
+        "title": "Karriereentscheidung: Mobile Entwicklung",
+        "description": "Durch meine erste dynamische Mobile-App mit Kotlin erkannte ich die Kraft der Programmierung und entschied mich für eine Karriere als Softwareingenieur."
+      },
+      {
+        "year": "2022",
+        "title": "Einstieg in die Spieleentwicklung",
+        "description": "Mit Unity und C# entwickelte ich 3D-Spiele und bewies meine Problemlösefähigkeiten in einem anderen Technologiestack."
+      },
+      {
+        "year": "2023-2024",
+        "title": "Akademische Basis und Horizonterweiterung",
+        "description": "Im Vorbereitungsjahr der Universität vertiefte ich meine Grundlagen in Technologien wie Java und Git, und das BTK-Event zur Künstlichen Intelligenz verstärkte mein Interesse an KI. Diese Phase legte das Fundament meines theoretischen Wissens."
+      },
+      {
+        "year": "2025",
+        "title": "Projekte bauen und Kompetenzen erweitern",
+        "description": "Mit der Google Akademie für KI und Technologie entwickelte ich TicaretApp und sammelte Linux-Erfahrung (Ubuntu/Fedora), während ich Projekte in die Cloud brachte. Beim BTK-Hackathon lernte ich Teamarbeit mit KI-gestützten Projekten wie Perpetua und Çıkmış."
+      },
+      {
+        "year": "Heute & Zukunft",
+        "title": "Ständiges Lernen und fortgeschrittene KI",
+        "description": "Während ich meine Ausbildung im maschinellen Lernen fortsetze, lerne ich durch Workshops zu Generativer KI und LLMs, künstliche Intelligenz als Verstärker einzusetzen. Mein Ziel ist es, KI-gestützte, skalierbare Systeme mit robuster Infrastruktur zu entwickeln."
+      }
+    ]
+  },
+  "skills": {
+    "title": "Meine Fähigkeiten",
+    "categories": [
+      {
+        "title": "Backend-Entwicklung",
+        "items": [
+          "• Hochleistungs-APIs mit Python (FastAPI)",
+          "• Skalierbare REST-API-Architektur",
+          "• Datenbankdesign mit PostgreSQL",
+          "• Serverseitige Logik und Workflows"
+        ]
+      },
+      {
+        "title": "Frontend-Entwicklung",
+        "items": [
+          "• Moderne Interfaces mit React & TypeScript",
+          "• Schnelles, konsistentes Design mit TailwindCSS",
+          "• Responsive-Design-Prinzipien",
+          "• State-Management und Komponenten-Architektur"
+        ]
+      },
+      {
+        "title": "Mobile Entwicklung",
+        "items": [
+          "• Native Android-Entwicklung mit Kotlin",
+          "• Deklarative UI mit Jetpack Compose",
+          "• Android Studio und Entwicklungstools",
+          "• Material-Design-Prinzipien"
+        ]
+      },
+      {
+        "title": "KI & Machine Learning",
+        "items": [
+          "• Integration von LLM-APIs wie OpenAI",
+          "• Einsatz von Generative-AI-Tools",
+          "• Grundlagen in Machine Learning und Data Science",
+          "• Entwicklung KI-gestützter Anwendungen"
+        ]
+      },
+      {
+        "title": "DevOps & Infrastruktur",
+        "items": [
+          "• Linux-Serververwaltung (Ubuntu/Fedora)",
+          "• Git- und GitHub-Workflows",
+          "• Anwendungen in Cloud-Umgebungen bereitstellen",
+          "• Tools wie Nginx, Docker"
+        ]
+      },
+      {
+        "title": "Spieleentwicklung",
+        "items": [
+          "• Arbeiten mit der Unity-3D-Engine",
+          "• Programmierung von Spielmechaniken mit C#",
+          "• 3D-Spieldesign und Physik-Integration",
+          "• Animation und Charaktersteuerung"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Meine Projekte",
+    "items": [
+      {
+        "id": 1,
+        "shortDescription": "Full-Stack-E-Commerce-Plattform. Bietet ein umfassendes Online-Shopping-Erlebnis.",
+        "longDescription": "TicaretApp ist eine moderne Full-Stack-E-Commerce-Plattform auf Basis einer leistungsstarken Backend-API mit Python FastAPI. Produkt-, Nutzer- und Bestelldaten werden in einer PostgreSQL-Datenbank verwaltet. Auf der Frontend-Seite habe ich eine benutzerfreundliche und dynamische Oberfläche mit React und TypeScript aufgebaut. Das Projekt ermöglichte mir tiefgehende Erfahrungen in REST-API-Design, Datenbankarchitektur und komponentenbasierter Frontend-Entwicklung."
+      },
+      {
+        "id": 2,
+        "shortDescription": "KI-gestützte, personalisierte Sprachlernplattform.",
+        "longDescription": "Perpetua ist eine sprachlern App, die künstliche Intelligenz nutzt. Sie bietet personalisierte Lektionen, die sich an Lernstil und Tempo der Nutzer anpassen. Funktionen wie Textgenerierung, Übersetzung und Sprechübungen basieren auf der OpenAI-API. Das Projekt macht Sprachenlernen interaktiver und effizienter. Das Backend entsteht mit FastAPI, das Frontend mit React."
+      },
+      {
+        "id": 3,
+        "shortDescription": "Dynamisches und unterhaltsames Platformer-Spiel mit Unity 3D entwickelt.",
+        "longDescription": "ZigZag ist ein 3D-Platformer, entwickelt mit der Unity-3D-Engine und C#. Spieler halten ihre Figuren auf ständig wechselnden und zufällig generierten Plattformen am Leben. Im Fokus stehen dynamisches Leveldesign, Spielphysik, Animationsverwaltung und die Optimierung für Mobile. Das Spiel bietet ein flüssiges und fesselndes Erlebnis."
+      }
+    ]
+  },
+  "projectModal": {
+    "technologiesTitle": "Verwendete Technologien",
+    "viewCodeButton": "Code ansehen",
+    "liveDemoButton": "Live-Demo"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "email": "E-Mail",
+    "socialNote": "Oder nutze die Links unten, um mich über Social Media zu erreichen.",
+    "formTitle": "Nachricht senden",
+    "namePlaceholder": "Dein Name",
+    "emailPlaceholder": "beispiel@email.com",
+    "messagePlaceholder": "Schreibe deine Nachricht hier...",
+    "sendButton": "Nachricht senden",
+    "sending": "Wird gesendet...",
+    "successMessage": "Deine Nachricht wurde erfolgreich gesendet. Danke!",
+    "errorMessage": "Es ist ein Fehler aufgetreten. Bitte versuche es später noch einmal.",
+    "validation": {
+      "nameMin": "Dein Name muss mindestens 2 Zeichen enthalten.",
+      "emailInvalid": "Bitte gib eine gültige E-Mail-Adresse ein.",
+      "messageMin": "Deine Nachricht muss mindestens 10 Zeichen enthalten."
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}} Mehmet Halit Barut. Alle Rechte vorbehalten.",
+    "quote": "Die Zukunft mit Technologiebegeisterung und dem Wunsch nach ständigem Lernen gestalten.",
+    "githubLabel": "Mein GitHub-Profil",
+    "linkedinLabel": "Mein LinkedIn-Profil",
+    "instagramLabel": "Mein Instagram-Profil",
+    "emailLabel": "E-Mail senden"
+  },
+  "seo": {
+    "title": "Mehmet Halit Barut | Softwareingenieur",
+    "description": "Ein Entwickler, der Ideen in Code verwandelt und greifbare Lösungen liefert – mit ständigem Lernen in Web, Mobile, Games und KI.",
+    "ogTitle": "Mehmet Halit Barut | Portfolio als Softwareingenieur",
+    "ogDescription": "Entdecke meine Projekte und Fähigkeiten in Web, Mobile, Games und Künstlicher Intelligenz."
+  }
+}

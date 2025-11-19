@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Puzzle, Smartphone, Gamepad2, GraduationCap, KanbanSquare, Sparkles } from 'lucide-react';
 
 type TimelineEvent = {
@@ -9,44 +10,7 @@ type TimelineEvent = {
     icon: React.ElementType;
 };
 
-const timelineData: TimelineEvent[] = [
-    {
-        year: '~2016-2019',
-        title: 'Merak ve İlk Fırsatlar',
-        description: 'Her fırsatı değerlendirerek, erişim sağlayabildiğim kaynaklarla ve dönemin donanım koşullarıyla Code.org ve Python temellerini öğrendim. Bu dönem, problem çözme tutkumun başlangıcı oldu.',
-        icon: Puzzle,
-    },
-    {
-        year: '2021',
-        title: 'Kariyer Kararı: Mobil Geliştirme',
-        description: 'Kotlin ile ilk dinamik mobil uygulamamı geliştirerek programlamanın gücünü kavradım ve yazılım mühendisliğini bir kariyer olarak seçtim.',
-        icon: Smartphone,
-    },
-    {
-        year: '2022',
-        title: 'Oyun Geliştirme Dünyasına Adım',
-        description: 'Unity ve C# ile 3D oyunlar geliştirerek farklı bir teknoloji yığınında problem çözme yeteneklerimi kanıtladım.',
-        icon: Gamepad2,
-    },
-    {
-        year: '2023-2024',
-        title: 'Akademik Temel ve Ufuk Genişletme',
-        description: 'Üniversite hazırlık yılında Java, Git gibi temel teknolojilerde derinleştim ve BTK Yapay Zeka Zirvesi ile AI\'a olan ilgim arttı. Bu dönem, teorik bilgimin temelini attım.',
-        icon: GraduationCap,
-    },
-    {
-        year: '2025',
-        title: 'Proje Üretimi ve Yetkinlik Gelişimi',
-        description: 'Google Yapay Zeka ve Teknoloji Akademisi ile TicaretApp\'i geliştirdim, projeleri buluta taşırken Linux (Ubuntu/Fedora) tecrübesi kazandım. BTK Hackathon\'unda Perpetua ve Çıkmış gibi AI destekli projelerle takım çalışmasını öğrendim.',
-        icon: KanbanSquare,
-    },
-    {
-        year: 'Bugün & Gelecek',
-        title: 'Sürekli Öğrenme ve İleri Yapay Zeka',
-        description: 'Makine öğrenmesi eğitimime devam ederken, Üretken Yapay Zeka ve LLM Atölyesi gibi etkinliklerle yapay zekayı bir güçlendirici olarak kullanmayı öğreniyorum. Hedefim, AI destekli, ölçeklenebilir ve sağlam altyapılara sahip sistemler geliştirmek.',
-        icon: Sparkles,
-    },
-];
+const iconMap = [Puzzle, Smartphone, Gamepad2, GraduationCap, KanbanSquare, Sparkles];
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -110,6 +74,13 @@ const TimelineItem = ({ event, isLast }: { event: TimelineEvent; isLast: boolean
 };
 
 const Timeline = () => {
+    const { t } = useTranslation();
+    const events = t('timeline.events', { returnObjects: true }) as Array<Pick<TimelineEvent, 'year' | 'title' | 'description'>>;
+    const timelineData = events.map((event, index) => ({
+        ...event,
+        icon: iconMap[index] || Puzzle,
+    }));
+
     return (
         <motion.div
             variants={containerVariants}
@@ -120,7 +91,7 @@ const Timeline = () => {
         >
             {timelineData.map((event, index) => (
                 <TimelineItem
-                    key={index}
+                    key={`${event.year}-${event.title}`}
                     event={event}
                     isLast={index === timelineData.length - 1}
                 />

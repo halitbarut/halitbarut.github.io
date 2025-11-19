@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Project } from '../data/projectsData';
 import { icons } from 'lucide-react';
 
@@ -8,8 +9,18 @@ interface ProjectCardProps {
     onClick: () => void;
 }
 
+type ProjectTranslation = {
+    id: number;
+    shortDescription: string;
+    longDescription: string;
+};
+
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
+    const { t } = useTranslation();
     const LucideIcon = icons[project.icon];
+    const projectTexts = t('projects.items', { returnObjects: true }) as ProjectTranslation[];
+    const translation = projectTexts.find((item) => item.id === project.id);
+    const shortDescription = translation?.shortDescription ?? '';
 
     return (
         <motion.button
@@ -41,7 +52,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
                         {project.title}
                     </h3>
                     <p className="text-gray-300 leading-relaxed flex-1">
-                        {project.shortDescription}
+                        {shortDescription}
                     </p>
                 </div>
                 <div className="flex flex-wrap gap-2">

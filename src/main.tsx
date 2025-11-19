@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
-import { HelmetProvider } from 'react-helmet-async'; // Import et
+import { HelmetProvider } from 'react-helmet-async';
+import './i18n/config';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
-        <HelmetProvider> {/* Uygulamayı sarmala */}
+        <HelmetProvider>
             <App />
         </HelmetProvider>
     </React.StrictMode>,
