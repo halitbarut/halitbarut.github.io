@@ -77,7 +77,7 @@ const Header = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.5 }}
-                        className="flex-shrink-0"
+                        className="hidden md:block flex-shrink-0"
                     >
                         <LanguageSwitcher />
                     </motion.div>

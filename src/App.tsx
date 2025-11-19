@@ -9,6 +9,7 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollReveal from './components/ScrollReveal';
+import LanguageSwitcher from './components/LanguageSwitcher';
 
 function App() {
     const { t, i18n } = useTranslation();
@@ -31,6 +32,10 @@ function App() {
                 <div className="absolute top-1/3 left-1/4 w-64 h-64 rounded-full border border-white/10 opacity-50 animate-[spin_40s_linear_infinite]" />
             </div>
             <div className="noise-overlay" aria-hidden />
+
+            <div className="md:hidden fixed top-5 right-5 z-50 drop-shadow-xl">
+                <LanguageSwitcher />
+            </div>
 
             <Header />
             <main className="relative z-10 flex flex-col gap-32 lg:gap-40 pt-32 pb-24">
