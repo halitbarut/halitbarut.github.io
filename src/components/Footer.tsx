@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Github, Linkedin, Instagram, Mail } from 'lucide-react';
 
 const Footer = () => {
+    const { t } = useTranslation();
     const links = [
         { href: 'https://github.com/halitbarut', icon: Github, label: 'GitHub Profilim' },
         { href: 'https://www.linkedin.com/in/mehmet-halit-barut/', icon: Linkedin, label: 'LinkedIn Profilim' },
@@ -41,7 +43,7 @@ const Footer = () => {
                     viewport={{ once: true }}
                     className="text-white text-lg mb-3 font-semibold"
                 >
-                    © {new Date().getFullYear()} Mehmet Halit Barut. Tüm hakları saklıdır.
+                    © {new Date().getFullYear()} Mehmet Halit Barut. {t('footer.copyright')}
                 </motion.p>
                 <motion.p 
                     initial={{ opacity: 0 }}
@@ -50,7 +52,7 @@ const Footer = () => {
                     transition={{ delay: 0.2 }}
                     className="text-transparent bg-gradient-to-r from-purple-300 via-pink-300 to-cyan-300 bg-clip-text text-base font-medium"
                 >
-                    "Teknoloji tutkusu ve sürekli öğrenme arzusu ile geleceği şekillendiriyorum."
+                    {t('footer.quote')}
                 </motion.p>
             </div>
         </footer>

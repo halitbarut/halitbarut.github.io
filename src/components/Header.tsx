@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Header = () => {
+    const { t } = useTranslation();
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
@@ -13,11 +16,11 @@ const Header = () => {
     }, []);
 
     const navItems = [
-        { href: '#hero', label: 'Anasayfa' },
-        { href: '#about', label: 'Hakkımda' },
-        { href: '#skills', label: 'Yetenekler' },
-        { href: '#projects', label: 'Projeler' },
-        { href: '#contact', label: 'İletişim' }
+        { href: '#hero', label: t('nav.home') },
+        { href: '#about', label: t('nav.about') },
+        { href: '#skills', label: t('nav.skills') },
+        { href: '#projects', label: t('nav.projects') },
+        { href: '#contact', label: t('nav.contact') }
     ];
 
     return (
@@ -35,7 +38,7 @@ const Header = () => {
                 <div className="flex items-center justify-between">
                     <motion.a
                         href="#hero"
-                        aria-label="Anasayfaya dön"
+                        aria-label={t('nav.backHome')}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
                         transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -71,8 +74,10 @@ const Header = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.5 }}
-                        className="hidden md:block w-12 h-12"
-                    ></motion.div>
+                        className="hidden md:block"
+                    >
+                        <LanguageSwitcher />
+                    </motion.div>
                 </div>
             </nav>
         </motion.header>

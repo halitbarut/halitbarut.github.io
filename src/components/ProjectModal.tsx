@@ -1,6 +1,7 @@
 import React from 'react';
 import { Dialog } from '@headlessui/react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Project } from '../data/projectsData';
 import { X, Github, ExternalLink } from 'lucide-react';
 
@@ -35,6 +36,7 @@ interface ProjectModalProps {
 }
 
 const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
+    const { t } = useTranslation();
     if (!project) return null;
 
     return (
@@ -89,7 +91,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
                                     </p>
 
                                     <div>
-                                        <h4 className="text-xl font-semibold text-white mb-3">Kullanılan Teknolojiler</h4>
+                                        <h4 className="text-xl font-semibold text-white mb-3">{t('projects.technologies')}</h4>
                                         <div className="flex flex-wrap gap-3">
                                             {project.technologies.map(tech => (
                                                 <span key={tech} className="text-sm bg-white/5 border border-white/10 text-gray-200 px-4 py-1 rounded-full">
@@ -107,7 +109,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
                                             className="flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-500 text-white font-semibold shadow-lg hover:opacity-90 transition"
                                         >
                                             <Github size={20} />
-                                            Kodu Görüntüle
+                                            {t('projects.viewOnGithub')}
                                         </a>
                                         {project.liveUrl && project.liveUrl !== '#' && (
                                             <a
@@ -117,7 +119,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
                                                 className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 text-white/90 hover:text-white hover:border-white/40 transition"
                                             >
                                                 <ExternalLink size={20} />
-                                                Canlı Demo
+                                                {t('projects.viewLiveDemo')}
                                             </a>
                                         )}
                                     </div>

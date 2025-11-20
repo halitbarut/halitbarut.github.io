@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Github, ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
+    const { t } = useTranslation();
     const name = "Mehmet Halit".split("");
     const surname = "Barut".split("");
 
@@ -63,7 +65,7 @@ const Hero = () => {
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/10 to-cyan-500/10 border border-purple-500/20 mb-8"
                 >
                     <Sparkles className="w-4 h-4 text-purple-400 animate-pulse" />
-                    <span className="text-sm text-gray-300 font-medium">Yazılım Mühendisliği Öğrencisi</span>
+                    <span className="text-sm text-gray-300 font-medium">{t('hero.badge')}</span>
                 </motion.div>
 
                 <motion.div
@@ -116,10 +118,10 @@ const Hero = () => {
                     className="space-y-4 mb-12"
                 >
                     <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 font-medium">
-                        Ankara Yıldırım Beyazıt Üniversitesi
+                        {t('hero.university')}
                     </p>
                     <p className="text-base md:text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed px-4">
-                        Fikirleri koda dönüştürerek somut çözümler üreten; web, mobil, oyun ve yapay zeka alanlarında sürekli öğrenen bir geliştiriciyim.
+                        {t('hero.description')}
                     </p>
                 </motion.div>
 
@@ -141,7 +143,7 @@ const Hero = () => {
                         <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-500 rounded-full blur-xl opacity-0 group-hover:opacity-75 transition-opacity duration-300"></div>
                         <div className="relative flex items-center gap-3 text-white text-lg">
                             <Github className="w-6 h-6" />
-                            <span>GitHub Profilim</span>
+                            <span>{t('hero.githubProfile')}</span>
                             <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
                         </div>
                     </motion.a>
@@ -155,7 +157,7 @@ const Hero = () => {
                         <div className="absolute inset-0 bg-white/5 backdrop-blur-xl rounded-full border-2 border-white/20"></div>
                         <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-cyan-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         <span className="relative text-white flex items-center gap-2 text-lg">
-                            İletişime Geç
+                            {t('hero.getInTouch')}
                             <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
                         </span>
                     </motion.a>
