@@ -53,27 +53,42 @@ const Hero = () => {
             <div className="absolute inset-0 overflow-hidden">
                 <motion.div
                     animate={{
-                        scale: [1, 1.2, 1],
-                        rotate: [0, 90, 0],
+                        scale: [1, 1.3, 1],
+                        rotate: [0, 180, 360],
+                        opacity: [0.3, 0.5, 0.3],
                     }}
                     transition={{
                         duration: 20,
                         repeat: Infinity,
-                        ease: "linear"
+                        ease: "easeInOut"
                     }}
-                    className="absolute top-1/4 -right-20 w-96 h-96 rounded-full bg-gradient-to-br from-purple-600/30 to-pink-600/30 blur-3xl"
+                    className="absolute top-1/4 -right-20 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-purple-600/40 via-pink-600/30 to-rose-600/40 blur-[100px]"
                 />
                 <motion.div
                     animate={{
                         scale: [1.2, 1, 1.2],
-                        rotate: [90, 0, 90],
+                        rotate: [360, 180, 0],
+                        opacity: [0.4, 0.6, 0.4],
                     }}
                     transition={{
                         duration: 25,
                         repeat: Infinity,
-                        ease: "linear"
+                        ease: "easeInOut"
                     }}
-                    className="absolute bottom-1/4 -left-20 w-96 h-96 rounded-full bg-gradient-to-br from-cyan-600/30 to-blue-600/30 blur-3xl"
+                    className="absolute bottom-1/4 -left-20 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-cyan-600/40 via-blue-600/30 to-indigo-600/40 blur-[100px]"
+                />
+                <motion.div
+                    animate={{
+                        scale: [1, 1.2, 1],
+                        x: [0, 50, 0],
+                        y: [0, -30, 0],
+                    }}
+                    transition={{
+                        duration: 15,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }}
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full bg-gradient-to-br from-yellow-500/20 to-orange-500/20 blur-[80px]"
                 />
             </div>
 
@@ -155,30 +170,54 @@ const Hero = () => {
                         href="https://github.com/halitbarut"
                         target="_blank"
                         rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05, y: -2 }}
-                        whileTap={{ scale: 0.98 }}
-                        className="group relative px-8 py-4 rounded-full font-semibold flex items-center gap-3 overflow-hidden"
+                        whileHover={{ scale: 1.08, y: -4 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="group relative px-10 py-5 rounded-full font-bold flex items-center gap-3 overflow-hidden shadow-2xl"
                     >
                         <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-500 rounded-full"></div>
-                        <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-500 rounded-full opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"></div>
-                        <div className="relative flex items-center gap-3 text-white">
-                            <Github className="w-5 h-5" />
+                        <motion.div 
+                            className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-500 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                            animate={{
+                                scale: [1, 1.1, 1],
+                            }}
+                            transition={{
+                                duration: 2,
+                                repeat: Infinity,
+                                ease: "easeInOut"
+                            }}
+                        />
+                        <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,.2)_50%,transparent_75%,transparent_100%)] bg-[length:250%_250%,100%_100%] animate-[shimmer_3s_infinite]"></div>
+                        <div className="relative flex items-center gap-3 text-white text-lg">
+                            <Github className="w-6 h-6" />
                             <span>GitHub Profilim</span>
-                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
                         </div>
                     </motion.a>
 
                     <motion.a
                         href="#contact"
-                        whileHover={{ scale: 1.05, y: -2 }}
-                        whileTap={{ scale: 0.98 }}
-                        className="group relative px-8 py-4 rounded-full font-semibold overflow-hidden"
+                        whileHover={{ scale: 1.08, y: -4 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="group relative px-10 py-5 rounded-full font-bold overflow-hidden shadow-2xl"
                     >
-                        <div className="absolute inset-0 bg-white/5 backdrop-blur-xl rounded-full border border-white/10"></div>
-                        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-cyan-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <span className="relative text-white flex items-center gap-2">
+                        <div className="absolute inset-0 bg-white/5 backdrop-blur-xl rounded-full border-2 border-white/20"></div>
+                        <motion.div 
+                            className="absolute inset-0 bg-gradient-to-r from-purple-600/30 to-cyan-500/30 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                            animate={{
+                                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+                            }}
+                            transition={{
+                                duration: 3,
+                                repeat: Infinity,
+                                ease: "linear"
+                            }}
+                        />
+                        <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                        </div>
+                        <span className="relative text-white flex items-center gap-2 text-lg">
                             İletişime Geç
-                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
                         </span>
                     </motion.a>
                 </motion.div>
