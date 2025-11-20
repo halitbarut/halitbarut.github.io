@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -10,13 +11,15 @@ import Footer from './components/Footer';
 import ScrollReveal from './components/ScrollReveal';
 
 function App() {
+    const { t } = useTranslation();
+    
     return (
         <div className="relative min-h-screen bg-[#030014] text-text-primary overflow-hidden">
             <Helmet>
-                <title>Mehmet Halit Barut | Yazılım Mühendisi</title>
-                <meta name="description" content="Fikirleri koda dönüştürerek somut çözümler üreten; web, mobil, oyun ve yapay zeka alanlarında sürekli öğrenen bir geliştirici." />
-                <meta property="og:title" content="Mehmet Halit Barut | Yazılım Mühendisi Portfolyosu" />
-                <meta property="og:description" content="Web, mobil, oyun ve yapay zeka alanlarındaki projelerimi ve yetkinliklerimi keşfedin." />
+                <title>{t('meta.title')}</title>
+                <meta name="description" content={t('meta.description')} />
+                <meta property="og:title" content={t('meta.ogTitle')} />
+                <meta property="og:description" content={t('meta.ogDescription')} />
                 <meta property="og:type" content="website" />
             </Helmet>
 

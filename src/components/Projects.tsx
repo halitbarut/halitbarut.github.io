@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { FolderKanban } from 'lucide-react';
-import { projects, Project } from '../data/projectsData';
+import { getProjects, Project } from '../data/projectsData';
 import ProjectCard from './ProjectCard';
 import ProjectModal from './ProjectModal';
 import ScrollReveal from './ScrollReveal';
 
 const Projects = () => {
+    const { t } = useTranslation();
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+    
+    const projects = getProjects();
 
     const openModal = (project: Project) => {
         setSelectedProject(project);
@@ -44,7 +48,7 @@ const Projects = () => {
                             </div>
                         </motion.div>
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent mb-6">
-                            Projelerim
+                            {t('projects.title')}
                         </h2>
                         <div className="w-32 h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 mx-auto rounded-full"></div>
                     </motion.div>
