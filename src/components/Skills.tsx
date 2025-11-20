@@ -114,7 +114,7 @@ const Skills = () => {
                     viewport={{ once: true, amount: 0.2 }}
                     className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
                 >
-                    {skills.map((skill, index) => (
+                    {skills.map((skill) => (
                         <motion.div
                             key={skill.title}
                             variants={cardVariants}
