@@ -4,7 +4,13 @@ import en from './locales/en.json';
 import de from './locales/de.json';
 import tr from './locales/tr.json';
 
-const savedLanguage = localStorage.getItem('language') || 'en';
+// Safely access localStorage only in browser environment
+const getSavedLanguage = () => {
+    if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+        return localStorage.getItem('language') || 'en';
+    }
+    return 'en';
+};
 
 i18n.use(initReactI18next).init({
     resources: {
@@ -12,7 +18,7 @@ i18n.use(initReactI18next).init({
         de: { translation: de },
         tr: { translation: tr },
     },
-    lng: savedLanguage,
+    lng: getSavedLanguage(),
     fallbackLng: 'en',
     interpolation: {
         escapeValue: false,
@@ -20,7 +26,9 @@ i18n.use(initReactI18next).init({
 });
 
 i18n.on('languageChanged', (lng) => {
-    localStorage.setItem('language', lng);
+    if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+        localStorage.setItem('language', lng);
+    }
 });
 
 export default i18n;
