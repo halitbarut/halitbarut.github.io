@@ -74,7 +74,6 @@ const Header = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.5 }}
-                        className="hidden md:block"
                     >
                         <LanguageSwitcher />
                     </motion.div>
