@@ -25,22 +25,12 @@ const Footer = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            whileHover={{ scale: 1.15, y: -4 }}
+                            whileHover={{ scale: 1.1, y: -3 }}
                             whileTap={{ scale: 0.95 }}
                             className="group relative w-14 h-14 rounded-full border-2 border-white/10 bg-white/5 flex items-center justify-center text-white/70 hover:text-white hover:border-purple-400/50 transition-all overflow-hidden"
                             aria-label={label}
                         >
-                            <motion.div
-                                className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                                animate={{
-                                    rotate: [0, 360],
-                                }}
-                                transition={{
-                                    duration: 8,
-                                    repeat: Infinity,
-                                    ease: "linear"
-                                }}
-                            />
+                            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             <Icon className="relative w-6 h-6" />
                         </motion.a>
                     ))}

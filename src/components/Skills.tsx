@@ -141,7 +141,7 @@ const Skills = () => {
                     viewport={{ once: true, amount: 0.2 }}
                     className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
                 >
-                    {skills.map((skill, index) => (
+                    {skills.map((skill) => (
                         <motion.div
                             key={skill.title}
                             variants={cardVariants}
@@ -156,21 +156,11 @@ const Skills = () => {
                             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                             
                             <motion.div
-                                whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.15 }}
-                                transition={{ duration: 0.6 }}
+                                whileHover={{ scale: 1.1 }}
+                                transition={{ duration: 0.3 }}
                                 className={`relative w-24 h-24 rounded-2xl bg-gradient-to-br ${skill.gradient} flex items-center justify-center mb-6 shadow-2xl`}
                             >
-                                <motion.div 
-                                    className={`absolute inset-0 bg-gradient-to-br ${skill.gradient} rounded-2xl blur-2xl opacity-60 group-hover:opacity-100 transition-opacity`}
-                                    animate={{
-                                        scale: [1, 1.2, 1],
-                                    }}
-                                    transition={{
-                                        duration: 2,
-                                        repeat: Infinity,
-                                        ease: "easeInOut"
-                                    }}
-                                />
+                                <div className={`absolute inset-0 bg-gradient-to-br ${skill.gradient} rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300`}></div>
                                 <skill.icon className="relative w-12 h-12 text-white drop-shadow-lg" />
                             </motion.div>
 
@@ -180,31 +170,17 @@ const Skills = () => {
 
                             <ul className="space-y-3 text-gray-300">
                                 {skill.items.map((item, idx) => (
-                                    <motion.li
+                                    <li
                                         key={idx}
-                                        initial={{ opacity: 0, x: -20 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: index * 0.1 + idx * 0.05 }}
                                         className="text-base leading-relaxed group-hover:text-gray-100 transition-colors flex items-start gap-2"
                                     >
                                         <span className="text-purple-400 mt-1">▸</span>
                                         <span>{item.replace('• ', '')}</span>
-                                    </motion.li>
+                                    </li>
                                 ))}
                             </ul>
 
-                            <motion.div
-                                className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 rounded-3xl opacity-0 group-hover:opacity-30 blur-2xl transition-opacity duration-500 -z-10"
-                                animate={{
-                                    rotate: [0, 360],
-                                }}
-                                transition={{
-                                    duration: 8,
-                                    repeat: Infinity,
-                                    ease: "linear"
-                                }}
-                            />
+                            <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500 -z-10" />
                         </motion.div>
                     ))}
                 </motion.div>

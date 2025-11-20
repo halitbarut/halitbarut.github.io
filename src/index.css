@@ -30,11 +30,6 @@ body {
     color: var(--text-primary);
     min-height: 100vh;
     line-height: 1.6;
-    cursor: none;
-}
-
-body * {
-    cursor: none;
 }
 
 #root {
@@ -205,14 +200,6 @@ body * {
     .container {
         padding-right: 1.25rem;
         padding-left: 1.25rem;
-    }
-    
-    body {
-        cursor: auto;
-    }
-    
-    body * {
-        cursor: auto !important;
     }
     
     .custom-cursor {

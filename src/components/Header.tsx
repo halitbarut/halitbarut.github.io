@@ -36,22 +36,12 @@ const Header = () => {
                     <motion.a
                         href="#hero"
                         aria-label="Anasayfaya dön"
-                        whileHover={{ scale: 1.15, rotate: 360 }}
-                        whileTap={{ scale: 0.9 }}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
                         transition={{ type: "spring", stiffness: 400, damping: 17 }}
                         className="relative group"
                     >
-                        <motion.div 
-                            className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300"
-                            animate={{
-                                scale: [1, 1.2, 1],
-                            }}
-                            transition={{
-                                duration: 2,
-                                repeat: Infinity,
-                                ease: "easeInOut"
-                            }}
-                        />
+                        <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full opacity-0 group-hover:opacity-100 blur-lg transition-opacity duration-300"></div>
                         <div className="relative w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 via-pink-500 to-cyan-500 p-[3px] shadow-2xl">
                             <div className="w-full h-full rounded-full bg-primary/95 flex items-center justify-center">
                                 <img src="/favicon-32x32.png" alt="MHB Logo" className="w-7 h-7" />
@@ -67,18 +57,12 @@ const Header = () => {
                                 initial={{ opacity: 0, y: -20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.1 }}
-                                whileHover={{ scale: 1.08, y: -2 }}
+                                whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 className="relative px-5 py-2.5 text-sm font-semibold text-text-secondary hover:text-white transition-colors duration-300 rounded-full group"
                             >
                                 <span className="relative z-10">{item.label}</span>
-                                <motion.div
-                                    className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-cyan-500/30 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                                    layoutId="navHighlight"
-                                />
-                                <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                                </div>
+                                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </motion.a>
                         ))}
                     </div>

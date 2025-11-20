@@ -91,42 +91,17 @@ const Contact = () => {
                     >
                         <motion.a
                             href="mailto:mhbarut66@gmail.com"
-                            whileHover={{ y: -6, scale: 1.02 }}
+                            whileHover={{ y: -4, scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                             className="group relative overflow-hidden"
                         >
-                            <motion.div 
-                                className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-pink-500 to-cyan-500 rounded-3xl opacity-0 blur-xl group-hover:opacity-100 transition duration-500"
-                                animate={{
-                                    rotate: [0, 360],
-                                }}
-                                transition={{
-                                    duration: 8,
-                                    repeat: Infinity,
-                                    ease: "linear"
-                                }}
-                            />
-                            <div className="relative flex items-center gap-6 p-8 rounded-3xl bg-white/5 border-2 border-white/10 backdrop-blur-xl group-hover:border-white/20 transition-all duration-500">
-                                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-purple-400/50 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                            <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-pink-500 to-cyan-500 rounded-3xl opacity-0 blur group-hover:opacity-100 transition duration-500"></div>
+                            <div className="relative flex items-center gap-6 p-8 rounded-3xl bg-white/5 border-2 border-white/10 backdrop-blur-xl group-hover:border-white/20 transition-all duration-300">
                                 <div className="relative flex-shrink-0">
-                                    <motion.div 
-                                        className="absolute inset-0 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-2xl blur-lg opacity-70"
-                                        animate={{
-                                            scale: [1, 1.2, 1],
-                                        }}
-                                        transition={{
-                                            duration: 2,
-                                            repeat: Infinity,
-                                            ease: "easeInOut"
-                                        }}
-                                    />
-                                    <motion.div 
-                                        className="relative w-20 h-20 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-2xl flex items-center justify-center shadow-2xl"
-                                        whileHover={{ rotate: [0, -10, 10, 0] }}
-                                        transition={{ duration: 0.5 }}
-                                    >
+                                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-2xl blur-md opacity-60"></div>
+                                    <div className="relative w-20 h-20 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-2xl flex items-center justify-center shadow-2xl">
                                         <Mail className="w-10 h-10 text-white drop-shadow-lg" />
-                                    </motion.div>
+                                    </div>
                                 </div>
                                 <div>
                                     <h3 className="text-xl font-bold text-white mb-1 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-purple-200 group-hover:to-cyan-200 transition-all">E-posta</h3>
@@ -200,23 +175,12 @@ const Contact = () => {
                                 <motion.button
                                     type="submit"
                                     disabled={isLoading}
-                                    whileHover={{ scale: 1.02, y: -2 }}
+                                    whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
                                     className="group relative w-full py-5 px-8 rounded-2xl font-bold text-white text-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden shadow-2xl"
                                 >
                                     <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-500"></div>
-                                    <motion.div 
-                                        className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-500 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"
-                                        animate={{
-                                            scale: [1, 1.1, 1],
-                                        }}
-                                        transition={{
-                                            duration: 2,
-                                            repeat: Infinity,
-                                            ease: "easeInOut"
-                                        }}
-                                    />
-                                    <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,.3)_50%,transparent_75%,transparent_100%)] bg-[length:250%_250%,100%_100%] animate-[shimmer_3s_infinite]"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-500 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300"></div>
                                     <span className="relative flex items-center justify-center gap-3">
                                         {isLoading ? (
                                             <>
