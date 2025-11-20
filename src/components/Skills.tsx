@@ -1,80 +1,53 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Code2, Monitor, Smartphone, Brain, Server, Gamepad2 } from 'lucide-react';
 
 const Skills = () => {
+    const { t } = useTranslation();
+    
     const skills = [
         {
             icon: Server,
-            title: 'Backend Development',
+            title: t('skills.categories.backend.title'),
             gradient: 'from-purple-500 to-indigo-600',
             borderColor: 'border-purple-500/20 hover:border-purple-400/50',
-            items: [
-                '• Python (FastAPI) ile performanslı API\'ler',
-                '• Ölçeklenebilir REST API mimarisi',
-                '• PostgreSQL ile veritabanı tasarımı',
-                '• Sunucu tarafı mantık ve iş akışları'
-            ]
+            items: t('skills.categories.backend.items', { returnObjects: true }) as string[]
         },
         {
             icon: Monitor,
-            title: 'Frontend Development',
+            title: t('skills.categories.frontend.title'),
             gradient: 'from-green-500 to-emerald-600',
             borderColor: 'border-green-500/20 hover:border-green-400/50',
-            items: [
-                '• React & TypeScript ile modern arayüzler',
-                '• TailwindCSS ile hızlı ve tutarlı tasarım',
-                '• Duyarlı (Responsive) tasarım prensipleri',
-                '• State yönetimi ve component mimarisi'
-            ]
+            items: t('skills.categories.frontend.items', { returnObjects: true }) as string[]
         },
         {
             icon: Smartphone,
-            title: 'Mobile Development',
+            title: t('skills.categories.mobile.title'),
             gradient: 'from-blue-500 to-cyan-600',
             borderColor: 'border-blue-500/20 hover:border-blue-400/50',
-            items: [
-                '• Kotlin ile native Android geliştirme',
-                '• Jetpack Compose ile deklaratif UI',
-                '• Android Studio ve geliştirme araçları',
-                '• Materyal Tasarım ilkeleri'
-            ]
+            items: t('skills.categories.mobile.items', { returnObjects: true }) as string[]
         },
         {
             icon: Brain,
-            title: 'AI & Machine Learning',
+            title: t('skills.categories.ai.title'),
             gradient: 'from-violet-500 to-fuchsia-600',
             borderColor: 'border-violet-500/20 hover:border-violet-400/50',
-            items: [
-                '• OpenAI gibi LLM API\'lerinin entegrasyonu',
-                '• Üretken Yapay Zeka araçlarının kullanımı',
-                '• Temel Makine Öğrenmesi ve Veri Bilimi',
-                '• AI destekli uygulama geliştirme'
-            ]
+            items: t('skills.categories.ai.items', { returnObjects: true }) as string[]
         },
         {
             icon: Code2,
-            title: 'DevOps & Altyapı',
+            title: t('skills.categories.devops.title'),
             gradient: 'from-yellow-500 to-orange-600',
             borderColor: 'border-yellow-500/20 hover:border-yellow-400/50',
-            items: [
-                '• Linux (Ubuntu/Fedora) sunucu yönetimi',
-                '• Temel Git ve GitHub iş akışları',
-                '• Uygulamaları bulut ortamına taşıma',
-                '• Nginx, Docker gibi temel araçlar'
-            ]
+            items: t('skills.categories.devops.items', { returnObjects: true }) as string[]
         },
         {
             icon: Gamepad2,
-            title: 'Game Development',
+            title: t('skills.categories.game.title'),
             gradient: 'from-red-500 to-pink-600',
             borderColor: 'border-red-500/20 hover:border-red-400/50',
-            items: [
-                '• Unity 3D oyun motoru kullanımı',
-                '• C# ile oyun mekaniği programlama',
-                '• 3D oyun tasarımı ve fizik entegrasyonu',
-                '• Animasyon ve karakter kontrolü'
-            ]
+            items: t('skills.categories.game.items', { returnObjects: true }) as string[]
         }
     ];
 
@@ -129,7 +102,7 @@ const Skills = () => {
                         </div>
                     </motion.div>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent mb-6">
-                        Yetkinliklerim
+                        {t('skills.title')}
                     </h2>
                     <div className="w-32 h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 mx-auto rounded-full"></div>
                 </motion.div>
@@ -141,7 +114,7 @@ const Skills = () => {
                     viewport={{ once: true, amount: 0.2 }}
                     className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
                 >
-                    {skills.map((skill) => (
+                    {skills.map((skill, index) => (
                         <motion.div
                             key={skill.title}
                             variants={cardVariants}

@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Timeline from './Timeline';
 
 const About = () => {
+    const { t } = useTranslation();
     const paragraphVariants = {
         hidden: { opacity: 0, y: 40 },
         visible: (i: number) => ({
@@ -30,9 +32,9 @@ const About = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <p className="text-sm uppercase tracking-[0.4em] text-gray-400 mb-4">Hikayem</p>
+                    <p className="text-sm uppercase tracking-[0.4em] text-gray-400 mb-4">{t('about.subtitle')}</p>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent mb-6">
-                        Benim Hikayem
+                        {t('about.title')}
                     </h2>
                     <div className="w-32 h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 mx-auto rounded-full"></div>
                 </motion.div>
@@ -55,9 +57,9 @@ const About = () => {
                                 custom={index}
                                 className="text-lg md:text-xl text-gray-300 leading-relaxed mb-6 last:mb-0"
                             >
-                                {index === 0 && 'Merhaba! Ben Mehmet Halit. Benim için yazılım, bir dergide gördüğüm bir merak kıvılcımıyla başlayıp, kod yazabilmek için her fırsatı bir arayışa dönüştürdüğüm bir tutku yolculuğu. Her şey, Code.org ile bloklarla kod yazmanın heyecanını keşfetmemle başladı ve lisede yazdığım ilk Python satırlarıyla somut bir hedefe dönüştü.'}
-                                {index === 1 && 'Bu yolculuk boyunca, farklı teknolojileri sadece öğrenmekle kalmadım, aynı zamanda onları problem çözmek için birer araç olarak kullanmayı benimsedim. Kotlin ile mobil dünyanın kapılarını araladım, Unity ile oyun mekaniklerinin ardındaki mantığı çözdüm ve FastAPI ile güçlü backend sistemleri inşa ettim. Her proje, benim için teorik bilgiyi pratiğe dökme ve sürekli gelişme fırsatı oldu.'}
-                                {index === 2 && 'Bugün, yapay zekayı bir rakip olarak değil, yaratıcılığı artıran bir güçlendirici olarak görüyorum. Sağdaki zaman tüneli, bu öğrenme ve adaptasyon sürecindeki önemli kilometre taşlarını özetliyor.'}
+                                {index === 0 && t('about.paragraph1')}
+                                {index === 1 && t('about.paragraph2')}
+                                {index === 2 && t('about.paragraph3')}
                             </motion.p>
                         ))}
                     </motion.div>

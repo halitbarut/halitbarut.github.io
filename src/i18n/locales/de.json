@@ -1,0 +1,169 @@
+{
+  "meta": {
+    "title": "Mehmet Halit Barut | Software-Ingenieur",
+    "description": "Ein Entwickler, der Ideen in Code verwandelt, um konkrete Lösungen zu schaffen; kontinuierliches Lernen in Web, Mobil, Spiele und künstliche Intelligenz.",
+    "ogTitle": "Mehmet Halit Barut | Software-Ingenieur Portfolio",
+    "ogDescription": "Entdecken Sie meine Projekte und Fähigkeiten in Web, Mobil, Spiele und künstliche Intelligenz."
+  },
+  "nav": {
+    "home": "Startseite",
+    "about": "Über mich",
+    "skills": "Fähigkeiten",
+    "projects": "Projekte",
+    "contact": "Kontakt",
+    "backHome": "Zurück zur Startseite"
+  },
+  "hero": {
+    "badge": "Software-Engineering-Student",
+    "university": "Ankara Yıldırım Beyazıt Universität",
+    "description": "Ich bin ein Entwickler, der Ideen in Code verwandelt, um konkrete Lösungen zu schaffen; kontinuierliches Lernen in Web, Mobil, Spiele und künstliche Intelligenz.",
+    "githubProfile": "GitHub-Profil",
+    "getInTouch": "Kontakt aufnehmen"
+  },
+  "about": {
+    "subtitle": "Meine Geschichte",
+    "title": "Meine Geschichte",
+    "paragraph1": "Hallo! Ich bin Mehmet Halit. Für mich ist Software eine Reise der Leidenschaft, die mit einem Funken Neugier begann, den ich in einer Zeitschrift sah, und jede Gelegenheit in eine Suche nach dem Schreiben von Code verwandelte. Alles begann mit der Entdeckung der Aufregung des blockbasierten Programmierens auf Code.org und wurde zu einem konkreten Ziel mit meinen ersten Python-Zeilen in der Oberschule.",
+    "paragraph2": "Während dieser Reise habe ich nicht nur verschiedene Technologien gelernt, sondern auch angenommen, sie als Werkzeuge zur Problemlösung zu verwenden. Ich öffnete die Türen zur mobilen Welt mit Kotlin, löste die Logik hinter Spielmechaniken mit Unity und baute leistungsstarke Backend-Systeme mit FastAPI auf. Jedes Projekt war für mich eine Gelegenheit, theoretisches Wissen in die Praxis umzusetzen und mich ständig zu verbessern.",
+    "paragraph3": "Heute betrachte ich künstliche Intelligenz nicht als Konkurrenz, sondern als Verstärker, der die Kreativität steigert. Die Zeitleiste rechts fasst die wichtigen Meilensteine in diesem Lern- und Anpassungsprozess zusammen."
+  },
+  "timeline": {
+    "period1": {
+      "year": "~2016-2019",
+      "title": "Neugier und erste Gelegenheiten",
+      "description": "Ich nutzte jede Gelegenheit und lernte die Grundlagen von Code.org und Python mit den Ressourcen, auf die ich Zugriff hatte, und den Hardware-Bedingungen der Zeit. Diese Zeit war der Beginn meiner Leidenschaft für Problemlösung."
+    },
+    "period2": {
+      "year": "2021",
+      "title": "Karriereentscheidung: Mobile Entwicklung",
+      "description": "Durch die Entwicklung meiner ersten dynamischen mobilen App mit Kotlin erfasste ich die Kraft der Programmierung und wählte Software-Engineering als Karriere."
+    },
+    "period3": {
+      "year": "2022",
+      "title": "Einstieg in die Spieleentwicklung",
+      "description": "Ich bewies meine Problemlösungsfähigkeiten in einem anderen Technologie-Stack durch die Entwicklung von 3D-Spielen mit Unity und C#."
+    },
+    "period4": {
+      "year": "2023-2024",
+      "title": "Akademische Grundlage und Horizonte erweitern",
+      "description": "Während meines Universitätsvorbereitungsjahres vertiefte ich mein Wissen in grundlegenden Technologien wie Java und Git, und mein Interesse an KI wuchs mit dem BTK AI Summit. Diese Zeit legte die Grundlage für mein theoretisches Wissen."
+    },
+    "period5": {
+      "year": "2025",
+      "title": "Projektproduktion und Kompetenzentwicklung",
+      "description": "Ich entwickelte TicaretApp mit der Google AI and Technology Academy und sammelte Linux-Erfahrung (Ubuntu/Fedora), während ich Projekte in die Cloud verlagerte. Ich lernte Teamarbeit mit KI-unterstützten Projekten wie Perpetua und Çıkmış beim BTK Hackathon."
+    },
+    "period6": {
+      "year": "Heute & Zukunft",
+      "title": "Kontinuierliches Lernen und fortgeschrittene KI",
+      "description": "Während ich meine Ausbildung im maschinellen Lernen fortsetze, lerne ich durch Veranstaltungen wie den Generative AI und LLM Workshop, künstliche Intelligenz als Verstärker zu nutzen. Mein Ziel ist es, KI-gestützte, skalierbare Systeme mit robuster Infrastruktur zu entwickeln."
+    }
+  },
+  "skills": {
+    "title": "Technische Fähigkeiten",
+    "categories": {
+      "backend": {
+        "title": "Backend-Entwicklung",
+        "items": [
+          "• Leistungsstarke APIs mit Python (FastAPI)",
+          "• Skalierbare REST-API-Architektur",
+          "• Datenbankdesign mit PostgreSQL",
+          "• Serverseitige Logik und Workflows"
+        ]
+      },
+      "frontend": {
+        "title": "Frontend-Entwicklung",
+        "items": [
+          "• Moderne Oberflächen mit React & TypeScript",
+          "• Schnelles und konsistentes Design mit TailwindCSS",
+          "• Responsive Design-Prinzipien",
+          "• State-Management und Komponentenarchitektur"
+        ]
+      },
+      "mobile": {
+        "title": "Mobile Entwicklung",
+        "items": [
+          "• Native Android-Entwicklung mit Kotlin",
+          "• Deklarative UI mit Jetpack Compose",
+          "• Android Studio und Entwicklungstools",
+          "• Material Design-Prinzipien"
+        ]
+      },
+      "ai": {
+        "title": "KI & Machine Learning",
+        "items": [
+          "• Integration von LLM-APIs wie OpenAI",
+          "• Verwendung von Generative AI Tools",
+          "• Grundlegendes Machine Learning und Data Science",
+          "• KI-gestützte Anwendungsentwicklung"
+        ]
+      },
+      "devops": {
+        "title": "DevOps & Infrastruktur",
+        "items": [
+          "• Linux (Ubuntu/Fedora) Serververwaltung",
+          "• Grundlegende Git- und GitHub-Workflows",
+          "• Bereitstellung von Anwendungen in der Cloud",
+          "• Grundlegende Tools wie Nginx, Docker"
+        ]
+      },
+      "game": {
+        "title": "Spieleentwicklung",
+        "items": [
+          "• Verwendung der Unity 3D-Spiel-Engine",
+          "• Spielmechanik-Programmierung mit C#",
+          "• 3D-Spieldesign und Physik-Integration",
+          "• Animation und Charaktersteuerung"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "title": "Projekte",
+    "subtitle": "Meine Arbeit",
+    "viewDetails": "Details anzeigen",
+    "closeModal": "Schließen",
+    "viewOnGithub": "Auf GitHub ansehen",
+    "viewLiveDemo": "Live-Demo ansehen",
+    "technologies": "Technologien",
+    "project1": {
+      "title": "TicaretApp",
+      "shortDescription": "Full-Stack-E-Commerce-Plattform. Bietet ein umfassendes Online-Shopping-Erlebnis.",
+      "longDescription": "TicaretApp ist eine moderne Full-Stack-E-Commerce-Plattform. Aufgebaut auf einer leistungsstarken Backend-API, die mit Python FastAPI entwickelt wurde. Verwaltet Produkt-, Benutzer- und Bestelldaten mit PostgreSQL-Datenbank. Auf der Frontend-Seite wird eine benutzerfreundliche und dynamische Oberfläche mit React und TypeScript erstellt. In diesem Projekt habe ich mich eingehend mit REST-API-Design, Datenbankarchitektur und komponentenbasierter Frontend-Entwicklung beschäftigt."
+    },
+    "project2": {
+      "title": "Perpetua",
+      "shortDescription": "KI-gestützte, personalisierte Sprachlernplattform.",
+      "longDescription": "Perpetua ist eine KI-gestützte Sprachlernanwendung. Sie bietet personalisierte Lektionen, die sich an die Lernstile und das Tempo der Benutzer anpassen. Funktionen wie Textgenerierung, Übersetzung und Konversationspraxis mit OpenAI API. Das Projekt zielt darauf ab, das Sprachenlernen interaktiver und effizienter zu gestalten. Backend wird mit FastAPI entwickelt, Frontend mit React."
+    },
+    "project3": {
+      "title": "ZigZag",
+      "shortDescription": "Dynamisches und unterhaltsames Plattformspiel, entwickelt mit Unity 3D.",
+      "longDescription": "ZigZag ist ein 3D-Plattformspiel, das mit Unity 3D-Spiel-Engine und C# entwickelt wurde. Spieler versuchen, ihren Charakter auf sich ständig ändernden und zufällig generierten Plattformen am Leben zu erhalten. Das Projekt konzentriert sich auf dynamisches Level-Design, Spielphysik, Animationsverwaltung und Mobile-Game-Optimierung. Es bietet ein angenehmes Spielerlebnis mit flüssiger Gameplay-Mechanik."
+    }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "In Kontakt treten",
+    "description": "Möchten Sie an einem Projekt zusammenarbeiten oder einfach nur Hallo sagen?",
+    "emailMe": "E-Mail schreiben",
+    "form": {
+      "name": "Ihr Name",
+      "email": "Ihre E-Mail",
+      "message": "Ihre Nachricht",
+      "send": "Nachricht senden",
+      "sending": "Wird gesendet...",
+      "success": "Nachricht erfolgreich gesendet! Ich werde mich bald bei Ihnen melden.",
+      "error": "Etwas ist schief gelaufen. Bitte versuchen Sie es erneut oder senden Sie direkt eine E-Mail."
+    },
+    "validation": {
+      "nameMin": "Ihr Name muss mindestens 2 Zeichen lang sein.",
+      "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "messageMin": "Ihre Nachricht muss mindestens 10 Zeichen lang sein."
+    }
+  },
+  "footer": {
+    "copyright": "Alle Rechte vorbehalten.",
+    "quote": "\"Die Zukunft gestalten mit Leidenschaft für Technologie und dem Wunsch nach kontinuierlichem Lernen.\""
+  }
+}

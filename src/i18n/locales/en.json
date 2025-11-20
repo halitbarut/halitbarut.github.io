@@ -1,0 +1,169 @@
+{
+  "meta": {
+    "title": "Mehmet Halit Barut | Software Engineer",
+    "description": "A developer who turns ideas into code to produce concrete solutions; continuously learning in web, mobile, game, and artificial intelligence.",
+    "ogTitle": "Mehmet Halit Barut | Software Engineer Portfolio",
+    "ogDescription": "Discover my projects and skills in web, mobile, game, and artificial intelligence."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact",
+    "backHome": "Back to Home"
+  },
+  "hero": {
+    "badge": "Software Engineering Student",
+    "university": "Ankara Yıldırım Beyazıt University",
+    "description": "I'm a developer who turns ideas into code to produce concrete solutions; continuously learning in web, mobile, game, and artificial intelligence.",
+    "githubProfile": "GitHub Profile",
+    "getInTouch": "Get in Touch"
+  },
+  "about": {
+    "subtitle": "My Story",
+    "title": "My Story",
+    "paragraph1": "Hello! I'm Mehmet Halit. For me, software is a journey of passion that began with a spark of curiosity I saw in a magazine, turning every opportunity into a quest to write code. It all started with discovering the excitement of block-based coding on Code.org and turned into a concrete goal with my first Python lines in high school.",
+    "paragraph2": "Throughout this journey, I not only learned different technologies, but also adopted using them as tools to solve problems. I opened the doors to the mobile world with Kotlin, solved the logic behind game mechanics with Unity, and built powerful backend systems with FastAPI. Each project was an opportunity for me to put theoretical knowledge into practice and constantly improve.",
+    "paragraph3": "Today, I view artificial intelligence not as a competitor, but as an enhancer that augments creativity. The timeline on the right summarizes the important milestones in this learning and adaptation process."
+  },
+  "timeline": {
+    "period1": {
+      "year": "~2016-2019",
+      "title": "Curiosity and First Opportunities",
+      "description": "Making the most of every opportunity, I learned the basics of Code.org and Python with the resources I could access and the hardware conditions of the time. This period was the beginning of my passion for problem-solving."
+    },
+    "period2": {
+      "year": "2021",
+      "title": "Career Decision: Mobile Development",
+      "description": "By developing my first dynamic mobile app with Kotlin, I grasped the power of programming and chose software engineering as a career."
+    },
+    "period3": {
+      "year": "2022",
+      "title": "Stepping Into Game Development",
+      "description": "I proved my problem-solving skills in a different technology stack by developing 3D games with Unity and C#."
+    },
+    "period4": {
+      "year": "2023-2024",
+      "title": "Academic Foundation and Broadening Horizons",
+      "description": "During my university preparation year, I deepened my knowledge in fundamental technologies like Java and Git, and my interest in AI grew with the BTK AI Summit. This period laid the foundation for my theoretical knowledge."
+    },
+    "period5": {
+      "year": "2025",
+      "title": "Project Production and Skill Development",
+      "description": "I developed TicaretApp with Google AI and Technology Academy, gained Linux (Ubuntu/Fedora) experience while moving projects to the cloud. I learned teamwork with AI-supported projects like Perpetua and Çıkmış at BTK Hackathon."
+    },
+    "period6": {
+      "year": "Today & Future",
+      "title": "Continuous Learning and Advanced AI",
+      "description": "While continuing my machine learning training, I'm learning to use artificial intelligence as an enhancer through events like Generative AI and LLM Workshop. My goal is to develop AI-powered, scalable systems with robust infrastructure."
+    }
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "categories": {
+      "backend": {
+        "title": "Backend Development",
+        "items": [
+          "• Performant APIs with Python (FastAPI)",
+          "• Scalable REST API architecture",
+          "• Database design with PostgreSQL",
+          "• Server-side logic and workflows"
+        ]
+      },
+      "frontend": {
+        "title": "Frontend Development",
+        "items": [
+          "• Modern interfaces with React & TypeScript",
+          "• Fast and consistent design with TailwindCSS",
+          "• Responsive design principles",
+          "• State management and component architecture"
+        ]
+      },
+      "mobile": {
+        "title": "Mobile Development",
+        "items": [
+          "• Native Android development with Kotlin",
+          "• Declarative UI with Jetpack Compose",
+          "• Android Studio and development tools",
+          "• Material Design principles"
+        ]
+      },
+      "ai": {
+        "title": "AI & Machine Learning",
+        "items": [
+          "• Integration of LLM APIs like OpenAI",
+          "• Using Generative AI tools",
+          "• Basic Machine Learning and Data Science",
+          "• AI-powered application development"
+        ]
+      },
+      "devops": {
+        "title": "DevOps & Infrastructure",
+        "items": [
+          "• Linux (Ubuntu/Fedora) server management",
+          "• Basic Git and GitHub workflows",
+          "• Deploying applications to cloud",
+          "• Basic tools like Nginx, Docker"
+        ]
+      },
+      "game": {
+        "title": "Game Development",
+        "items": [
+          "• Using Unity 3D game engine",
+          "• Game mechanics programming with C#",
+          "• 3D game design and physics integration",
+          "• Animation and character control"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "My Work",
+    "viewDetails": "View Details",
+    "closeModal": "Close",
+    "viewOnGithub": "View on GitHub",
+    "viewLiveDemo": "View Live Demo",
+    "technologies": "Technologies",
+    "project1": {
+      "title": "TicaretApp",
+      "shortDescription": "Full-stack e-commerce platform. Provides a comprehensive online shopping experience.",
+      "longDescription": "TicaretApp is a modern full-stack e-commerce platform. Built on a powerful backend API developed with Python FastAPI. Manages product, user, and order data with PostgreSQL database. On the frontend side, a user-friendly and dynamic interface is created using React and TypeScript. In this project, I worked in-depth on REST API design, database architecture, and component-based frontend development."
+    },
+    "project2": {
+      "title": "Perpetua",
+      "shortDescription": "AI-powered, personalized language learning platform.",
+      "longDescription": "Perpetua is an AI-powered language learning application. It offers personalized lessons that adapt to users' learning styles and pace. Features like text generation, translation, and conversation practice using OpenAI API. The project aims to make language learning more interactive and efficient. Backend is developed with FastAPI, frontend with React."
+    },
+    "project3": {
+      "title": "ZigZag",
+      "shortDescription": "Dynamic and fun platform game developed with Unity 3D.",
+      "longDescription": "ZigZag is a 3D platform game developed using Unity 3D game engine and C#. Players try to keep their character alive on constantly changing and randomly generated platforms. The project focuses on dynamic level design, game physics, animation management, and mobile game optimization. It offers an enjoyable gaming experience with smooth gameplay mechanics."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Get In Touch",
+    "description": "Want to collaborate on a project or just want to say hi?",
+    "emailMe": "Email Me",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "message": "Your Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully! I will get back to you soon.",
+      "error": "Something went wrong. Please try again or send an email directly."
+    },
+    "validation": {
+      "nameMin": "Your name must be at least 2 characters.",
+      "emailInvalid": "Please enter a valid email address.",
+      "messageMin": "Your message must be at least 10 characters."
+    }
+  },
+  "footer": {
+    "copyright": "All rights reserved.",
+    "quote": "\"Shaping the future with a passion for technology and a desire for continuous learning.\""
+  }
+}
