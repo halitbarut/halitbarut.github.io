@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -10,6 +10,8 @@
     --bg-elevated: #060a1f;
     --border-muted: rgba(255, 255, 255, 0.08);
     --text-primary: #F5F7FB;
+    --gold: #FFD700;
+    --gold-light: #FFF4B8;
 }
 
 * {
@@ -32,8 +34,9 @@ body {
 
 #root {
     min-height: 100vh;
-    background: radial-gradient(circle at 10% 20%, rgba(43, 10, 61, 0.65) 0%, transparent 50%),
-                radial-gradient(circle at 90% 0%, rgba(11, 136, 192, 0.45) 0%, transparent 50%),
+    background: radial-gradient(circle at 10% 20%, rgba(43, 10, 61, 0.75) 0%, transparent 50%),
+                radial-gradient(circle at 90% 0%, rgba(11, 136, 192, 0.65) 0%, transparent 50%),
+                radial-gradient(circle at 50% 100%, rgba(139, 92, 246, 0.35) 0%, transparent 50%),
                 var(--bg-base);
     position: relative;
     overflow-x: hidden;
@@ -127,9 +130,79 @@ body {
     }
 }
 
+@keyframes float-slow {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+    }
+    25% {
+        transform: translateY(-20px) translateX(10px);
+    }
+    50% {
+        transform: translateY(-10px) translateX(-10px);
+    }
+    75% {
+        transform: translateY(-30px) translateX(5px);
+    }
+}
+
+@keyframes glow-pulse {
+    0%, 100% {
+        opacity: 0.5;
+        filter: blur(40px);
+    }
+    50% {
+        opacity: 0.8;
+        filter: blur(60px);
+    }
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(168, 85, 247, 0.8);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: width 0.15s ease, height 0.15s ease, border-color 0.15s ease;
+    mix-blend-mode: difference;
+}
+
+.custom-cursor::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4px;
+    height: 4px;
+    background: rgba(168, 85, 247, 0.8);
+    border-radius: 50%;
+}
+
+.custom-cursor.hover {
+    width: 60px;
+    height: 60px;
+    border-color: rgba(6, 182, 212, 0.8);
+    background: rgba(6, 182, 212, 0.1);
+}
+
 @media (max-width: 768px) {
     .container {
         padding-right: 1.25rem;
         padding-left: 1.25rem;
+    }
+    
+    .custom-cursor {
+        display: none;
     }
 }

@@ -51,30 +51,8 @@ const Hero = () => {
     return (
         <section id="hero" className="min-h-screen flex items-center justify-center relative px-6 lg:px-0">
             <div className="absolute inset-0 overflow-hidden">
-                <motion.div
-                    animate={{
-                        scale: [1, 1.2, 1],
-                        rotate: [0, 90, 0],
-                    }}
-                    transition={{
-                        duration: 20,
-                        repeat: Infinity,
-                        ease: "linear"
-                    }}
-                    className="absolute top-1/4 -right-20 w-96 h-96 rounded-full bg-gradient-to-br from-purple-600/30 to-pink-600/30 blur-3xl"
-                />
-                <motion.div
-                    animate={{
-                        scale: [1.2, 1, 1.2],
-                        rotate: [90, 0, 90],
-                    }}
-                    transition={{
-                        duration: 25,
-                        repeat: Infinity,
-                        ease: "linear"
-                    }}
-                    className="absolute bottom-1/4 -left-20 w-96 h-96 rounded-full bg-gradient-to-br from-cyan-600/30 to-blue-600/30 blur-3xl"
-                />
+                <div className="absolute top-1/4 -right-20 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-purple-600/30 via-pink-600/20 to-rose-600/30 blur-[100px] animate-pulse" />
+                <div className="absolute bottom-1/4 -left-20 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-cyan-600/30 via-blue-600/20 to-indigo-600/30 blur-[100px] animate-[pulse_12s_ease-in-out_infinite]" />
             </div>
 
             <div className="container mx-auto text-center relative z-10">
@@ -155,30 +133,30 @@ const Hero = () => {
                         href="https://github.com/halitbarut"
                         target="_blank"
                         rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05, y: -2 }}
-                        whileTap={{ scale: 0.98 }}
-                        className="group relative px-8 py-4 rounded-full font-semibold flex items-center gap-3 overflow-hidden"
+                        whileHover={{ scale: 1.05, y: -3 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="group relative px-10 py-5 rounded-full font-bold flex items-center gap-3 overflow-hidden shadow-2xl"
                     >
                         <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-500 rounded-full"></div>
-                        <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-500 rounded-full opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"></div>
-                        <div className="relative flex items-center gap-3 text-white">
-                            <Github className="w-5 h-5" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-500 rounded-full blur-xl opacity-0 group-hover:opacity-75 transition-opacity duration-300"></div>
+                        <div className="relative flex items-center gap-3 text-white text-lg">
+                            <Github className="w-6 h-6" />
                             <span>GitHub Profilim</span>
-                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
                         </div>
                     </motion.a>
 
                     <motion.a
                         href="#contact"
-                        whileHover={{ scale: 1.05, y: -2 }}
-                        whileTap={{ scale: 0.98 }}
-                        className="group relative px-8 py-4 rounded-full font-semibold overflow-hidden"
+                        whileHover={{ scale: 1.05, y: -3 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="group relative px-10 py-5 rounded-full font-bold overflow-hidden shadow-2xl"
                     >
-                        <div className="absolute inset-0 bg-white/5 backdrop-blur-xl rounded-full border border-white/10"></div>
+                        <div className="absolute inset-0 bg-white/5 backdrop-blur-xl rounded-full border-2 border-white/20"></div>
                         <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-cyan-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <span className="relative text-white flex items-center gap-2">
+                        <span className="relative text-white flex items-center gap-2 text-lg">
                             İletişime Geç
-                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
                         </span>
                     </motion.a>
                 </motion.div>

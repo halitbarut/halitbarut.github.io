@@ -27,7 +27,7 @@ const Header = () => {
             transition={{ type: "spring", stiffness: 100, damping: 20 }}
             className={`fixed top-0 w-full z-50 transition-all duration-500 ${
                 isScrolled
-                    ? 'bg-primary/60 backdrop-blur-2xl border-b border-white/5 shadow-2xl'
+                    ? 'bg-primary/70 backdrop-blur-3xl border-b border-white/10 shadow-2xl'
                     : 'bg-transparent'
             }`}
         >
@@ -36,20 +36,20 @@ const Header = () => {
                     <motion.a
                         href="#hero"
                         aria-label="Anasayfaya dön"
-                        whileHover={{ scale: 1.1, rotate: 360 }}
+                        whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
                         transition={{ type: "spring", stiffness: 400, damping: 17 }}
                         className="relative group"
                     >
-                        <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300"></div>
-                        <div className="relative w-11 h-11 rounded-full bg-gradient-to-br from-purple-500 via-pink-500 to-cyan-500 p-[2px] shadow-lg">
+                        <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full opacity-0 group-hover:opacity-100 blur-lg transition-opacity duration-300"></div>
+                        <div className="relative w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 via-pink-500 to-cyan-500 p-[3px] shadow-2xl">
                             <div className="w-full h-full rounded-full bg-primary/95 flex items-center justify-center">
-                                <img src="/favicon-32x32.png" alt="MHB Logo" className="w-6 h-6" />
+                                <img src="/favicon-32x32.png" alt="MHB Logo" className="w-7 h-7" />
                             </div>
                         </div>
                     </motion.a>
 
-                    <div className="hidden md:flex items-center gap-1 px-3 py-2 rounded-full bg-white/5 backdrop-blur-xl border border-white/10">
+                    <div className="hidden md:flex items-center gap-2 px-4 py-3 rounded-full bg-white/5 backdrop-blur-xl border-2 border-white/10 shadow-xl">
                         {navItems.map((item, index) => (
                             <motion.a
                                 key={item.href}
@@ -59,13 +59,10 @@ const Header = () => {
                                 transition={{ delay: index * 0.1 }}
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="relative px-4 py-2 text-sm font-medium text-text-secondary hover:text-white transition-colors duration-300 rounded-full group"
+                                className="relative px-5 py-2.5 text-sm font-semibold text-text-secondary hover:text-white transition-colors duration-300 rounded-full group"
                             >
                                 <span className="relative z-10">{item.label}</span>
-                                <motion.div
-                                    className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-full opacity-0 group-hover:opacity-100"
-                                    layoutId="navHighlight"
-                                />
+                                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </motion.a>
                         ))}
                     </div>
@@ -74,7 +71,7 @@ const Header = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.5 }}
-                        className="hidden md:block w-11 h-11"
+                        className="hidden md:block w-12 h-12"
                     ></motion.div>
                 </div>
             </nav>
