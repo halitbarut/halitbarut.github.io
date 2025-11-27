@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Github, ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -7,14 +7,24 @@ const Hero = () => {
     const { t } = useTranslation();
     const name = "Mehmet Halit".split("");
     const surname = "Barut".split("");
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.03,
-                delayChildren: 0.2,
+                staggerChildren: isMobile ? 0.02 : 0.03,
+                delayChildren: isMobile ? 0.1 : 0.2,
             },
         },
     };
@@ -22,9 +32,9 @@ const Hero = () => {
     const letterVariants = {
         hidden: { 
             opacity: 0, 
-            y: 50,
-            scale: 0.5,
-            rotateX: -90,
+            y: isMobile ? 20 : 50,
+            scale: isMobile ? 0.9 : 0.5,
+            rotateX: isMobile ? 0 : -90,
         },
         visible: {
             opacity: 1,
@@ -33,11 +43,11 @@ const Hero = () => {
             rotateX: 0,
             transition: {
                 type: "spring",
-                damping: 12,
-                stiffness: 100,
+                damping: isMobile ? 15 : 12,
+                stiffness: isMobile ? 150 : 100,
             },
         },
-        hover: {
+        hover: isMobile ? {} : {
             y: -8,
             scale: 1.1,
             color: "#06b6d4",
@@ -51,10 +61,13 @@ const Hero = () => {
     };
 
     return (
-        <section id="hero" className="min-h-screen flex items-center justify-center relative px-6 lg:px-0">
+        <section id="hero" className="min-h-screen flex items-center justify-center relative px-4 sm:px-6 lg:px-0">
             <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute top-1/4 -right-20 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-purple-600/30 via-pink-600/20 to-rose-600/30 blur-[100px] animate-pulse" />
-                <div className="absolute bottom-1/4 -left-20 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-cyan-600/30 via-blue-600/20 to-indigo-600/30 blur-[100px] animate-[pulse_12s_ease-in-out_infinite]" />
+                <div className="hidden md:block absolute top-1/4 -right-20 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-purple-600/30 via-pink-600/20 to-rose-600/30 blur-[100px] animate-pulse" />
+                <div className="md:hidden absolute top-1/4 -right-10 w-[250px] h-[250px] rounded-full bg-gradient-to-br from-purple-600/20 via-pink-600/15 to-rose-600/20 blur-[50px]" />
+                
+                <div className="hidden md:block absolute bottom-1/4 -left-20 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-cyan-600/30 via-blue-600/20 to-indigo-600/30 blur-[100px] animate-[pulse_12s_ease-in-out_infinite]" />
+                <div className="md:hidden absolute bottom-1/4 -left-10 w-[250px] h-[250px] rounded-full bg-gradient-to-br from-cyan-600/20 via-blue-600/15 to-indigo-600/20 blur-[50px]" />
             </div>
 
             <div className="container mx-auto text-center relative z-10">
@@ -75,15 +88,15 @@ const Hero = () => {
                     className="mb-8"
                 >
                     <motion.h1
-                        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-tight cursor-default"
-                        whileHover="hover"
+                        className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-tight cursor-default"
+                        whileHover={isMobile ? undefined : "hover"}
                     >
                         <div className="inline-block">
                             {name.map((letter, index) => (
                                 <motion.span
                                     key={`name-${index}`}
                                     variants={letterVariants}
-                                    className="inline-block text-white hover:text-cyan-400 transition-colors"
+                                    className="inline-block text-white md:hover:text-cyan-400 transition-colors"
                                     style={{
                                         display: 'inline-block',
                                         fontWeight: 700,
@@ -98,7 +111,7 @@ const Hero = () => {
                                 <motion.span
                                     key={`surname-${index}`}
                                     variants={letterVariants}
-                                    className="inline-block bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent hover:from-cyan-400 hover:via-purple-400 hover:to-pink-400"
+                                    className="inline-block bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent md:hover:from-cyan-400 md:hover:via-purple-400 md:hover:to-pink-400"
                                     style={{
                                         display: 'inline-block',
                                         fontWeight: 700,
@@ -128,37 +141,37 @@ const Hero = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1, duration: 0.6 }}
-                    className="flex flex-col sm:flex-row gap-5 justify-center items-center"
+                    transition={{ delay: isMobile ? 0.5 : 1, duration: 0.6 }}
+                    className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center items-center w-full sm:w-auto px-4 sm:px-0"
                 >
                     <motion.a
                         href="https://github.com/halitbarut"
                         target="_blank"
                         rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05, y: -3 }}
+                        whileHover={isMobile ? undefined : { scale: 1.05, y: -3 }}
                         whileTap={{ scale: 0.95 }}
-                        className="group relative px-10 py-5 rounded-full font-bold flex items-center gap-3 overflow-hidden shadow-2xl"
+                        className="group relative w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold flex items-center justify-center gap-3 overflow-hidden shadow-2xl touch-manipulation"
                     >
                         <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-500 rounded-full"></div>
-                        <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-500 rounded-full blur-xl opacity-0 group-hover:opacity-75 transition-opacity duration-300"></div>
-                        <div className="relative flex items-center gap-3 text-white text-lg">
-                            <Github className="w-6 h-6" />
+                        <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-500 rounded-full blur-xl opacity-0 group-hover:opacity-75 transition-opacity duration-300"></div>
+                        <div className="relative flex items-center gap-2 sm:gap-3 text-white text-base sm:text-lg">
+                            <Github className="w-5 h-5 sm:w-6 sm:h-6" />
                             <span>{t('hero.githubProfile')}</span>
-                            <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
+                            <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 md:group-hover:translate-x-1 transition-transform duration-300" />
                         </div>
                     </motion.a>
 
                     <motion.a
                         href="#contact"
-                        whileHover={{ scale: 1.05, y: -3 }}
+                        whileHover={isMobile ? undefined : { scale: 1.05, y: -3 }}
                         whileTap={{ scale: 0.95 }}
-                        className="group relative px-10 py-5 rounded-full font-bold overflow-hidden shadow-2xl"
+                        className="group relative w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold overflow-hidden shadow-2xl touch-manipulation"
                     >
                         <div className="absolute inset-0 bg-white/5 backdrop-blur-xl rounded-full border-2 border-white/20"></div>
-                        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-cyan-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <span className="relative text-white flex items-center gap-2 text-lg">
+                        <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-purple-600/20 to-cyan-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <span className="relative text-white flex items-center justify-center gap-2 text-base sm:text-lg">
                             {t('hero.getInTouch')}
-                            <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
+                            <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 md:group-hover:translate-x-1 transition-transform duration-300" />
                         </span>
                     </motion.a>
                 </motion.div>

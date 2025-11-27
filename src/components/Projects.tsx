@@ -23,37 +23,37 @@ const Projects = () => {
 
     return (
         <>
-            <section id="projects" className="py-24 relative">
+            <section id="projects" className="py-16 sm:py-24 relative">
                 <div className="absolute inset-0">
-                    <div className="absolute top-1/3 right-0 w-80 h-80 rounded-full bg-purple-600/20 blur-[140px]" />
-                    <div className="absolute bottom-0 left-1/4 w-96 h-96 rounded-full bg-cyan-500/20 blur-[160px]" />
+                    <div className="hidden md:block absolute top-1/3 right-0 w-80 h-80 rounded-full bg-purple-600/20 blur-[140px]" />
+                    <div className="hidden md:block absolute bottom-0 left-1/4 w-96 h-96 rounded-full bg-cyan-500/20 blur-[160px]" />
                 </div>
-                <div className="container mx-auto px-6 relative">
+                <div className="container mx-auto px-4 sm:px-6 relative">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="text-center mb-20"
+                        className="text-center mb-12 sm:mb-16 md:mb-20"
                     >
                         <motion.div
                             initial={{ scale: 0 }}
                             whileInView={{ scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                            className="inline-block mb-4"
+                            className="inline-block mb-3 sm:mb-4"
                         >
-                            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center mx-auto mb-6">
-                                <FolderKanban className="w-8 h-8 text-white" />
+                            <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                                <FolderKanban className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                             </div>
                         </motion.div>
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent mb-6">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent mb-4 sm:mb-6">
                             {t('projects.title')}
                         </h2>
-                        <div className="w-32 h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 mx-auto rounded-full"></div>
+                        <div className="w-24 sm:w-32 h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 mx-auto rounded-full"></div>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
                         {projects.map((project, index) => (
                             <ScrollReveal key={project.id} delay={index * 0.1}>
                                 <ProjectCard

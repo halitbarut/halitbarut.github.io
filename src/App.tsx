@@ -26,11 +26,13 @@ function App() {
             <div className="absolute inset-0">
                 <div className="grid-overlay" aria-hidden />
                 
-                <div className="absolute -top-32 right-0 w-[600px] h-[600px] bg-gradient-to-br from-purple-700/60 via-pink-600/30 to-cyan-500/30 blur-[130px] animate-pulse" />
+                <div className="hidden md:block absolute -top-32 right-0 w-[600px] h-[600px] bg-gradient-to-br from-purple-700/60 via-pink-600/30 to-cyan-500/30 blur-[130px] animate-pulse" />
+                <div className="md:hidden absolute -top-20 right-0 w-[300px] h-[300px] bg-gradient-to-br from-purple-700/40 via-pink-600/20 to-cyan-500/20 blur-[60px]" />
                 
-                <div className="absolute -bottom-10 -left-10 w-[520px] h-[520px] bg-gradient-to-br from-cyan-400/30 via-blue-500/20 to-purple-700/50 blur-[150px] animate-[pulse_12s_ease-in-out_infinite]" />
+                <div className="hidden md:block absolute -bottom-10 -left-10 w-[520px] h-[520px] bg-gradient-to-br from-cyan-400/30 via-blue-500/20 to-purple-700/50 blur-[150px] animate-[pulse_12s_ease-in-out_infinite]" />
+                <div className="md:hidden absolute -bottom-10 -left-10 w-[280px] h-[280px] bg-gradient-to-br from-cyan-400/20 via-blue-500/15 to-purple-700/30 blur-[50px]" />
                 
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gradient-to-br from-yellow-500/15 via-orange-500/10 to-pink-500/15 blur-[100px] rounded-full animate-[pulse_15s_ease-in-out_infinite]" />
+                <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gradient-to-br from-yellow-500/15 via-orange-500/10 to-pink-500/15 blur-[100px] rounded-full animate-[pulse_15s_ease-in-out_infinite]" />
             </div>
             
             <div className="noise-overlay" aria-hidden />
