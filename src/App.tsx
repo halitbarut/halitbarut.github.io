@@ -11,7 +11,11 @@ import Footer from './components/Footer';
 import ScrollReveal from './components/ScrollReveal';
 
 function App() {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+
+    React.useEffect(() => {
+        document.documentElement.lang = i18n.language;
+    }, [i18n.language]);
     
     return (
         <div className="relative min-h-screen bg-[#030014] text-text-primary overflow-hidden">
