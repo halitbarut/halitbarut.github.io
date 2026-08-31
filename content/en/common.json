@@ -28,7 +28,7 @@
     "lastName": "Barut",
     "title": "Software Engineering Student",
     "university": "Ankara Yıldırım Beyazıt University",
-    "introduction": "I'm a developer who turns ideas into code to produce concrete solutions; continuously learning in web, mobile, game, and artificial intelligence.",
+    "introduction": "Software Engineering student building scalable, high-performance digital products by bridging artificial intelligence with modern web and mobile architectures.",
     "about": "",
     "social": {
       "github": "https://github.com/halitbarut",
@@ -39,40 +39,40 @@
   "about": {
     "subtitle": "My Story",
     "title": "My Story",
-    "paragraph1": "Hello! I'm Mehmet Halit. For me, software is a journey of passion that began with a spark of curiosity I saw in a magazine, turning every opportunity into a quest to write code. It all started with discovering the excitement of block-based coding on Code.org and turned into a concrete goal with my first Python lines in high school.",
-    "paragraph2": "Throughout this journey, I not only learned different technologies, but also adopted using them as tools to solve problems. I opened the doors to the mobile world with Kotlin, solved the logic behind game mechanics with Unity, and built powerful backend systems with FastAPI. Each project was an opportunity for me to put theoretical knowledge into practice and constantly improve.",
-    "paragraph3": "Today, I view artificial intelligence not as a competitor, but as an enhancer that augments creativity. The timeline on the right summarizes the important milestones in this learning and adaptation process."
+    "paragraph1": "My journey in software began with a spark of curiosity from a magazine article. After building my initial programming foundation in Python, I embraced various technologies not just to learn them, but as powerful tools to solve real-world engineering problems.",
+    "paragraph2": "Along the way, I practiced native mobile development with Kotlin, explored 3D systems and physics optimization with Unity, and architected robust backend services using FastAPI and PostgreSQL. Each project served as a gateway to translate theoretical CS principles into scalable software.",
+    "paragraph3": "Today, I view Artificial Intelligence as a transformative force multiplier. With my primary focus on Applied AI and LLM-driven systems, I build resilient digital products backed by modern web and mobile infrastructures."
   },
   "timeline": {
     "period1": {
-      "year": "~2016-2019",
-      "title": "Curiosity and First Opportunities",
-      "description": "Making the most of every opportunity, I learned the basics of Code.org and Python with the resources I could access and the hardware conditions of the time. This period was the beginning of my passion for problem-solving."
+      "year": "2016-2019",
+      "title": "Algorithmic Foundations & Core Python",
+      "description": "Maximized accessible resources to master fundamental programming principles and problem-solving with Python."
     },
     "period2": {
       "year": "2021",
-      "title": "Career Decision: Mobile Development",
-      "description": "By developing my first dynamic mobile app with Kotlin, I grasped the power of programming and chose software engineering as a career."
+      "title": "Mobile Architecture & Native Development",
+      "description": "Built dynamic mobile applications with Kotlin, diving into declarative UI paradigms and native mobile architecture."
     },
     "period3": {
       "year": "2022",
-      "title": "Stepping Into Game Development",
-      "description": "I proved my problem-solving skills in a different technology stack by developing 3D games with Unity and C#."
+      "title": "Game Mechanics & System Design",
+      "description": "Engineered 3D game mechanics with Unity and C#, gaining practical experience in physics optimization and object-oriented design."
     },
     "period4": {
       "year": "2023-2024",
-      "title": "Academic Foundation and Broadening Horizons",
-      "description": "During my university preparation year, I deepened my knowledge in fundamental technologies like Java and Git, and my interest in AI grew with the BTK AI Summit. This period laid the foundation for my theoretical knowledge."
+      "title": "Academic Rigor & Core CS",
+      "description": "Deepened core computer science foundations (Java, Git, Linux) at AYBÜ, shaping my strong academic and practical interest in AI."
     },
     "period5": {
       "year": "2025",
-      "title": "Project Production and Skill Development",
-      "description": "I developed TicaretApp with Google AI and Technology Academy, gained Linux (Ubuntu/Fedora) experience while moving projects to the cloud. I learned teamwork with AI-supported projects like Perpetua and Çıkmış at BTK Hackathon."
+      "title": "Production Projects & Hackathons",
+      "description": "Architected end-to-end cloud and AI-driven projects like Perpetua and TicaretApp during the Google AI Academy and BTK Hackathon."
     },
     "period6": {
-      "year": "Today & Future",
-      "title": "Continuous Learning and Advanced AI",
-      "description": "While continuing my machine learning training, I'm learning to use artificial intelligence as an enhancer through events like Generative AI and LLM Workshop. My goal is to develop AI-powered, scalable systems with robust infrastructure."
+      "year": "Present & Future",
+      "title": "Applied AI & Scalable Architectures",
+      "description": "Focusing primarily on LLM integrations, machine learning systems, and engineering AI-augmented scalable platforms."
     }
   },
   "skills": [
@@ -111,7 +111,7 @@
     {
       "id": "ticaretapp",
       "name": "TicaretApp",
-      "shortDescription": "Full-stack e-commerce platform. Provides a comprehensive online shopping experience.",
+      "shortDescription": "Full-stack e-commerce platform built with FastAPI and PostgreSQL, featuring JWT authentication, optimized REST APIs, and a modern React frontend.",
       "problem": "Building a scalable full-stack e-commerce solution with modern architecture.",
       "solution": "TicaretApp is a modern full-stack e-commerce platform. Built on a powerful backend API developed with Python FastAPI. Manages product, user, and order data with PostgreSQL database. On the frontend side, a user-friendly and dynamic interface is created using React and TypeScript. In this project, I worked in-depth on REST API design, database architecture, and component-based frontend development.",
       "technologies": ["Python", "FastAPI", "PostgreSQL", "React", "TypeScript", "TailwindCSS"],
@@ -123,7 +123,7 @@
     {
       "id": "perpetua",
       "name": "Perpetua",
-      "shortDescription": "AI-powered, personalized language learning platform.",
+      "shortDescription": "AI-powered personalized language acquisition platform leveraging the OpenAI API and advanced prompt engineering for dynamic content generation.",
       "problem": "Creating an adaptive language learning experience powered by artificial intelligence.",
       "solution": "Perpetua is an AI-powered language learning application. It offers personalized lessons that adapt to users' learning styles and pace. Features like text generation, translation, and conversation practice using OpenAI API. The project aims to make language learning more interactive and efficient. Backend is developed with FastAPI, frontend with React.",
       "technologies": ["Python", "FastAPI", "OpenAI API", "React", "Next.js"],
@@ -135,7 +135,7 @@
     {
       "id": "zigzag",
       "name": "ZigZag",
-      "shortDescription": "Dynamic and fun platform game developed with Unity 3D.",
+      "shortDescription": "Dynamic 3D arcade platformer developed in Unity & C#, emphasizing physics engine optimization and clean OOP architecture.",
       "problem": "Designing an engaging and replayable mobile platform game.",
       "solution": "ZigZag is a 3D platform game developed using Unity 3D game engine and C#. Players try to keep their character alive on constantly changing and randomly generated platforms. The project focuses on dynamic level design, game physics, animation management, and mobile game optimization. It offers an enjoyable gaming experience with smooth gameplay mechanics.",
       "technologies": ["Unity 3D", "C#", "Game Design", "Physics", "Animation"],
