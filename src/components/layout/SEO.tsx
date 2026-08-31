@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 
 interface SEOProps {
   title?: string;
@@ -11,30 +12,36 @@ interface SEOProps {
 }
 
 export default function SEO({
-  title = "Developer Portfolio",
-  description = "Professional developer portfolio showcasing my projects and experience.",
+  title,
+  description,
   type = "website",
-  name = "Developer Portfolio",
+  name,
   image = "/og-image.jpg",
-  url = "https://example.com" // Update with real URL later
+  url = "https://halitbarut.github.io"
 }: SEOProps) {
+  const { t } = useTranslation();
+
+  const finalTitle = title || t('meta.title', { defaultValue: 'Mehmet Halit Barut | Yazılım Mühendisi' });
+  const finalDescription = description || t('meta.description', { defaultValue: 'Fikirleri koda dönüştürerek somut çözümler üreten; web, mobil, oyun ve yapay zeka alanlarında sürekli öğrenen bir geliştirici.' });
+  const finalName = name || t('profile.name', { defaultValue: 'Mehmet Halit Barut' });
+
   return (
     <Helmet>
       {/* Standard metadata tags */}
-      <title>{title}</title>
-      <meta name="description" content={description} />
+      <title>{finalTitle}</title>
+      <meta name="description" content={finalDescription} />
       {/* Open Graph metadata */}
       <meta property="og:type" content={type} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:site_name" content={name} />
+      <meta property="og:title" content={finalTitle} />
+      <meta property="og:description" content={finalDescription} />
+      <meta property="og:site_name" content={finalName} />
       <meta property="og:url" content={url} />
       <meta property="og:image" content={image} />
       {/* Twitter metadata */}
-      <meta name="twitter:creator" content={name} />
+      <meta name="twitter:creator" content={finalName} />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
+      <meta name="twitter:title" content={finalTitle} />
+      <meta name="twitter:description" content={finalDescription} />
       <meta name="twitter:image" content={image} />
     </Helmet>
   );
