@@ -8,7 +8,12 @@
   "hero": {
     "badge": "Software-Engineering-Student",
     "viewProjects": "GitHub-Profil",
-    "contactMe": "Kontakt aufnehmen"
+    "contactMe": "Kontakt aufnehmen",
+    "badges": {
+      "ai": "KI & LLM",
+      "mobile": "Mobile Entwicklung",
+      "web": "Moderne Webarchitektur"
+    }
   },
   "sections": {
     "about": "Meine Geschichte",

@@ -8,7 +8,12 @@
   "hero": {
     "badge": "Software Engineering Student",
     "viewProjects": "GitHub Profile",
-    "contactMe": "Get in Touch"
+    "contactMe": "Get in Touch",
+    "badges": {
+      "ai": "AI & LLM",
+      "mobile": "Mobile Development",
+      "web": "Modern Web Architecture"
+    }
   },
   "sections": {
     "about": "My Story",

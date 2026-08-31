@@ -8,7 +8,12 @@
   "hero": {
     "badge": "Yazılım Mühendisliği Öğrencisi",
     "viewProjects": "GitHub Profilim",
-    "contactMe": "İletişime Geç"
+    "contactMe": "İletişime Geç",
+    "badges": {
+      "ai": "Yapay Zeka & LLM",
+      "mobile": "Mobil Geliştirme",
+      "web": "Modern Web Mimarisi"
+    }
   },
   "sections": {
     "about": "Benim Hikayem",
