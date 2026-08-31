@@ -29,8 +29,16 @@ i18n
     interpolation: {
       escapeValue: false 
     },
-    // Disable browser language detection — always start with Turkish
+    // Disable browser language detection — always start with Turkish unless saved
     detection: undefined,
   });
+
+// Synchronize the HTML document lang attribute immediately and on language change
+if (typeof document !== 'undefined') {
+  document.documentElement.lang = i18n.language || savedLang;
+  i18n.on('languageChanged', (lng) => {
+    document.documentElement.lang = lng;
+  });
+}
 
 export default i18n;

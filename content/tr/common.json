@@ -52,7 +52,7 @@
     "period2": {
       "year": "2021",
       "title": "Mobil Mimariler & Native Deneyim",
-      "description": "Kotlin ile dinamik mobil uygulamalar geliştirerek declarative UI ve mobil yazılım mimarilerini pratik ettim."
+      "description": "Kotlin ile dinamik mobil uygulamalar geliştirerek deklaratif UI ve mobil yazılım mimarilerini pratik ettim."
     },
     "period3": {
       "year": "2022",
@@ -79,32 +79,62 @@
     {
       "category": "Backend Development",
       "icon": "server",
-      "items": ["Python (FastAPI) ile performanslı API'ler", "Ölçeklenebilir REST API mimarisi", "PostgreSQL ile veritabanı tasarımı", "Sunucu tarafı mantık ve iş akışları"]
+      "items": [
+        "Python (FastAPI) ile performanslı API'ler",
+        "Ölçeklenebilir REST API mimarisi",
+        "PostgreSQL ile veritabanı tasarımı",
+        "Sunucu tarafı mantık ve iş akışları"
+      ]
     },
     {
       "category": "Frontend Development",
       "icon": "code",
-      "items": ["React & TypeScript ile modern arayüzler", "TailwindCSS ile hızlı ve tutarlı tasarım", "Duyarlı (Responsive) tasarım prensipleri", "State yönetimi ve component mimarisi"]
+      "items": [
+        "React & TypeScript ile modern arayüzler",
+        "TailwindCSS ile hızlı ve tutarlı tasarım",
+        "Duyarlı (Responsive) tasarım prensipleri",
+        "State yönetimi ve bileşen mimarisi"
+      ]
     },
     {
       "category": "Mobile Development",
       "icon": "smartphone",
-      "items": ["Kotlin ile native Android geliştirme", "Jetpack Compose ile deklaratif UI", "Android Studio ve geliştirme araçları", "Materyal Tasarım ilkeleri"]
+      "items": [
+        "Kotlin ile native Android geliştirme",
+        "Jetpack Compose ile deklaratif UI",
+        "Android Studio ve geliştirme araçları",
+        "Materyal Tasarım ilkeleri"
+      ]
     },
     {
       "category": "AI & Machine Learning",
       "icon": "brain",
-      "items": ["OpenAI gibi LLM API'lerinin entegrasyonu", "Üretken Yapay Zeka araçlarının kullanımı", "Temel Makine Öğrenmesi ve Veri Bilimi", "AI destekli uygulama geliştirme"]
+      "items": [
+        "OpenAI ve Gemini gibi LLM API'lerinin entegrasyonu",
+        "Üretken Yapay Zeka araçlarının kullanımı",
+        "Temel Makine Öğrenmesi ve Veri Bilimi",
+        "AI destekli uygulama geliştirme"
+      ]
     },
     {
       "category": "DevOps & Altyapı",
       "icon": "cloud",
-      "items": ["Linux (Ubuntu/Fedora) sunucu yönetimi", "Temel Git ve GitHub iş akışları", "Uygulamaları bulut ortamına taşıma", "Nginx, Docker gibi temel araçlar"]
+      "items": [
+        "Linux (Ubuntu/Fedora) sunucu yönetimi",
+        "Temel Git ve GitHub iş akışları",
+        "Uygulamaları bulut ortamına taşıma",
+        "Nginx, Docker gibi temel araçlar"
+      ]
     },
     {
       "category": "Game Development",
       "icon": "gamepad",
-      "items": ["Unity 3D oyun motoru kullanımı", "C# ile oyun mekaniği programlama", "3D oyun tasarımı ve fizik entegrasyonu", "Animasyon ve karakter kontrolü"]
+      "items": [
+        "Unity 3D oyun motoru kullanımı",
+        "C# ile oyun mekaniği programlama",
+        "3D oyun tasarımı ve fizik entegrasyonu",
+        "Animasyon ve karakter kontrolü"
+      ]
     }
   ],
   "projects": [
@@ -113,7 +143,7 @@
       "name": "TicaretApp",
       "shortDescription": "FastAPI ve PostgreSQL altyapısıyla geliştirilmiş; JWT kimlik doğrulama, optimize edilmiş REST API'ler ve modern React arayüzü sunan full-stack e-ticaret platformu.",
       "problem": "Modern mimaride ölçeklenebilir bir full-stack e-ticaret çözümü oluşturmak.",
-      "solution": "TicaretApp, modern bir full-stack e-ticaret platformudur. Python FastAPI ile geliştirilen güçlü bir backend API'si üzerine kurulmuştur. PostgreSQL veritabanı ile ürün, kullanıcı ve sipariş verilerini yönetir. Frontend tarafında ise React ve TypeScript kullanılarak kullanıcı dostu ve dinamik bir arayüz oluşturulmuştur. Bu projede, REST API tasarımı, veritabanı mimarisi ve component tabanlı frontend geliştirme konularında derinlemesine çalıştım.",
+      "solution": "TicaretApp, modern bir full-stack e-ticaret platformudur. Python FastAPI ile geliştirilen güçlü bir backend API'si üzerine kurulmuştur. PostgreSQL veritabanı ile ürün, kullanıcı ve sipariş verilerini yönetir. Frontend tarafında ise React ve TypeScript kullanılarak kullanıcı dostu ve dinamik bir arayüz oluşturulmuştur. Bu projede, REST API tasarımı, veritabanı mimarisi ve bileşen tabanlı frontend geliştirme konularında derinlemesine çalıştım.",
       "technologies": ["Python", "FastAPI", "PostgreSQL", "React", "TypeScript", "TailwindCSS"],
       "features": ["REST API", "Veritabanı Mimarisi", "Kullanıcı Yetkilendirmesi", "Ürün Yönetimi"],
       "githubUrl": "https://github.com/halitbarut/ticaretapp",
@@ -183,6 +213,7 @@
     "messageRequired": "Mesajınız en az 10 karakter olmalıdır."
   },
   "project": {
+    "viewDetails": "Detayları İncele",
     "viewCode": "GitHub'da Görüntüle",
     "liveDemo": "Canlı Demoyu Gör",
     "problem": "Problem",
@@ -193,7 +224,7 @@
     "challenges": "Teknik Zorluklar",
     "decisions": "Kararlar",
     "lessons": "Çıkarımlar",
-    "backToHome": "Anasayfaya dön"
+    "backToHome": "Anasayfaya Dön"
   },
   "error": {
     "projectNotFound": "Proje Bulunamadı",

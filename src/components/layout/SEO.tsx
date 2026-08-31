@@ -19,14 +19,14 @@ export default function SEO({
   image = "/og-image.jpg",
   url = "https://halitbarut.github.io"
 }: SEOProps) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const finalTitle = title || t('meta.title', { defaultValue: 'Mehmet Halit Barut | Yazılım Mühendisi' });
   const finalDescription = description || t('meta.description', { defaultValue: 'Fikirleri koda dönüştürerek somut çözümler üreten; web, mobil, oyun ve yapay zeka alanlarında sürekli öğrenen bir geliştirici.' });
   const finalName = name || t('profile.name', { defaultValue: 'Mehmet Halit Barut' });
 
   return (
-    <Helmet>
+    <Helmet htmlAttributes={{ lang: i18n.language || 'tr' }}>
       {/* Standard metadata tags */}
       <title>{finalTitle}</title>
       <meta name="description" content={finalDescription} />

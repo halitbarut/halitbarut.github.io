@@ -27,7 +27,7 @@
     "firstName": "Mehmet Halit",
     "lastName": "Barut",
     "title": "Software Engineering Student",
-    "university": "Ankara Yıldırım Beyazıt University",
+    "university": "Ankara Yildirim Beyazit University",
     "introduction": "Software Engineering student building scalable, high-performance digital products by bridging artificial intelligence with modern web and mobile architectures.",
     "about": "",
     "social": {
@@ -62,7 +62,7 @@
     "period4": {
       "year": "2023-2024",
       "title": "Academic Rigor & Core CS",
-      "description": "Deepened core computer science foundations (Java, Git, Linux) at AYBÜ, shaping my strong academic and practical interest in AI."
+      "description": "Deepened core computer science foundations (Java, Git, Linux) at AYBU, shaping my strong academic and practical interest in AI."
     },
     "period5": {
       "year": "2025",
@@ -79,32 +79,62 @@
     {
       "category": "Backend Development",
       "icon": "server",
-      "items": ["Python (FastAPI)", "REST API Architecture", "PostgreSQL", "Server-side Logic"]
+      "items": [
+        "High-performance APIs with Python (FastAPI)",
+        "Scalable REST API Architecture",
+        "Database Design with PostgreSQL",
+        "Server-side Logic & Workflows"
+      ]
     },
     {
       "category": "Frontend Development",
       "icon": "code",
-      "items": ["React & TypeScript", "TailwindCSS", "Responsive Design", "Component Architecture"]
+      "items": [
+        "Modern Interfaces with React & TypeScript",
+        "Fast & Consistent Styling with TailwindCSS",
+        "Responsive Web Design Principles",
+        "State Management & Component Architecture"
+      ]
     },
     {
       "category": "Mobile Development",
       "icon": "smartphone",
-      "items": ["Kotlin", "Jetpack Compose", "Android Studio", "Material Design"]
+      "items": [
+        "Native Android Development with Kotlin",
+        "Declarative UI with Jetpack Compose",
+        "Android Studio & Developer Tooling",
+        "Material Design Guidelines"
+      ]
     },
     {
       "category": "AI & Machine Learning",
       "icon": "brain",
-      "items": ["LLM API Integration", "Generative AI Tools", "Machine Learning Basics", "AI-powered Apps"]
+      "items": [
+        "LLM API Integration (OpenAI, Gemini)",
+        "Generative AI Workflows & Prompt Engineering",
+        "Core Machine Learning & Data Science",
+        "AI-Powered Application Development"
+      ]
     },
     {
       "category": "DevOps & Infrastructure",
       "icon": "cloud",
-      "items": ["Linux (Ubuntu/Fedora)", "Git & GitHub", "Cloud Deployment", "Nginx, Docker"]
+      "items": [
+        "Linux (Ubuntu/Fedora) Server Administration",
+        "Git & GitHub Version Control Workflows",
+        "Cloud Deployment & Infrastructure",
+        "Nginx, Docker & Essential Tooling"
+      ]
     },
     {
       "category": "Game Development",
       "icon": "gamepad",
-      "items": ["Unity 3D", "C# Scripting", "Game Physics", "Animation & Controls"]
+      "items": [
+        "Unity 3D Engine Development",
+        "C# Game Mechanics Programming",
+        "3D Game Design & Physics Integration",
+        "Animation & Character Controls"
+      ]
     }
   ],
   "projects": [
@@ -113,7 +143,7 @@
       "name": "TicaretApp",
       "shortDescription": "Full-stack e-commerce platform built with FastAPI and PostgreSQL, featuring JWT authentication, optimized REST APIs, and a modern React frontend.",
       "problem": "Building a scalable full-stack e-commerce solution with modern architecture.",
-      "solution": "TicaretApp is a modern full-stack e-commerce platform. Built on a powerful backend API developed with Python FastAPI. Manages product, user, and order data with PostgreSQL database. On the frontend side, a user-friendly and dynamic interface is created using React and TypeScript. In this project, I worked in-depth on REST API design, database architecture, and component-based frontend development.",
+      "solution": "TicaretApp is a modern full-stack e-commerce platform powered by a robust Python FastAPI backend. It manages product, user, and order data via a PostgreSQL database, while providing a responsive and intuitive user interface built with React and TypeScript. Throughout this project, I worked in-depth on REST API design, database architecture, and component-based frontend development.",
       "technologies": ["Python", "FastAPI", "PostgreSQL", "React", "TypeScript", "TailwindCSS"],
       "features": ["REST API", "Database Architecture", "User Authentication", "Product Management"],
       "githubUrl": "https://github.com/halitbarut/ticaretapp",
@@ -125,7 +155,7 @@
       "name": "Perpetua",
       "shortDescription": "AI-powered personalized language acquisition platform leveraging the OpenAI API and advanced prompt engineering for dynamic content generation.",
       "problem": "Creating an adaptive language learning experience powered by artificial intelligence.",
-      "solution": "Perpetua is an AI-powered language learning application. It offers personalized lessons that adapt to users' learning styles and pace. Features like text generation, translation, and conversation practice using OpenAI API. The project aims to make language learning more interactive and efficient. Backend is developed with FastAPI, frontend with React.",
+      "solution": "Perpetua is an AI-powered language learning application that provides personalized lessons tailored to users' learning styles and pace. By integrating the OpenAI API, it delivers dynamic content generation, translation, and interactive conversation practice. The project aims to make language learning more interactive, engaging, and efficient. The backend is developed with FastAPI and the frontend with React.",
       "technologies": ["Python", "FastAPI", "OpenAI API", "React", "Next.js"],
       "features": ["Personalized Lessons", "AI Text Generation", "Translation", "Conversation Practice"],
       "githubUrl": "https://github.com/halitbarut/perpetua",
@@ -137,9 +167,9 @@
       "name": "ZigZag",
       "shortDescription": "Dynamic 3D arcade platformer developed in Unity & C#, emphasizing physics engine optimization and clean OOP architecture.",
       "problem": "Designing an engaging and replayable mobile platform game.",
-      "solution": "ZigZag is a 3D platform game developed using Unity 3D game engine and C#. Players try to keep their character alive on constantly changing and randomly generated platforms. The project focuses on dynamic level design, game physics, animation management, and mobile game optimization. It offers an enjoyable gaming experience with smooth gameplay mechanics.",
+      "solution": "ZigZag is a 3D platform game developed using the Unity 3D engine and C#. Players navigate continuously changing, procedurally generated platforms to keep their character moving forward. The project focuses on dynamic level design, rigid-body physics, animation state management, and mobile optimization to deliver an enjoyable and fluid gameplay experience.",
       "technologies": ["Unity 3D", "C#", "Game Design", "Physics", "Animation"],
-      "features": ["Procedural Levels", "Physics Engine", "Mobile Optimized", "Smooth Mechanics"],
+      "features": ["Procedural Levels", "Physics Engine", "Mobile Optimization", "Smooth Mechanics"],
       "githubUrl": "https://github.com/halitbarut/zigzag",
       "liveUrl": "",
       "imageUrl": ""
@@ -149,7 +179,7 @@
   "education": [
     {
       "id": "aybu",
-      "university": "Ankara Yıldırım Beyazıt University (AYBÜ)",
+      "university": "Ankara Yildirim Beyazit University (AYBU)",
       "degree": "B.S.",
       "department": "Software Engineering",
       "startDate": "2023",
@@ -183,6 +213,7 @@
     "messageRequired": "Your message must be at least 10 characters."
   },
   "project": {
+    "viewDetails": "View Details",
     "viewCode": "View on GitHub",
     "liveDemo": "Live Demo",
     "problem": "Problem",
@@ -207,8 +238,8 @@
   },
   "meta": {
     "title": "Mehmet Halit Barut | Software Engineer",
-    "description": "A developer who turns ideas into code to produce concrete solutions; continuously learning in web, mobile, game, and artificial intelligence.",
+    "description": "A software engineer who turns ideas into code to build concrete solutions, continuously learning across web, mobile, games, and artificial intelligence.",
     "ogTitle": "Mehmet Halit Barut | Software Engineer Portfolio",
-    "ogDescription": "Discover my projects and skills in web, mobile, game, and artificial intelligence."
+    "ogDescription": "Discover my projects and engineering skills in web, mobile, games, and artificial intelligence."
   }
 }

@@ -98,7 +98,7 @@ export default function Projects() {
                       className="flex-1 inline-flex items-center justify-center py-3 rounded-xl font-medium transition-all duration-300 text-sm border border-border/50 text-foreground hover:border-[#39ff14]/50 hover:text-[#39ff14]"
                       aria-label={`View details for ${project.name}`}
                     >
-                      {t('project.viewCode', { defaultValue: 'View Details' })}
+                      {t('project.viewDetails', { defaultValue: 'View Details' })}
                     </Link>
                     {project.githubUrl && (
                       <a 
