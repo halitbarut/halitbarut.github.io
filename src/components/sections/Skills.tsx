@@ -33,8 +33,8 @@ export default function Skills() {
   return (
     <div className="relative bg-transparent">
       {/* Background Glows: Royal Blue (top-left) + Neon Green (bottom-right) */}
-      <div className="absolute top-0 -left-20 w-[450px] h-[450px] bg-[#2563eb] opacity-35 blur-[100px] rounded-full pointer-events-none animate-float-slow" />
-      <div className="absolute bottom-0 -right-20 w-[450px] h-[450px] bg-[#39ff14] opacity-25 blur-[90px] rounded-full pointer-events-none animate-float-reverse" />
+      <div className="absolute top-0 -left-20 w-[450px] h-[450px] bg-[#2563eb] opacity-35 blur-[100px] rounded-full pointer-events-none animate-orb-1" />
+      <div className="absolute bottom-0 -right-20 w-[450px] h-[450px] bg-[#39ff14] opacity-25 blur-[90px] rounded-full pointer-events-none animate-orb-3" />
       
       <Section id="skills" title={t('sections.skills')} className="bg-transparent">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

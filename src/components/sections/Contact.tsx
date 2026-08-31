@@ -50,9 +50,9 @@ export default function Contact() {
 
   return (
     <div className="relative bg-transparent">
-      {/* Ambient glows: Neon Green (top-right) + Royal Blue (bottom-left) */}
-      <div className="absolute top-0 -right-20 w-[450px] h-[450px] bg-[#39ff14] opacity-25 blur-[90px] rounded-full pointer-events-none animate-float-slow" />
-      <div className="absolute bottom-0 -left-20 w-[450px] h-[450px] bg-[#2563eb] opacity-35 blur-[100px] rounded-full pointer-events-none animate-float-reverse" />
+      {/* Ambient glows: Neon Green (top-right, drift 2) + Royal Blue (bottom-left, drift 3) */}
+      <div className="absolute top-0 -right-20 w-[450px] h-[450px] bg-[#39ff14] opacity-25 blur-[90px] rounded-full pointer-events-none animate-orb-2" />
+      <div className="absolute bottom-0 -left-20 w-[450px] h-[450px] bg-[#2563eb] opacity-35 blur-[100px] rounded-full pointer-events-none animate-orb-3" />
 
       <Section id="contact" title={t('sections.contact')} className="bg-transparent">
         <div className="max-w-3xl mx-auto">

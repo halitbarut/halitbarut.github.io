@@ -19,8 +19,8 @@ export default function Education() {
 
   return (
     <div className="relative bg-transparent">
-      {/* Ambient background glows: Royal Blue (center) */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-[#2563eb] opacity-35 blur-[100px] rounded-full pointer-events-none animate-float-slow" />
+      {/* Ambient background glows: Royal Blue (center, slow drift 1) */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-[#2563eb] opacity-35 blur-[100px] rounded-full pointer-events-none animate-orb-1" />
 
       <Section id="education" title={t('sections.education', { defaultValue: 'Education' })} className="bg-transparent">
         <div className="max-w-4xl mx-auto space-y-8">

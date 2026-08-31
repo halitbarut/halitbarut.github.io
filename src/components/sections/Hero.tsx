@@ -30,11 +30,11 @@ export default function Hero() {
       {/* 2. Floating Ambient Glow Orbs */}
       {/* Neon Green top-left */}
       <div 
-        className="absolute top-1/4 -left-20 w-[450px] h-[450px] bg-[#39ff14] opacity-30 blur-[90px] rounded-full pointer-events-none animate-float-slow" 
+        className="absolute top-1/4 -left-20 w-[450px] h-[450px] bg-[#39ff14] opacity-30 blur-[90px] rounded-full pointer-events-none animate-orb-1" 
       />
       {/* Royal Blue center-right */}
       <div 
-        className="absolute top-1/3 -right-20 w-[500px] h-[500px] bg-[#2563eb] opacity-35 blur-[100px] rounded-full pointer-events-none animate-float-reverse" 
+        className="absolute top-1/3 -right-20 w-[500px] h-[500px] bg-[#2563eb] opacity-35 blur-[100px] rounded-full pointer-events-none animate-orb-2" 
       />
       
       {/* 3. Layered Text Aura directly behind typography */}

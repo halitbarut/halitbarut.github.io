@@ -30,8 +30,8 @@ export default function About() {
   return (
     <div className="relative bg-transparent">
       {/* Royal Blue (middle-left) + Deep Navy (bottom-right) */}
-      <div className="absolute top-1/2 -left-24 -translate-y-1/2 w-[450px] h-[450px] bg-[#2563eb] opacity-35 blur-[100px] rounded-full pointer-events-none animate-float-slow" />
-      <div className="absolute bottom-10 -right-20 w-[350px] h-[350px] bg-[#1e3a8a] opacity-30 blur-[90px] rounded-full pointer-events-none animate-float-reverse" />
+      <div className="absolute top-1/2 -left-24 -translate-y-1/2 w-[450px] h-[450px] bg-[#2563eb] opacity-35 blur-[100px] rounded-full pointer-events-none animate-orb-2" />
+      <div className="absolute bottom-10 -right-20 w-[350px] h-[350px] bg-[#1e3a8a] opacity-30 blur-[90px] rounded-full pointer-events-none animate-orb-3" />
 
       <Section id="about" title={t('sections.about')} className="bg-transparent">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
