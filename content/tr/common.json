@@ -1,0 +1,214 @@
+{
+  "nav": {
+    "about": "Hakkımda",
+    "skills": "Yetenekler",
+    "projects": "Projeler",
+    "contact": "İletişim"
+  },
+  "hero": {
+    "badge": "Yazılım Mühendisliği Öğrencisi",
+    "viewProjects": "GitHub Profilim",
+    "contactMe": "İletişime Geç",
+    "badges": {
+      "ai": "Yapay Zeka & LLM",
+      "mobile": "Mobil Geliştirme",
+      "web": "Modern Web Mimarisi"
+    }
+  },
+  "sections": {
+    "about": "Benim Hikayem",
+    "skills": "Teknik Yetenekler",
+    "projects": "Projeler",
+    "education": "Eğitim",
+    "contact": "İletişim"
+  },
+  "profile": {
+    "name": "Mehmet Halit Barut",
+    "firstName": "Mehmet Halit",
+    "lastName": "Barut",
+    "title": "Yazılım Mühendisliği Öğrencisi",
+    "university": "Ankara Yıldırım Beyazıt Üniversitesi",
+    "introduction": "Yapay zeka modellerini modern web ve mobil mimarileriyle birleştirerek ölçeklenebilir, yüksek performanslı dijital ürünler geliştiren Yazılım Mühendisliği öğrencisiyim.",
+    "about": "",
+    "social": {
+      "github": "https://github.com/halitbarut",
+      "linkedin": "https://www.linkedin.com/in/halitbarut",
+      "email": "halitbarut@example.com"
+    }
+  },
+  "about": {
+    "subtitle": "Hikayem",
+    "title": "Benim Hikayem",
+    "paragraph1": "Yazılıma olan ilgim, bir dergi sayfasındaki kod satırlarını merak etmemle başladı. Kodlama temellerini Python ile attıktan sonra, farklı teknolojileri sadece öğrenmekle kalmayıp gerçek mühendislik problemlerini çözmek için birer araç olarak benimsedim.",
+    "paragraph2": "Bu süreçte Kotlin ile native mobil geliştirme pratikleri edindim, Unity ile 3D sistem mantığını ve optimizasyonlarını kavradım, FastAPI ve PostgreSQL ile güçlü backend mimarileri inşa ettim. Her proje, teorik bilgiyi ölçeklenebilir sistemlere dönüştürme fırsatı sundu.",
+    "paragraph3": "Bugün, yazılım dünyasında yapay zekayı bir çarpan etkisi olarak görüyorum. Ana odağımı Uygulamalı Yapay Zeka ve LLM tabanlı sistemler üzerine kurarak, bu gücü sağlam web ve mobil altyapılarıyla birleştiren çözümler üretiyorum."
+  },
+  "timeline": {
+    "period1": {
+      "year": "2016-2019",
+      "title": "Algoritmik Düşünce & Kod Temelleri",
+      "description": "Mevcut kaynakları en verimli şekilde kullanarak Python ve temel programlama mantığı üzerine sağlam bir temel inşa ettim."
+    },
+    "period2": {
+      "year": "2021",
+      "title": "Mobil Mimariler & Native Deneyim",
+      "description": "Kotlin ile dinamik mobil uygulamalar geliştirerek declarative UI ve mobil yazılım mimarilerini pratik ettim."
+    },
+    "period3": {
+      "year": "2022",
+      "title": "Sistem Mantığı & Oyun Mekanikleri",
+      "description": "Unity 3D ve C# ile oyun mekanikleri geliştirerek farklı bir teknoloji yığınında optimizasyon ve nesne yönelimli programlama deneyimi kazandım."
+    },
+    "period4": {
+      "year": "2023-2024",
+      "title": "Akademik Temeller & CS Derinliği",
+      "description": "AYBÜ Yazılım Mühendisliği müfredatında derinleşirken, Git/Linux sistemleri ve yapay zeka alanına olan ilgim teorik ve pratik temellere oturdu."
+    },
+    "period5": {
+      "year": "2025",
+      "title": "Üretim Odaklı Projeler & Hackathonlar",
+      "description": "Google Yapay Zeka Akademisi ve BTK Hackathon süreçlerinde Perpetua ve TicaretApp gibi uçtan uca AI ve bulut tabanlı sistemler geliştirdim."
+    },
+    "period6": {
+      "year": "Bugün & Gelecek",
+      "title": "Uygulamalı Yapay Zeka & Geleceğin Mimarileri",
+      "description": "Ana odağımı LLM entegrasyonları, makine öğrenmesi ve yapay zeka destekli ölçeklenebilir ürün mimarileri üzerine yoğunlaştırıyorum."
+    }
+  },
+  "skills": [
+    {
+      "category": "Backend Development",
+      "icon": "server",
+      "items": ["Python (FastAPI) ile performanslı API'ler", "Ölçeklenebilir REST API mimarisi", "PostgreSQL ile veritabanı tasarımı", "Sunucu tarafı mantık ve iş akışları"]
+    },
+    {
+      "category": "Frontend Development",
+      "icon": "code",
+      "items": ["React & TypeScript ile modern arayüzler", "TailwindCSS ile hızlı ve tutarlı tasarım", "Duyarlı (Responsive) tasarım prensipleri", "State yönetimi ve component mimarisi"]
+    },
+    {
+      "category": "Mobile Development",
+      "icon": "smartphone",
+      "items": ["Kotlin ile native Android geliştirme", "Jetpack Compose ile deklaratif UI", "Android Studio ve geliştirme araçları", "Materyal Tasarım ilkeleri"]
+    },
+    {
+      "category": "AI & Machine Learning",
+      "icon": "brain",
+      "items": ["OpenAI gibi LLM API'lerinin entegrasyonu", "Üretken Yapay Zeka araçlarının kullanımı", "Temel Makine Öğrenmesi ve Veri Bilimi", "AI destekli uygulama geliştirme"]
+    },
+    {
+      "category": "DevOps & Altyapı",
+      "icon": "cloud",
+      "items": ["Linux (Ubuntu/Fedora) sunucu yönetimi", "Temel Git ve GitHub iş akışları", "Uygulamaları bulut ortamına taşıma", "Nginx, Docker gibi temel araçlar"]
+    },
+    {
+      "category": "Game Development",
+      "icon": "gamepad",
+      "items": ["Unity 3D oyun motoru kullanımı", "C# ile oyun mekaniği programlama", "3D oyun tasarımı ve fizik entegrasyonu", "Animasyon ve karakter kontrolü"]
+    }
+  ],
+  "projects": [
+    {
+      "id": "ticaretapp",
+      "name": "TicaretApp",
+      "shortDescription": "FastAPI ve PostgreSQL altyapısıyla geliştirilmiş; JWT kimlik doğrulama, optimize edilmiş REST API'ler ve modern React arayüzü sunan full-stack e-ticaret platformu.",
+      "problem": "Modern mimaride ölçeklenebilir bir full-stack e-ticaret çözümü oluşturmak.",
+      "solution": "TicaretApp, modern bir full-stack e-ticaret platformudur. Python FastAPI ile geliştirilen güçlü bir backend API'si üzerine kurulmuştur. PostgreSQL veritabanı ile ürün, kullanıcı ve sipariş verilerini yönetir. Frontend tarafında ise React ve TypeScript kullanılarak kullanıcı dostu ve dinamik bir arayüz oluşturulmuştur. Bu projede, REST API tasarımı, veritabanı mimarisi ve component tabanlı frontend geliştirme konularında derinlemesine çalıştım.",
+      "technologies": ["Python", "FastAPI", "PostgreSQL", "React", "TypeScript", "TailwindCSS"],
+      "features": ["REST API", "Veritabanı Mimarisi", "Kullanıcı Yetkilendirmesi", "Ürün Yönetimi"],
+      "githubUrl": "https://github.com/halitbarut/ticaretapp",
+      "liveUrl": "",
+      "imageUrl": ""
+    },
+    {
+      "id": "perpetua",
+      "name": "Perpetua",
+      "shortDescription": "OpenAI API ve prompt engineering teknikleriyle kullanıcı seviyesine göre dinamik içerik üreten, yapay zeka destekli kişiselleştirilmiş dil edinim sistemi.",
+      "problem": "Yapay zeka destekli adaptif dil öğrenme deneyimi oluşturmak.",
+      "solution": "Perpetua, yapay zeka destekli bir dil öğrenme uygulamasıdır. Kullanıcıların öğrenme stillerine ve hızlarına göre adapte olan kişiselleştirilmiş dersler sunar. OpenAI API'sini kullanarak metin üretme, çeviri ve konuşma pratiği gibi özellikler içerir. Proje, dil öğrenimini daha etkileşimli ve verimli hale getirmeyi amaçlamaktadır. Backend FastAPI, frontend ise React ile geliştirilmektedir.",
+      "technologies": ["Python", "FastAPI", "OpenAI API", "React", "Next.js"],
+      "features": ["Kişiselleştirilmiş Dersler", "AI Metin Üretimi", "Çeviri", "Konuşma Pratiği"],
+      "githubUrl": "https://github.com/halitbarut/perpetua",
+      "liveUrl": "",
+      "imageUrl": ""
+    },
+    {
+      "id": "zigzag",
+      "name": "ZigZag",
+      "shortDescription": "Unity 3D ve C# kullanılarak fizik motoru optimizasyonları ve OOP mimari prensipleriyle geliştirilen dinamik arcade platform oyunu.",
+      "problem": "İlgi çekici ve tekrar oynanabilir bir mobil platform oyunu tasarlamak.",
+      "solution": "ZigZag, Unity 3D oyun motoru ve C# kullanılarak geliştirilmiş bir 3D platform oyunudur. Oyuncular, sürekli değişen ve rastgele oluşturulan platformlarda karakterlerini hayatta tutmaya çalışırlar. Proje, dinamik level tasarımı, oyun fiziği, animasyon yönetimi ve mobil oyun optimizasyonu gibi konulara odaklanmaktadır. Akıcı oynanış mekaniği ile keyifli bir oyun deneyimi sunar.",
+      "technologies": ["Unity 3D", "C#", "Game Design", "Physics", "Animation"],
+      "features": ["Prosedürel Seviyeler", "Fizik Motoru", "Mobil Optimizasyon", "Akıcı Mekanikler"],
+      "githubUrl": "https://github.com/halitbarut/zigzag",
+      "liveUrl": "",
+      "imageUrl": ""
+    }
+  ],
+  "experience": [],
+  "education": [
+    {
+      "id": "aybu",
+      "university": "Ankara Yıldırım Beyazıt Üniversitesi (AYBÜ)",
+      "degree": "Lisans",
+      "department": "Yazılım Mühendisliği",
+      "startDate": "2023",
+      "endDate": "Devam Ediyor",
+      "gpa": "",
+      "achievements": ["3. sınıf öğrencisi", "Yapay Zeka ve Mobil Geliştirme odaklı"]
+    },
+    {
+      "id": "hannover",
+      "university": "Hochschule Hannover",
+      "degree": "Erasmus Değişim",
+      "department": "Bilgisayar Bilimleri",
+      "startDate": "Bahar 2025",
+      "endDate": "2026",
+      "gpa": "",
+      "achievements": ["Erasmus+ değişim dönemi"]
+    }
+  ],
+  "contact": {
+    "title": "İletişime Geçin",
+    "subtitle": "Bir proje üzerinde işbirliği yapmak mı istiyorsunuz yoksa sadece merhaba mı demek istiyorsunuz?",
+    "name": "Adınız",
+    "email": "E-posta Adresiniz",
+    "message": "Mesajınız",
+    "send": "Mesaj Gönder",
+    "sending": "Gönderiliyor...",
+    "success": "Mesaj başarıyla gönderildi! En kısa sürede size geri dönüş yapacağım.",
+    "error": "Bir şeyler ters gitti. Lütfen tekrar deneyin veya doğrudan e-posta gönderin.",
+    "nameRequired": "Adınız en az 2 karakter olmalıdır.",
+    "emailRequired": "Lütfen geçerli bir e-posta adresi girin.",
+    "messageRequired": "Mesajınız en az 10 karakter olmalıdır."
+  },
+  "project": {
+    "viewCode": "GitHub'da Görüntüle",
+    "liveDemo": "Canlı Demoyu Gör",
+    "problem": "Problem",
+    "solution": "Çözüm",
+    "technologies": "Teknolojiler",
+    "features": "Özellikler",
+    "architecture": "Mimari",
+    "challenges": "Teknik Zorluklar",
+    "decisions": "Kararlar",
+    "lessons": "Çıkarımlar",
+    "backToHome": "Anasayfaya dön"
+  },
+  "error": {
+    "projectNotFound": "Proje Bulunamadı",
+    "returnHome": "Anasayfaya Dön",
+    "404": "404 - Sayfa Bulunamadı",
+    "404message": "Aradığınız sayfa mevcut değil veya taşınmış olabilir."
+  },
+  "footer": {
+    "copyright": "Tüm hakları saklıdır.",
+    "quote": "Teknoloji tutkusu ve sürekli öğrenme arzusu ile geleceği şekillendiriyorum."
+  },
+  "meta": {
+    "title": "Mehmet Halit Barut | Yazılım Mühendisi",
+    "description": "Fikirleri koda dönüştürerek somut çözümler üreten; web, mobil, oyun ve yapay zeka alanlarında sürekli öğrenen bir geliştirici.",
+    "ogTitle": "Mehmet Halit Barut | Yazılım Mühendisi Portfolyosu",
+    "ogDescription": "Web, mobil, oyun ve yapay zeka alanlarındaki projelerimi ve yetkinliklerimi keşfedin."
+  }
+}

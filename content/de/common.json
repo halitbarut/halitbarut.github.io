@@ -1,0 +1,214 @@
+{
+  "nav": {
+    "about": "Über mich",
+    "skills": "Fähigkeiten",
+    "projects": "Projekte",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "badge": "Software-Engineering-Student",
+    "viewProjects": "GitHub-Profil",
+    "contactMe": "Kontakt aufnehmen",
+    "badges": {
+      "ai": "KI & LLM",
+      "mobile": "Mobile Entwicklung",
+      "web": "Moderne Webarchitektur"
+    }
+  },
+  "sections": {
+    "about": "Meine Geschichte",
+    "skills": "Technische Fähigkeiten",
+    "projects": "Projekte",
+    "education": "Bildung",
+    "contact": "Kontakt"
+  },
+  "profile": {
+    "name": "Mehmet Halit Barut",
+    "firstName": "Mehmet Halit",
+    "lastName": "Barut",
+    "title": "Software-Engineering-Student",
+    "university": "Ankara Yıldırım Beyazıt Universität",
+    "introduction": "Software Engineering-Student, der skalierbare, hochperformante digitale Produkte durch die Verbindung von KI mit modernen Web- und Mobilarchitekturen entwickelt.",
+    "about": "",
+    "social": {
+      "github": "https://github.com/halitbarut",
+      "linkedin": "https://www.linkedin.com/in/halitbarut",
+      "email": "halitbarut@example.com"
+    }
+  },
+  "about": {
+    "subtitle": "Meine Geschichte",
+    "title": "Meine Geschichte",
+    "paragraph1": "Meine Leidenschaft für Software begann mit der Neugier auf Codezeilen in einem Technikmagazin. Nach meinen ersten Grundlagen in Python habe ich Technologien stets als Werkzeuge zur Lösung echter technischer Probleme verstanden.",
+    "paragraph2": "Im Laufe der Zeit vertiefte ich mich in die native mobile Entwicklung mit Kotlin, lernte 3D-Optimierung mit Unity und entwickelte robuste Backend-Systeme mit FastAPI und PostgreSQL.",
+    "paragraph3": "Heute betrachte ich Künstliche Intelligenz als entscheidenden Innovationsmultiplikator. Mein Hauptfokus liegt auf angewandter KI und LLM-gestützten Systemen, kombiniert mit soliden Web- und Mobile-Architekturen."
+  },
+  "timeline": {
+    "period1": {
+      "year": "2016-2019",
+      "title": "Algorithmische Grundlagen & Python",
+      "description": "Erwerb fundierter Programmierkenntnisse und Problemlösungskompetenzen mit Python."
+    },
+    "period2": {
+      "year": "2021",
+      "title": "Mobile Architekturen & Native Entwicklung",
+      "description": "Entwicklung dynamischer Android-Apps mit Kotlin und deklarativen UI-Prinzipien."
+    },
+    "period3": {
+      "year": "2022",
+      "title": "Systemlogik & Spielmechanik",
+      "description": "Entwicklung von 3D-Spielmechaniken in Unity & C# mit Fokus auf Physik- und OOP-Optimierung."
+    },
+    "period4": {
+      "year": "2023-2024",
+      "title": "Akademische Grundlagen & CS-Vertiefung",
+      "description": "Vertiefung von Software Engineering-Grundlagen (Java, Git, Linux) an der AYBÜ und Weckung des Interesses an KI."
+    },
+    "period5": {
+      "year": "2025",
+      "title": "Praxisprojekte & Hackathons",
+      "description": "Entwicklung von KI- und Cloud-Projekten (Perpetua, TicaretApp) im Rahmen der Google AI Academy und des BTK Hackathons."
+    },
+    "period6": {
+      "year": "Gegenwart & Zukunft",
+      "title": "Angewandte KI & Skalierbare Systeme",
+      "description": "Spezialisierung auf LLM-Integrationen, maschinelles Lernen und KI-gestützte moderne Architekturen."
+    }
+  },
+  "skills": [
+    {
+      "category": "Backend-Entwicklung",
+      "icon": "server",
+      "items": ["Leistungsstarke APIs mit Python (FastAPI)", "Skalierbare REST-API-Architektur", "Datenbankdesign mit PostgreSQL", "Serverseitige Logik und Workflows"]
+    },
+    {
+      "category": "Frontend-Entwicklung",
+      "icon": "code",
+      "items": ["Moderne Oberflächen mit React & TypeScript", "Schnelles und konsistentes Design mit TailwindCSS", "Responsive Design-Prinzipien", "State-Management und Komponentenarchitektur"]
+    },
+    {
+      "category": "Mobile Entwicklung",
+      "icon": "smartphone",
+      "items": ["Native Android-Entwicklung mit Kotlin", "Deklarative UI mit Jetpack Compose", "Android Studio und Entwicklungstools", "Material Design-Prinzipien"]
+    },
+    {
+      "category": "KI & Machine Learning",
+      "icon": "brain",
+      "items": ["Integration von LLM-APIs wie OpenAI", "Verwendung von Generative AI Tools", "Grundlegendes Machine Learning und Data Science", "KI-gestützte Anwendungsentwicklung"]
+    },
+    {
+      "category": "DevOps & Infrastruktur",
+      "icon": "cloud",
+      "items": ["Linux (Ubuntu/Fedora) Serververwaltung", "Grundlegende Git- und GitHub-Workflows", "Bereitstellung von Anwendungen in der Cloud", "Grundlegende Tools wie Nginx, Docker"]
+    },
+    {
+      "category": "Spieleentwicklung",
+      "icon": "gamepad",
+      "items": ["Verwendung der Unity 3D-Spiel-Engine", "Spielmechanik-Programmierung mit C#", "3D-Spieldesign und Physik-Integration", "Animation und Charaktersteuerung"]
+    }
+  ],
+  "projects": [
+    {
+      "id": "ticaretapp",
+      "name": "TicaretApp",
+      "shortDescription": "Full-Stack-E-Commerce-Plattform auf Basis von FastAPI und PostgreSQL mit JWT-Authentifizierung und modernem React-Frontend.",
+      "problem": "Eine skalierbare Full-Stack-E-Commerce-Lösung mit moderner Architektur aufbauen.",
+      "solution": "TicaretApp ist eine moderne Full-Stack-E-Commerce-Plattform. Aufgebaut auf einer leistungsstarken Backend-API, die mit Python FastAPI entwickelt wurde. Verwaltet Produkt-, Benutzer- und Bestelldaten mit PostgreSQL-Datenbank. Auf der Frontend-Seite wird eine benutzerfreundliche und dynamische Oberfläche mit React und TypeScript erstellt. In diesem Projekt habe ich mich eingehend mit REST-API-Design, Datenbankarchitektur und komponentenbasierter Frontend-Entwicklung beschäftigt.",
+      "technologies": ["Python", "FastAPI", "PostgreSQL", "React", "TypeScript", "TailwindCSS"],
+      "features": ["REST API", "Datenbankarchitektur", "Benutzerauthentifizierung", "Produktverwaltung"],
+      "githubUrl": "https://github.com/halitbarut/ticaretapp",
+      "liveUrl": "",
+      "imageUrl": ""
+    },
+    {
+      "id": "perpetua",
+      "name": "Perpetua",
+      "shortDescription": "KI-gestützte Plattform für personalisierten Spracherwerb unter Nutzung der OpenAI-API und Prompt-Engineering.",
+      "problem": "Eine adaptive Sprachlernerfahrung mit künstlicher Intelligenz schaffen.",
+      "solution": "Perpetua ist eine KI-gestützte Sprachlernanwendung. Sie bietet personalisierte Lektionen, die sich an die Lernstile und das Tempo der Benutzer anpassen. Funktionen wie Textgenerierung, Übersetzung und Konversationspraxis mit OpenAI API. Das Projekt zielt darauf ab, das Sprachenlernen interaktiver und effizienter zu gestalten. Backend wird mit FastAPI entwickelt, Frontend mit React.",
+      "technologies": ["Python", "FastAPI", "OpenAI API", "React", "Next.js"],
+      "features": ["Personalisierte Lektionen", "KI-Textgenerierung", "Übersetzung", "Konversationspraxis"],
+      "githubUrl": "https://github.com/halitbarut/perpetua",
+      "liveUrl": "",
+      "imageUrl": ""
+    },
+    {
+      "id": "zigzag",
+      "name": "ZigZag",
+      "shortDescription": "Dynamisches 3D-Arcade-Spiel, entwickelt mit Unity & C#, mit Fokus auf Physik-Optimierung und OOP-Architektur.",
+      "problem": "Ein fesselndes und wiederholbar spielbares mobiles Plattformspiel gestalten.",
+      "solution": "ZigZag ist ein 3D-Plattformspiel, das mit Unity 3D-Spiel-Engine und C# entwickelt wurde. Spieler versuchen, ihren Charakter auf sich ständig ändernden und zufällig generierten Plattformen am Leben zu erhalten. Das Projekt konzentriert sich auf dynamisches Level-Design, Spielphysik, Animationsverwaltung und Mobile-Game-Optimierung. Es bietet ein angenehmes Spielerlebnis mit flüssiger Gameplay-Mechanik.",
+      "technologies": ["Unity 3D", "C#", "Game Design", "Physics", "Animation"],
+      "features": ["Prozedurale Level", "Physik-Engine", "Mobile Optimierung", "Flüssige Mechanik"],
+      "githubUrl": "https://github.com/halitbarut/zigzag",
+      "liveUrl": "",
+      "imageUrl": ""
+    }
+  ],
+  "experience": [],
+  "education": [
+    {
+      "id": "aybu",
+      "university": "Ankara Yıldırım Beyazıt Universität (AYBÜ)",
+      "degree": "B.S.",
+      "department": "Software Engineering",
+      "startDate": "2023",
+      "endDate": "Laufend",
+      "gpa": "",
+      "achievements": ["Student im 3. Studienjahr", "Schwerpunkt auf KI und Mobile Entwicklung"]
+    },
+    {
+      "id": "hannover",
+      "university": "Hochschule Hannover",
+      "degree": "Erasmus-Austausch",
+      "department": "Informatik",
+      "startDate": "Frühjahr 2025",
+      "endDate": "2026",
+      "gpa": "",
+      "achievements": ["Erasmus+ Austauschsemester"]
+    }
+  ],
+  "contact": {
+    "title": "In Kontakt treten",
+    "subtitle": "Möchten Sie an einem Projekt zusammenarbeiten oder einfach nur Hallo sagen?",
+    "name": "Ihr Name",
+    "email": "Ihre E-Mail",
+    "message": "Ihre Nachricht",
+    "send": "Nachricht senden",
+    "sending": "Wird gesendet...",
+    "success": "Nachricht erfolgreich gesendet! Ich werde mich bald bei Ihnen melden.",
+    "error": "Etwas ist schief gelaufen. Bitte versuchen Sie es erneut oder senden Sie direkt eine E-Mail.",
+    "nameRequired": "Ihr Name muss mindestens 2 Zeichen lang sein.",
+    "emailRequired": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    "messageRequired": "Ihre Nachricht muss mindestens 10 Zeichen lang sein."
+  },
+  "project": {
+    "viewCode": "Auf GitHub ansehen",
+    "liveDemo": "Live-Demo ansehen",
+    "problem": "Problem",
+    "solution": "Lösung",
+    "technologies": "Technologien",
+    "features": "Funktionen",
+    "architecture": "Architektur",
+    "challenges": "Technische Herausforderungen",
+    "decisions": "Entscheidungen",
+    "lessons": "Erkenntnisse",
+    "backToHome": "Zurück zur Startseite"
+  },
+  "error": {
+    "projectNotFound": "Projekt nicht gefunden",
+    "returnHome": "Zur Startseite",
+    "404": "404 - Seite nicht gefunden",
+    "404message": "Die Seite, die Sie suchen, existiert nicht oder wurde verschoben."
+  },
+  "footer": {
+    "copyright": "Alle Rechte vorbehalten.",
+    "quote": "Die Zukunft gestalten mit Leidenschaft für Technologie und dem Wunsch nach kontinuierlichem Lernen."
+  },
+  "meta": {
+    "title": "Mehmet Halit Barut | Software-Ingenieur",
+    "description": "Ein Entwickler, der Ideen in Code verwandelt, um konkrete Lösungen zu schaffen; kontinuierliches Lernen in Web, Mobil, Spiele und künstliche Intelligenz.",
+    "ogTitle": "Mehmet Halit Barut | Software-Ingenieur Portfolio",
+    "ogDescription": "Entdecken Sie meine Projekte und Fähigkeiten in Web, Mobil, Spiele und künstliche Intelligenz."
+  }
+}
