@@ -1,9 +1,36 @@
-import React from 'react';
+import React, { useRef, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
 export default function Hero() {
   const { t } = useTranslation();
+  const nameRef = useRef<HTMLHeadingElement>(null);
+
+  const rawX = useMotionValue(0);
+  const rawY = useMotionValue(0);
+
+  const springConfig = { stiffness: 120, damping: 18, mass: 0.6 };
+  const x = useSpring(rawX, springConfig);
+  const y = useSpring(rawY, springConfig);
+
+  const rotateX = useTransform(y, [-0.5, 0.5], [6, -6]);
+  const rotateY = useTransform(x, [-0.5, 0.5], [-8, 8]);
+  const translateX = useTransform(x, [-0.5, 0.5], [-6, 6]);
+  const translateY = useTransform(y, [-0.5, 0.5], [-4, 4]);
+
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLElement>) => {
+    const rect = nameRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    rawX.set((e.clientX - cx) / (rect.width / 2));
+    rawY.set((e.clientY - cy) / (rect.height / 2));
+  }, [rawX, rawY]);
+
+  const handleMouseLeave = useCallback(() => {
+    rawX.set(0);
+    rawY.set(0);
+  }, [rawX, rawY]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -57,14 +84,19 @@ export default function Hero() {
           </motion.div>
           
           {/* Name with 3-stop rich gradient */}
-          <motion.h1 
-            variants={itemVariants}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-extrabold leading-tight tracking-tight drop-shadow-sm"
-          >
-            <span className="text-foreground">{t('profile.firstName', { defaultValue: 'Mehmet Halit' })}</span>
-            <br />
-            <span className="gradient-text">{t('profile.lastName', { defaultValue: 'Barut' })}</span>
-          </motion.h1>
+          <motion.div variants={itemVariants} style={{ perspective: 800 }}>
+            <motion.h1
+              ref={nameRef}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              style={{ rotateX, rotateY, x: translateX, y: translateY }}
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-extrabold leading-tight tracking-tight drop-shadow-sm cursor-default select-none"
+            >
+              <span className="text-foreground">{t('profile.firstName', { defaultValue: 'Mehmet Halit' })}</span>
+              <br />
+              <span className="gradient-text">{t('profile.lastName', { defaultValue: 'Barut' })}</span>
+            </motion.h1>
+          </motion.div>
           
           {/* University */}
           <motion.p 
